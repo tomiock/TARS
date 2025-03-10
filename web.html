@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traductores</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Traduceme esta</h1>
+    <form id="formulario">
+        <input type="text" id="manufacturer" placeholder="Manufacturer" name="manufacturer" required>
+        
+        <select id="sector" name="sector" required>
+            <option value="">Sector</option>
+            <option value="tecnologia">Technology</option>
+            <option value="salud">Medicine</option>
+            <option value="finanzas">Finances</option>
+            <option value="educacion">Education</option>
+        </select>
+        
+        <select id="industry" name="industry" required>
+            <option value="">Industry</option>
+            <option value="software">Software</option>
+            <option value="farmaceutica">Pharmaceutic</option>
+            <option value="banca">Banking</option>
+            <option value="universidades">Universities</option>
+        </select>
+        
+        <select id="industry-group" name="industry-group" required>
+            <option value="">Industry Group</option>
+            <option value="desarrollo">Development</option>
+            <option value="investigacion">Investigation</option>
+            <option value="servicios">Services</option>
+        </select>
+        
+        <select id="sub-industry" name="sub-industry" required>
+            <option value="">Sub-Industry</option>
+            <option value="saas">SaaS</option>
+            <option value="biotecnologia">Biotecnology</option>
+            <option value="fintech">Fintech</option>
+        </select>
+        
+        <select id="task-type" name="task-type" required>
+            <option value="">Task Type</option>
+            <option value="traduction">Translation</option>
+            <option value="correction">Correction</option>
+            <option value="engineering">Engineering</option>
+        </select>
+        
+        <input type="text" id="original-language" placeholder="Original Language" name="original-language" required>
+        
+        <input type="text" id="target-language" placeholder="Target Language" name="target-language" required>
+        
+        <input type="number" id="budget" placeholder="Budget" name="budget" required>
+        
+        <input type="text" id="project-id" placeholder="Project ID" name="project-id" required>
+        
+        <input type="date" id="finish-date" placeholder="Finish Date" name="finish-date" required>
+        
+        <button type="submit">Search Translators</button>
+    </form>
+    
+    <h2>Translators Available</h2>
+    <div class="quality-filter">
+        <label for="min-quality">Sort by minimum quality:</label>
+        <input type="number" id="min-quality" name="min-quality" min="1.0" max="10.0">
+        <button id="filter-quality">Filter</button>
+    </div>
+
+    <div id="translators-list">
+        <!-- Aquí se mostrarán los traductores sugeridos -->
+    </div>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>

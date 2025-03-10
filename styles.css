@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    color:#178582;
+    margin: 20px;
+    padding: 0;
+    background-color: #0A1828;
+}
+
+h1, h2 {
+    text-align: center;
+    padding: 10px;
+}
+
+form {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #deb386;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #0000001a;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+label {
+    display: block;
+    padding: 10px;
+    margin: 10px 0 5px 50px;
+    font-weight: bold;
+}
+
+input {
+    width: 25%;
+    padding: 10px;
+    margin: 10px 0 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+select{
+    width: 26.65%;
+    padding: 10px;
+    margin: 10px 0 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #6aeeff;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color: #88bdf5;
+}
+
+.quality-filter{
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.quality-filter input {
+
+    width: 5%;
+}
+
+.quality-filter button{
+
+    width: 10%;
+    padding: 10px;
+
+}
+
+
+#translators-list {
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.translator-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}

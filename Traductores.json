@@ -1,0 +1,81 @@
+{
+  "translators": [
+      {
+          "name": "Carlos Gómez",
+          "avatar": "Imagenes/Paddington.jpg",
+          "languages": ["Español", "Inglés", "Francés"],
+          "availability": "Disponible",
+          "quality": 9,
+          "history": [
+              {"project": "Manual Técnico", "languagePair": "Español → Inglés"},
+              {"project": "Contrato Legal", "languagePair": "Francés → Español"}
+          ]
+      },
+      {
+          "name": "Emily Carter",
+          "avatar": "Imagenes/pezbruja.jpg",
+          "languages": ["Inglés", "Alemán"],
+          "availability": "Ocupado",
+          "quality": 8,
+          "history": [
+              {"project": "Website Localization", "languagePair": "Inglés → Alemán"},
+              {"project": "Medical Report", "languagePair": "Alemán → Inglés"}
+          ]
+      },
+      {
+          "name": "Hiroshi Tanaka",
+          "avatar": "https://randomuser.me/api/portraits/men/3.jpg",
+          "languages": ["Japonés", "Inglés"],
+          "availability": "Disponible",
+          "quality": 10,
+          "history": [
+              {"project": "Anime Subtitles", "languagePair": "Japonés → Inglés"},
+              {"project": "Technical Manual", "languagePair": "Inglés → Japonés"}
+          ]
+      },
+      {
+          "name": "Sophie Dubois",
+          "avatar": "Imagenes/pezluna.jpg",
+          "languages": ["Francés", "Español", "Italiano"],
+          "availability": "Disponible",
+          "quality": 7,
+          "history": [
+              {"project": "Marketing Brochure", "languagePair": "Francés → Español"},
+              {"project": "Novel Translation", "languagePair": "Italiano → Francés"}
+          ]
+      },
+      {
+          "name": "Luca Rossi",
+          "avatar": "https://randomuser.me/api/portraits/men/5.jpg",
+          "languages": ["Italiano", "Inglés"],
+          "availability": "Ocupado",
+          "quality": 6,
+          "history": [
+              {"project": "Financial Report", "languagePair": "Italiano → Inglés"},
+              {"project": "Legal Document", "languagePair": "Inglés → Italiano"}
+          ]
+      },
+      {
+          "name": "Ming Wei",
+          "avatar": "https://randomuser.me/api/portraits/women/6.jpg",
+          "languages": ["Chino Mandarín", "Inglés"],
+          "availability": "Disponible",
+          "quality": 4,
+          "history": [
+              {"project": "Business Proposal", "languagePair": "Chino → Inglés"},
+              {"project": "Technical Document", "languagePair": "Inglés → Chino"}
+          ]
+      },
+      {
+          "name": "André Silva",
+          "avatar": "https://randomuser.me/api/portraits/men/7.jpg",
+          "languages": ["Portugués", "Español", "Inglés"],
+          "availability": "Disponible",
+          "quality": 5,
+          "history": [
+              {"project": "Scientific Article", "languagePair": "Portugués → Inglés"},
+              {"project": "Software UI Translation", "languagePair": "Español → Portugués"}
+          ]
+      }
+  ]
+}
