@@ -1,0 +1,2647 @@
+CLIENT_NAME,SELLING_HOURLY_PRICE,MIN_QUALITY,WILDCARD
+Accesstra,25,7,Quality
+AccuBank Industries,30,7,Deadline
+AccuBuild Industries,35,7.5,Quality
+AccuPulse,25,7.5,Deadline
+Accura Systems,40,7.5,Price
+AccuSense,25,7,Deadline
+AccuTech,20,7,Quality
+AccuVision,25,7,Quality
+Acme Corporation,20,0,Deadline
+AcmeTech,25,7,Quality
+Acrylon,30,7,Quality
+Acuity Automation Solutions,25,7.5,Deadline
+AdeptTech,25,7,Deadline
+AdMakers Industrial,20,8,Price
+Advanced Manufacturing,25,0,Deadline
+AdvancedEndo,25,7,Quality
+AdvancedHealthTech,35,8,Quality
+AdVantage Solutions,20,7.5,Price
+Advantech Machinery,25,0,Deadline
+AdWorks Manufacturing,25,7.5,Price
+AeroAdventures,25,7,Deadline
+AeroCargo Solutions,20,8,Price
+AeroChem,25,8,Price
+AeroComposites,20,0,Deadline
+AeroDrill Industries,25,7,Quality
+Aerodyne Tech,35,7,Quality
+AeroFab,25,7.5,Price
+AeroForge,25,0,Price
+AeroForge Corporation,20,8,Quality
+AeroFresh,20,7,Deadline
+AeroGuard,35,0,Deadline
+AeroHealth Systems,20,0,Deadline
+AeroIndustries,25,7,Quality
+AeroLand,20,7.5,Price
+AeroLeisure,25,0,Price
+AeroLink Logistics,20,8,Quality
+AeroLogic,45,8,Quality
+AeroLogix,20,7.5,Deadline
+AeroMech Industries,25,7,Deadline
+AeroMed,40,7,Price
+AeroMed Industries,25,0,Price
+AeroMedical Devices,30,0,Deadline
+AeroMetrix Industries,25,7.5,Quality
+AeroMotive Solutions,20,8,Quality
+AeroNet,25,7,Quality
+AeroPro,25,7,Deadline
+AeroPulse Solutions,25,8,Price
+Aerospace & Defense,30,0,Price
+AeroSysTech,35,7,Deadline
+AeroTech,20,0,Deadline
+AeroTech Industrial Systems,35,0,Deadline
+AeroTech Services,30,8,Quality
+AeroWorks,20,8,Deadline
+AeroWorks Industries,30,8,Quality
+AetherPharm,25,7,Price
+AetherWorks,30,0,Price
+Aethos Dynamics,20,7.5,Deadline
+Agile Industrial,20,0,Deadline
+AgileMotive,30,7,Deadline
+AgileTech,25,0,Deadline
+Agricultural Machinery,25,7,Quality
+Agrigenius,30,7,Quality
+AgriPro,25,7.5,Deadline
+Agri-Tech,30,7.5,Deadline
+Agritech Solutions,35,7,Deadline
+AgroChem Solutions,40,7,Deadline
+AgroLogix,35,0,Price
+AgroMech,25,7,Quality
+Agro-Motion,25,0,Deadline
+AgroMotive,25,7,Quality
+Agronics,20,7.5,Deadline
+Agronome,25,7,Price
+Agroquip,25,7,Price
+AgroTech Industries,20,7,Quality
+AgroTechWorks,35,8,Deadline
+AirBridge Services,35,0,Price
+AirFlow Dynamics,30,0,Deadline
+AirMasters,30,7,Price
+AirPro,25,7.5,Price
+Airtech,35,7,Deadline
+AirTech Cargo,20,0,Deadline
+alent Builders Inc.,25,7.5,Deadline
+alentBridge Solutions,30,7,Quality
+AlgoIndustries,30,8,Price
+AlgoSys,25,7,Deadline
+AllaHuAk,25,7,Price
+Alliance Industrial,25,7.5,Price
+AlloyWorks,30,0,Deadline
+Alpha Air Systems,25,7.5,Quality
+Alpha Consulting,25,8,Quality
+Alpha Industrial Solutions,25,0,Deadline
+AlphaNet,20,7,Price
+AlphaTech Industrial Services,25,7,Quality
+AlphaWorks,25,7.5,Deadline
+AlphaZone,50,7,Deadline
+Altitude Solutions,20,7.5,Price
+Alumitronix,20,0,Price
+Ampere Industrial Works,20,7,Deadline
+Amplexus Industries,40,7.5,Price
+Amplify Inc,20,8,Deadline
+Amplitude Systems Corp.,20,7,Price
+Apex Assembly,40,7.5,Price
+Apex Asset Services,25,7.5,Price
+Apex Automation,25,0,Price
+Apex Automotive Systems,20,8,Deadline
+Apex Capital Partners,25,7,Price
+Apex Connect,20,7.5,Quality
+Apex Consulting,25,7.5,Quality
+Apex Corporation,25,8,Deadline
+Apex Cybernetics,25,0,Price
+Apex Dynamics Semiconductors,25,0,Deadline
+Apex Electric Equipment,35,7,Price
+Apex Enterprises Group,40,8,Deadline
+Apex Global,20,7,Deadline
+Apex Holdings,25,0,Price
+Apex Industrial,20,8,Price
+Apex Industrial Finance,20,7.5,Price
+Apex Industrial Health Care,20,7.5,Price
+Apex Industrial Rubber Company,25,7,Price
+Apex Innovations,40,7,Quality
+Apex Motors,25,7,Deadline
+Apex Specialty Properties,25,8,Quality
+ApexCare,25,7,Price
+ApexFlow,25,7.5,Price
+ApexMasters Industries,20,7.5,Quality
+ApexMed,25,8,Price
+ApexPharma,20,8,Price
+ApexPrint Corp.,25,7,Price
+ApexTech,25,0,Deadline
+Apextronics,20,7.5,Deadline
+ApexWorks,40,7,Deadline
+ApexXcel,85,0,Price
+Appcelerate,25,7,Deadline
+AppFactory,25,7.5,Quality
+AppGear,25,8,Deadline
+AppGenius,25,7,Price
+ApplicaPro,25,7,Quality
+Applicon,20,8,Quality
+Appliconics,20,7.5,Deadline
+AppTech Solutions,25,0,Deadline
+AppTronics,25,7.5,Quality
+Appvise,65,7,Quality
+AppWorks,80,0,Deadline
+AquaAir,20,0,Price
+AquaArena,25,7,Quality
+AquaFlow,25,7.5,Deadline
+AquaFoam Solutions,40,7,Quality
+AquaLux,25,7.5,Deadline
+AquaPure Systems,25,8,Quality
+AquaPurify,35,8,Quality
+AquaSteel,20,7.5,Deadline
+AquaTech,25,7,Price
+AquaVista Hotels & Infrastructure,20,8,Deadline
+AquaZone,25,7,Price
+Arcadia Automation Systems,20,0,Price
+Arcadian Chemicals,40,7,Deadline
+Arcadian Electric,30,0,Price
+ArcadiaTech,30,7,Price
+Arcane Automation,35,0,Deadline
+ArcFlashTech,30,0,Price
+Archstone Financial,25,8,Deadline
+ArcLight,20,7,Price
+Arcturus,20,0,Deadline
+ArteVida,20,0,Price
+ArtEvo,25,8,Price
+ArtiCraft,20,7,Deadline
+ArtifexZoo,30,8,Price
+Artisan Abode,20,7,Deadline
+Ascend Enterprises,25,7,Quality
+Askaden,25,7.5,Quality
+Aspen Aesthetic,25,7,Quality
+Aspirex,25,7.5,Quality
+Assembly Avenue,40,7,Deadline
+AssemblyWorks,20,7,Deadline
+Assembyte,25,7.5,Deadline
+AssemTech,25,7,Price
+AssetMind,30,7.5,Price
+AssetShield Insurance,20,7.5,Quality
+Astra Aerospace,25,0,Price
+Atlas Assembly,40,7.5,Deadline
+Atlas Corporation,30,7,Deadline
+Atlas Foundry,40,7,Quality
+Atlas Industrial and Development Corporation,20,0,Price
+Atomix,25,7,Deadline
+Auralux Chemicals,25,7.5,Deadline
+Aurora Aerospace,20,7.5,Price
+Auto Parts Prodigy,25,0,Deadline
+AutoAlchemy,25,7.5,Quality
+AutoArtisan,25,7,Price
+AutoBoost,20,7,Price
+AutoChoice,20,7,Quality
+AutoGenius,30,7,Quality
+AutoMakers,65,7.5,Price
+Automatech,25,0,Deadline
+Automatek,25,7,Quality
+AutomateQ,25,0,Price
+AutoMaven,25,7,Price
+Autonix,20,0,Deadline
+AutoPlanner,25,7,Quality
+Autoquipra,25,7.5,Deadline
+AutoTech,25,7.5,Quality
+Autovance,30,0,Price
+AutoWorks,30,7,Quality
+Autozonix,25,8,Quality
+Avenir Dynamics,20,7.5,Price
+Axiom Applications,20,7,Price
+Axiom Industrial,25,7,Deadline
+Axiom Services,25,7,Price
+Axiomatic Industries,20,8,Price
+AxiomTech,35,0,Price
+AxiomWorks,25,7.5,Quality
+Axion Automotive Solutions,35,8,Deadline
+Axionics,20,8,Quality
+AxisTech,25,8,Quality
+AzarDivertido,60,7,Price
+Baxtex Manufacturing,25,0,Price
+BayShore,35,7,Price
+BayView Industries & Cruise Line,20,7,Deadline
+Bella Home Decor,30,7,Deadline
+BelleMode,25,7,Quality
+BestMarks,30,8,Deadline
+Bienestar360,20,0,Deadline
+BienestarTotal,25,8,Price
+BigBolt,25,0,Price
+BigRigTech,20,8,Price
+BioAgra,20,0,Deadline
+BioBoost,25,7,Deadline
+BioCare,20,7,Price
+BioClean,25,7.5,Deadline
+BioConic,25,8,Price
+BioCore,35,7.5,Quality
+BioFabrica,25,7,Quality
+BioFusion,30,8,Deadline
+BioGenX,20,0,Price
+BioInnovate,25,0,Price
+BioLogic,25,7,Price
+BioLubricants Inc.,25,8,Quality
+BioMatixx Materials,25,8,Quality
+BioMatrix Materials,25,7,Quality
+BioMechTech,20,7,Price
+BioMed,20,8,Quality
+BioMotive,20,0,Deadline
+Bionix Corporation,25,7.5,Deadline
+BioNova,25,7,Quality
+BioPro Manufacturing,25,7,Price
+BioProTech,25,7,Deadline
+BioScience Innovations,25,0,Price
+BioSculpture Materials,25,7,Deadline
+BioSolutions,20,7,Deadline
+BioSolutions Inc.,20,0,Deadline
+BioSource,20,7,Deadline
+BioSphere,20,7.5,Quality
+BioSupply Innovations,25,7,Price
+BioSynth Innovations,25,7,Deadline
+BioTech Facilities,20,7,Quality
+BioTech Manufacturing Group,25,0,Deadline
+BioTechInnovate,25,7,Deadline
+BioTechPlus,20,8,Quality
+BioTechSolutions,25,7,Deadline
+BioTechTools,35,0,Deadline
+BiotechVision,25,7,Quality
+BiotechWorks,20,0,Deadline
+BioWave,25,7,Deadline
+BitBridge,25,7.5,Quality
+Bites&Brews,25,0,Deadline
+Blackout Industries,25,7.5,Quality
+BlackRock Railways,20,7.5,Deadline
+Blackstone Drilling,40,7.5,Quality
+Blaze Oil & Gas,25,7.5,Price
+BlazeDirect,25,8,Price
+Blue Flame Energy,40,7.5,Quality
+Blue Ridge Industrial Properties,25,7,Quality
+Blue Ridge Investments,20,0,Deadline
+Blue Sky Express,45,7.5,Price
+Bluebird Wireless,35,7.5,Price
+BlueBloom,25,8,Deadline
+BlueBolt,25,7,Price
+BlueCollar University,20,0,Price
+BlueCollarTech,20,0,Price
+BlueFlame Industries,25,7,Deadline
+BlueGlobe,30,7,Quality
+BlueHills,25,8,Deadline
+BlueLine Software,35,0,Deadline
+BlueMelt,20,8,Quality
+BluePixel Studios,20,7,Price
+BluePrint Industries,20,7,Deadline
+BlueShift Robotics,25,8,Quality
+BlueSky Ad Agency,25,0,Deadline
+BlueSky Express,25,8,Price
+BlueStar Industrial,20,7.5,Price
+BlueStream,25,7.5,Price
+BlueWave Energy,40,7,Deadline
+BlueWave Industries & Resorts,35,7.5,Quality
+Bluewave Semiconductors,25,7,Deadline
+BluNova,25,7,Deadline
+Boho Bazaar,25,0,Price
+Bold Ventures,25,7,Quality
+BoldVentures,25,7,Quality
+Bolt & Bite Restaurants Inc.,35,7,Deadline
+BondBridge,25,7,Deadline
+BrainWave Solutions,30,8,Deadline
+BrandBoosters Manufacturing,20,0,Price
+BrandWave Marketing,25,0,Deadline
+Brick & Mortar Co.,60,7,Deadline
+BrickStone,25,7.5,Price
+BridgeTech,25,7,Price
+Bridgeview Finance,25,0,Deadline
+BridgeWorks Engineering,20,7,Quality
+BrightBots,25,7,Quality
+BrightSight Engineering,20,8,Deadline
+BrightSol Chemicals,25,7.5,Price
+BrightWave,30,7.5,Quality
+Brightway Builders,25,8,Deadline
+BrightWorks,25,7.5,Quality
+Brooklyn Brownstone,20,0,Price
+BTP,30,7,Price
+Bubblesque Beverages,20,0,Deadline
+BuildBotics,55,0,Deadline
+BuildEquip,30,0,Price
+BuildForge,25,7,Deadline
+BuildMaster,20,0,Price
+BuildMate,25,7,Deadline
+BuildPro,25,0,Deadline
+BuildProTech,20,8,Deadline
+Buildrite,25,7,Deadline
+Buildware,30,0,Price
+BuildWorks,20,8,Deadline
+Byte Haven,20,7.5,Deadline
+ByteBuilders,20,7,Deadline
+ByteLab,30,7,Price
+ByteNet,25,8,Quality
+CallMax,30,0,Deadline
+CallNet,25,7.5,Price
+CapitalBridge Inc.,20,8,Price
+CapitalCare,20,0,Price
+CapitalForge,20,0,Price
+Capstone Management,25,0,Deadline
+Carbon Solutions Inc.,20,0,Deadline
+CarbonForge,25,7,Price
+CarConnoisseur,25,7,Quality
+CarCrafter,20,7.5,Quality
+Cardiactix,20,8,Price
+CareBay,20,7,Price
+CareCore,20,7.5,Price
+CareCore Inc.,20,7,Price
+CareEssential Innovations,25,0,Deadline
+CareForce,25,7,Deadline
+CareGate,20,7,Price
+CareGear Innovations,25,7,Deadline
+CareGenius Corp.,25,7,Deadline
+CareGenius Technologies,25,7.5,Quality
+CareLife Corp.,25,7,Price
+CareLink,25,7.5,Deadline
+CareLink Equipments,20,0,Price
+CareLogistics Corporation,20,7.5,Quality
+CareMaxx Dynamics,20,0,Deadline
+CarePro Technologies,25,7,Quality
+CareScape,35,8,Deadline
+CareShield Tech,25,7,Price
+CareSphere,25,7,Price
+CareSquad,25,7.5,Quality
+Caretronics,20,7,Deadline
+CareVantage Corp.,35,7,Quality
+CareView,20,0,Deadline
+CareWise Innovations,30,8,Deadline
+CarZone,35,0,Price
+Cascade Industrial,25,7.5,Quality
+Catalyst Equipment Co.,20,7,Price
+Catalyst Industrial,25,7,Price
+Catalyst Ventures,30,0,Price
+CatalystIndustries,25,7,Quality
+CatalystSoft,25,7.5,Quality
+Cedar Creek Advisors,20,0,Deadline
+CementWorks,25,7,Quality
+Cemtex,20,7.5,Quality
+CentralCom,25,0,Deadline
+Centurion Defense,40,7,Deadline
+Centurion Heavy Industries,30,8,Deadline
+Ceramco,25,0,Price
+ChainCraft,20,7.5,Deadline
+Chemcorp,25,7,Quality
+ChemicalMarket,25,8,Price
+ChemiSpec,20,7,Quality
+Chemplus,25,7.5,Quality
+Chemstrat,30,0,Price
+Chemwell,25,0,Deadline
+Chic Chateau,25,7,Deadline
+ChicDesigns,30,0,Deadline
+ChipTopia,25,8,Deadline
+CineCorp Industries,20,8,Deadline
+CineMachining,25,7,Price
+CircuitCore,25,7,Deadline
+CircuitDesign,25,0,Price
+CircuitLogic,25,0,Deadline
+CircuitMax,25,7,Deadline
+CircuitPro,60,7,Price
+Circuitree,25,7.5,Price
+Circuitronix,25,0,Price
+Circuitry Solutions,40,7,Deadline
+Circuitwise,30,8,Quality
+CircuitWorks,20,7.5,Quality
+CircuitWorks Corporation,25,7,Deadline
+Citiworks,25,7,Deadline
+CityPalms,30,7,Price
+CleanCharge Inc,35,0,Price
+CleanCoat,30,7.5,Price
+CleanHands Logistics,20,0,Price
+CleanHealth,20,0,Deadline
+CleanMed Industries,20,0,Deadline
+CleanTech Solutions,20,7,Quality
+CleanWash Co.,40,7,Price
+ClearComm,25,0,Deadline
+ClearCycle,20,7,Deadline
+ClearNet,20,7.5,Price
+ClearSpace Innovations,25,7.5,Price
+ClearTrack Industries,30,7,Deadline
+Clearview Investments,25,7.5,Quality
+Clearview Securities,20,0,Price
+ClearVision AI,25,8,Deadline
+ClearWater,25,7,Price
+ClearWater Environmental,25,0,Deadline
+Clickforce,30,7,Quality
+ClínicaDigital,35,7,Quality
+ClínicaWeb,20,0,Price
+CloudLab,20,8,Deadline
+Cloudline Solutions,20,7,Price
+CloudNation,25,8,Quality
+CloudNet,25,7.5,Deadline
+CloudScape,25,7,Quality
+Cloudware,40,7,Price
+CloudWorks,25,7.5,Quality
+Coastal Cottage,30,7.5,Deadline
+Coastal Industries & Cruise Line,20,0,Deadline
+Coastal Real Estate Holdings,40,0,Deadline
+Coastline,25,0,Price
+Code360,20,7,Price
+CodeCraft,25,7.5,Quality
+CodeCrush,30,7,Quality
+CodeForge,25,7.5,Quality
+CodeLab,25,7.5,Deadline
+CodeLine,25,7,Quality
+CodeNet,25,7,Deadline
+CodeWave Solutions,25,7,Deadline
+CodeWorks,25,7,Price
+Cogent Innovations,25,7,Price
+Cognicom Industrial,20,7.5,Deadline
+Cognitix,30,0,Price
+ColorBlind,25,7,Deadline
+ComfiHomes,40,7,Quality
+ComfyZone,25,7.5,Price
+Commlink,25,7.5,Price
+CommSolutions,70,0,Price
+CommuniLink,35,7,Deadline
+CommuniPro,35,0,Deadline
+CommuniServe,35,7,Quality
+CommuniTech,25,7,Deadline
+ComNet,30,8,Price
+CompraSmart,30,7,Deadline
+ComunicaciónDirecta,25,0,Price
+Comunicar360,45,8,Quality
+Comunicarex,20,8,Quality
+ComunicarPro,30,8,Deadline
+ComunicaYa,35,7.5,Deadline
+ComuTech,40,7,Quality
+ConBuild,25,7,Price
+ConectaMax,25,0,Deadline
+ConexiónGlobal,20,0,Deadline
+ConexiónTotal,20,8,Price
+ConnectaBro,25,7,Price
+ConnectCast,20,0,Price
+ConnectEdge Innovations,20,7,Quality
+Connectr Communications,25,7,Quality
+Constructa,25,0,Deadline
+ConstructCorp,25,7,Quality
+ConstructiGenius,25,7.5,Quality
+Constructive Co.,25,0,Deadline
+Constructivus,30,7.5,Price
+Constructo,30,8,Price
+ConstructoTruck Industries,25,7,Deadline
+ConStructPro,25,7,Quality
+Contour Engineering,25,8,Deadline
+ControlEdge,20,7.5,Deadline
+ControlLogic,20,7.5,Price
+ControlSoft,30,7,Quality
+ConvergeCo,20,7.5,Quality
+Convergent Materials Corp.,25,7,Price
+Conveyor & Cookery Manufacturing Co.,30,7.5,Quality
+Copper Cask,25,0,Deadline
+Core Equipment,25,0,Price
+CoreCast,20,7,Deadline
+CorePulse Technologies,30,7,Quality
+CoreTech Industrial Automation,20,0,Deadline
+CoreTech Innovations,25,7,Price
+Coruscant Senate,40,7.5,Deadline
+CosmoCon,20,7,Quality
+Council of Elrond,35,0,Deadline
+Cozy Casa,20,8,Quality
+Craftech Industries,25,7,Price
+CraftKings,25,7,Quality
+Craftsmanship Academy,20,0,Deadline
+Craton Machines,25,7,Quality
+Creative Minds Tutoring,20,0,Deadline
+CreativWorks,30,7.5,Quality
+Crestwood Dynamics,25,0,Price
+Crimson Cellars,35,7,Deadline
+Crimson Exploration,30,8,Quality
+CropTech,25,7,Quality
+CruiseTech Industries,35,8,Deadline
+Crystal Resorts & Infrastructure,20,7,Quality
+Culinaire,20,0,Price
+CuraFácil,25,0,Price
+CuraOnline,25,7.5,Deadline
+CureCare Innovations,25,7,Price
+CureEquip Co.,20,7.5,Price
+CureGuardian Corp.,20,0,Price
+CureLab,20,7.5,Quality
+CureLink Innovations,25,0,Price
+CurrencyHub,25,7.5,Quality
+Current Control Systems,25,7,Quality
+CurrentTech,20,0,Deadline
+Cyber Machinery,20,7.5,Price
+CyberCentral,20,8,Price
+Cyberconix Solutions,25,8,Quality
+Cyberdyne Systems Corporation,35,8,Deadline
+CyberIndustries,25,0,Price
+CyberMech,40,8,Quality
+CyberMind,25,7.5,Price
+Cybersonix,25,7,Deadline
+CyberTronics,30,7,Price
+CyberWise,20,8,Quality
+CyberWorks Solutions,40,7.5,Price
+Cybros,30,7.5,Deadline
+Cybrospection,25,7,Deadline
+CycleCrafters,25,7,Price
+Cyclonic Manufacturing,25,0,Price
+Cygnus Industrial Technologies,25,7,Price
+CygnusIndustries,20,7.5,Price
+CygnusTech,25,8,Quality
+Czerka Corporation,20,7,Quality
+DataBoost,25,7,Deadline
+DataBridge,35,0,Deadline
+DataCall,35,7.5,Deadline
+DataCom,40,7.5,Deadline
+DataCrunch,25,7,Price
+Datadeck,40,0,Price
+DataDriven Dynamics,25,0,Deadline
+DataDriven Solutions,25,8,Price
+DataFlow,30,8,Quality
+DataForge,35,0,Price
+DataFortify,25,7,Deadline
+DataFusion,20,0,Deadline
+DataHive,25,7.5,Quality
+DataLab,25,7.5,Price
+DataMinds,25,7,Deadline
+DataNet,25,0,Deadline
+DataPulse,20,7,Deadline
+DataRealm,25,7,Deadline
+DataScope,25,8,Price
+DataStream,25,7.5,Quality
+DataTech Solutions,25,7,Quality
+DataVibe,25,7,Quality
+DataWise,20,8,Price
+DataWorks,20,7,Quality
+DataXcelerate,25,7,Quality
+Davenport Capital,25,8,Price
+Delphi Works,25,7,Deadline
+Delta Contracting,25,7,Quality
+Delta Design,25,0,Price
+DeltaTech Manufacturing,25,0,Price
+DeltaV Solutions,25,0,Price
+DeltaVision Engineering,40,0,Deadline
+DentalDyne,25,7,Price
+Department of Mysteries,30,0,Deadline
+DerivativesX,20,0,Deadline
+DesarrolloWeb,35,7.5,Deadline
+DesarrolloYa,25,7,Price
+Desert Digs,30,7,Quality
+Diamond Designs,25,7.5,Price
+Diamond Destiny Casinos,20,0,Price
+Digital Dreamers,25,7.5,Quality
+Digital Pipeline,20,8,Deadline
+DigitalCrest,25,7,Quality
+DigitalForge Technologies,25,0,Price
+DigitalFuse Technologies,25,0,Price
+DigitalHarbor,25,7.5,Deadline
+Digitalityx,45,7,Deadline
+DigitalPrint Innovations,25,0,Deadline
+DigitalPro,25,8,Deadline
+DigitalPulse,35,8,Quality
+DigitalTech,45,0,Deadline
+DigitalWorks,25,0,Deadline
+DigitalWorks Solutions,25,7,Quality
+DINAMO A4,25,0,Price
+Direct Supply,20,0,Deadline
+DisfrutaYa,20,7,Price
+DiverBank Industries,35,0,Deadline
+Diverchem,25,0,Price
+Divergent Finance,25,7,Price
+Divergent Industries Bank,20,0,Price
+DiverInd,25,7.5,Deadline
+Diverse Dynamics,25,7,Quality
+DiversiFunds,20,7,Price
+Diversión24,20,8,Quality
+DreamBuilders,20,0,Price
+DreamMakers,25,0,Price
+DreamWorks Solutions,25,8,Quality
+DreamyParks,25,0,Deadline
+Drill & Diner Manufacturing Corp.,35,7,Quality
+Drillmax Energy,35,0,Deadline
+DriveCore,25,7.5,Deadline
+DriveDynasty,30,7,Quality
+DriveLine Motors,25,7.5,Deadline
+DriveTrain Dynamics,25,0,Deadline
+Dune Energy Corporation,25,7,Quality
+DuraStitch,25,7,Quality
+DynaFlow,25,0,Price
+DynaFlow Solutions,20,8,Price
+Dynaforce,25,7.5,Price
+DynaForge,25,0,Price
+DynaIndustries,25,7.5,Quality
+DynaMation,25,7.5,Quality
+Dynamo Industries,40,7.5,Deadline
+DynaMotive,20,0,Deadline
+DynaSource,25,7,Deadline
+DynaStructures,25,7,Quality
+DynaTech,25,7,Deadline
+DynaWorks,25,7,Deadline
+Dynax Inc,25,7,Price
+DynoTech,25,7,Quality
+Eagle Eye Industries,25,7,Quality
+Echelon Manufacturing Co.,20,0,Deadline
+Echelon Solutions,25,8,Quality
+Echelon Tire Corporation,25,7.5,Quality
+EchoMedia Solutions,25,7,Quality
+echWorks Inc.,20,7,Price
+Eclipse Industries,25,7.5,Deadline
+EcoCycle Inc.,35,8,Deadline
+EcoEdge,20,7,Price
+EcoEnergy,25,7,Deadline
+EcoFacil Solutions,25,7,Deadline
+Eco-Friendly Manufacturing,20,7,Quality
+EcoFuture,45,7,Price
+EcoGuard,25,7.5,Quality
+EcoHealth Solutions,20,0,Price
+EcoMed,30,7,Quality
+EcoMetrix,20,0,Price
+EcoPackaging Solutions,25,7,Deadline
+EcoPharm Industries,25,0,Price
+EcoSolar,25,7,Price
+EcoUtility,50,7.5,Quality
+EcoVolt Energy,25,0,Deadline
+EcoWorks,25,7,Deadline
+EcoZone,25,7.5,Quality
+Edgecut Industries,30,0,Price
+EdgePath,25,7.5,Deadline
+EdIndustrial,20,0,Deadline
+EducaTrainning,25,8,Price
+EduManufacturing,20,7,Deadline
+Efficient Assembly Inc,25,0,Price
+El Ammo Bandito,30,7,Deadline
+Electra Components & Systems,25,7,Deadline
+Electra Works,20,0,Price
+ElectraForge,25,8,Price
+ElectraLogic Works,25,7,Quality
+ElectraMech,25,0,Deadline
+ElectraTech Solutions,25,7,Deadline
+ElectraTrans,20,7.5,Price
+ElectraWorks,30,0,Deadline
+Electric Vision Corp.,25,7,Deadline
+Electrical Equipment & Parts,20,7.5,Price
+ElectriCo-Motors,25,7,Quality
+Electricore,25,7,Price
+ElectriCore Innovations,20,8,Quality
+Electrindustries,30,8,Price
+ElectroEquipment,25,0,Price
+ElectroForge,25,7.5,Deadline
+ElectroForge Industries,25,8,Deadline
+Electromech,25,7.5,Deadline
+Electromechanical Inc.,25,7,Quality
+EleguitarEq,20,7,Deadline
+Element Engineering,40,0,Deadline
+ElementaCo,25,8,Price
+Elemental Electronics,35,0,Deadline
+ElementalTech,25,0,Deadline
+Elevate Industries,20,7.5,Price
+Elextronix,35,7,Deadline
+Elite Biomedical Solutions,20,7,Price
+Elite Electrics,25,7,Quality
+Elite HR Solutions,20,7,Quality
+Elite Industrial,25,0,Deadline
+Elite Machining Corp,25,7.5,Price
+Elite Medical Solutions,25,0,Price
+Elite Packaging Solutions,25,7,Price
+Elitech,30,7.5,Quality
+EliteEngineered,20,7.5,Price
+EliteForge,20,8,Deadline
+EliteForge Co.,20,7.5,Quality
+EliteHealth,40,7,Price
+EliteIndustries,35,7,Quality
+EliteSoft,20,0,Price
+EliteStream Industrial Automation,20,7,Price
+EliteTech,35,7.5,Deadline
+EliteWorks,25,7.5,Quality
+EliteWorks Industries,20,7,Price
+Elumin Engineering,20,7.5,Quality
+EmergeTech Enterprises,25,7.5,Price
+Empyrean Aviation,35,8,Deadline
+Empyrean Dynamics,25,8,Quality
+Encompass Engineering,25,0,Price
+Endeavor Group,20,8,Deadline
+EnergyPulse Inc.,30,7,Quality
+EnergySolutions,25,7,Deadline
+EnergyWorks,25,7,Price
+Engineware,25,7,Price
+Enigma Semiconductors,20,7,Quality
+Enigma Tech,25,7.5,Quality
+EntretenimientoPremium,25,7.5,Price
+EnviroChem,25,7.5,Quality
+EnviroGreen,25,8,Price
+Environics Solutions,20,8,Deadline
+EnviroPro Industrial Solutions,20,7.5,Price
+EnviroSafe,25,7.5,Quality
+EnviroSolutions,20,0,Price
+Envoque,35,7,Deadline
+EonTech,25,7,Quality
+EpicParks,25,7,Quality
+Epoch Energy Solutions,20,7,Price
+Equil,40,8,Deadline
+Equinox Enterprises,25,8,Deadline
+Equinox Technologies Ltd.,30,0,Price
+Equinoxia,30,0,Price
+EquipCare Innovations,20,7,Price
+EquipCare Solutions,20,7,Deadline
+EquipHealth Solutions,25,7.5,Price
+EquipLife Innovations,25,7,Price
+EquipLink Corp.,20,7.5,Price
+EquipMart,25,8,Quality
+EquipMaxx Dynamics,20,0,Price
+EquipMed Inc.,20,7,Price
+EquipMed Innovations,25,0,Deadline
+EquipmentExchange,25,7,Quality
+EquipNet,25,0,Price
+EquipPro Inc.,20,7,Deadline
+Equipronix,25,7,Price
+EquipVantage Technologies,25,0,Deadline
+EquipWise Technologies,20,7,Price
+Ergo Manufacturing,40,0,Price
+EverCare,35,0,Price
+Everest Machines,20,8,Deadline
+Evergreen House,25,7,Deadline
+Evolve Robotics,25,0,Price
+Excella Equipment,45,8,Deadline
+Exceltech,25,0,Price
+Exergy Systems,25,8,Deadline
+ExperienciaTotal,20,8,Quality
+FabricatePro,25,7,Quality
+FabricateX,20,8,Quality
+FabricaYa,25,7.5,Price
+FabriTech,20,7,Quality
+FactoFlow,35,7,Price
+FactoMate,25,7,Quality
+Factoría360,25,7,Deadline
+FactoryFlow,25,0,Deadline
+FactoryFuse,20,0,Price
+FamliFun,25,7.5,Price
+FarmElevate,40,0,Deadline
+FarmFresh,20,7.5,Price
+FarmFusion,20,7.5,Deadline
+Farm-to-Table Foods,25,0,Price
+FarmWorks Corp.,25,7.5,Price
+FashionStyle,30,7,Price
+FastCom,20,7,Quality
+FastTech,25,0,Deadline
+FastTrack Construction,25,8,Quality
+FastTrack Industries,25,7,Price
+Ferengi Commerce Authority,30,8,Deadline
+FerroTech,35,7,Price
+FertileGrowth Industries,45,7.5,Deadline
+Fidelity Packaging,25,7,Price
+FinanceSwap,25,7,Price
+FineLine,40,7.5,Quality
+Finesse Machinery,30,0,Deadline
+Fintrading Exchange Services,30,8,Deadline
+FinTrust Holdings,20,7,Deadline
+FireSafe,30,0,Deadline
+FirstLine Solutions,25,0,Deadline
+Fizzy Fusion Co.,25,7,Deadline
+Fizzy Works,20,7,Quality
+FleetBuilders,20,0,Deadline
+FlexControl,25,0,Price
+FlexiLogix,25,7.5,Price
+FlexiMed,20,0,Price
+FlexiPak,25,8,Deadline
+FlexiSpace,25,0,Price
+FlexiStaff,25,7.5,Deadline
+FlexiTech,30,8,Deadline
+FlexTronics Innovations,25,8,Deadline
+Flexxon Manufacturing,30,8,Price
+FlightCrew,40,7,Deadline
+FlightWorx Industries,25,8,Price
+FlowCycle,25,0,Price
+FlowMotion,20,0,Deadline
+FlowTech,25,7.5,Price
+Fluid,25,8,Quality
+FluidMaster,30,8,Quality
+FluidMasterX,25,7.5,Deadline
+FluidTech,25,8,Deadline
+Flux Fuel,25,7,Price
+Fontaine Futuristics,30,7.5,Deadline
+FoodFlow,25,7,Quality
+ForceMaster,30,7,Deadline
+Forge & Fire Grills Corp.,20,7.5,Quality
+ForgeFashion,45,0,Deadline
+ForgeTech,30,7.5,Price
+ForgeWorks,25,8,Price
+ForgeWorks Industries,25,0,Deadline
+Fortress Materials,20,0,Price
+Fortune Falls Casinos,25,7.5,Deadline
+Foundry & Food Truck Corp.,25,8,Deadline
+FreshBites Inc,25,7.5,Price
+Frontier Resources,25,7,Quality
+FrontierTech,25,7,Price
+FSB ,30,7,Price
+FunFlicks,35,7,Deadline
+Furnace & Flavor Foods Co.,25,7,Deadline
+Fusion Consulting,30,8,Deadline
+Fusion Electricals,25,0,Price
+Fusion Fabrications,25,7,Quality
+Fusion Fabricators,40,7,Deadline
+Fusion Industries,20,7,Deadline
+FusionLink Technologies,35,7.5,Quality
+FusionMark,20,7.5,Deadline
+FusionPoint Innovations,30,7,Quality
+FusionWorks Industrial Solutions,25,0,Deadline
+Future Fabrications,25,7.5,Price
+FutureBuild,25,7,Deadline
+FutureFlow,25,0,Deadline
+FutureForge,35,7.5,Quality
+FutureForge Industries,20,8,Deadline
+FutureIndustries,25,7.5,Quality
+FuturePeak,20,8,Price
+FuturePharma Inc,25,7,Quality
+FutureScape,20,0,Price
+FutureScope Engineering,25,7,Deadline
+FutureSkills Academy,35,7,Deadline
+FutureStep,25,8,Price
+FutureTech,25,7.5,Quality
+FutureTech Solutions,25,7,Quality
+FutureTechInd,25,7,Price
+FutureTechSys,25,7,Deadline
+FutureWorks,20,0,Price
+FutureWorks Engineering,30,7,Price
+FutureX Enterprises,25,7,Deadline
+Futurize,25,7.5,Deadline
+Fuzionix,25,0,Price
+GAF,25,7,Quality
+Galactic Empire Bureau of Investigation,40,7.5,Price
+GameGo,35,7,Quality
+Gamma Glassworks,35,7.5,Deadline
+GardenHues,25,7,Deadline
+GastroMed Innovations,30,7,Price
+Gateway Industrial Properties,20,8,Deadline
+Gateway Industries,25,0,Deadline
+GealSoft,20,7.5,Price
+Gear & Grillhouse Restaurants Co.,20,7,Price
+GearGenius,20,8,Quality
+Gearhead Innovations,25,7,Price
+GearMaster,20,7.5,Quality
+GearUp,25,8,Quality
+GearWorks,45,7,Quality
+Geminus Machines,20,0,Price
+Gemstone Productions,20,8,Deadline
+GeneralNothing,25,7.5,Deadline
+GeneWorks,20,7,Deadline
+GenoMachinex,25,7,Deadline
+GenoMed,25,7,Quality
+GenomicSolutions,25,7,Price
+GenomicWorks,30,8,Quality
+Genus Industrial,25,7,Quality
+GetalifeCo,30,0,Deadline
+GigaPulse Technologies,25,7,Price
+GlamorCorp,25,0,Deadline
+GlassGuard,35,7,Deadline
+Global Gear,30,0,Price
+Global Green Packaging,30,7.5,Deadline
+Global Logistics,20,7,Deadline
+Global Logistics Solutions,20,7.5,Quality
+Global Trading Solutions,25,7,Price
+GlobalCom Connect,30,0,Deadline
+GlobalTech Solutions,25,7.5,Deadline
+GlobeGuardian,35,7,Quality
+GlobeLink,20,7,Deadline
+GodFriend,25,8,Price
+Golden Nugget Gaming,20,7.5,Deadline
+GoldenTrack Industries,25,7,Quality
+Goldstinc,30,0,Price
+Gondor Council of the Wise,40,8,Deadline
+Gourmet Goodness,30,8,Price
+GrainsGalore,20,8,Quality
+Grandeur Co,25,0,Price
+Grandeur Industrial,30,7.5,Price
+GrandHarvest,25,7,Price
+GraphicProdigy Industries,20,7,Quality
+GraphiPrint Solutions,20,8,Deadline
+GraphixPro Printers,20,7.5,Price
+Gravitas Engineering,25,0,Deadline
+Green Facilities Group,25,7.5,Quality
+Greener Homes,25,0,Deadline
+GreenForce Innovations,20,7.5,Quality
+GreenGlow,40,7.5,Deadline
+GreenGuru,25,7,Price
+Greenleaf Industries,20,0,Deadline
+GreenLeaf Services,25,0,Deadline
+GreenNet,25,7,Quality
+GreenPak Industries,25,0,Price
+GreenPath,50,8,Quality
+GreenPower Engineering,25,8,Deadline
+GreenPower Solutions,25,7,Price
+GreenPrint,35,7.5,Price
+GreenTech Industries,20,8,Price
+GreenWave,25,7,Price
+GreenWave Industrial Technologies,30,7.5,Price
+GreenWorks,25,0,Deadline
+GridMach,20,0,Price
+Grill & Gasket Inc.,40,0,Deadline
+Gringotts Wizarding Bank,30,8,Quality
+GrowGenius,45,7,Quality
+Hambalah,20,8,Quality
+Hammer & Hearth Diners Co.,20,0,Price
+Hands-On Industries,20,0,Deadline
+Hands-On Learning,25,8,Deadline
+HappyCampers,25,8,Deadline
+HappyHappenings,20,7,Deadline
+HappyHive,20,7.5,Price
+Harbor Hill Investments,30,7,Deadline
+Harbor House,20,7,Price
+Harborfront Technologies,25,7,Price
+HarborSide Industries & Resorts,20,7,Quality
+HarborWalk Industries & Resorts,25,7.5,Price
+HarborX,25,0,Price
+Harmonious,25,8,Price
+Harvest Moon,45,7,Quality
+HarvestFields,20,7.5,Quality
+HarvestHive,20,8,Deadline
+HarvestMax Chemicals,20,7,Deadline
+Havenly Homes,25,7.5,Quality
+Healco,25,7,Quality
+HealthAid,20,7,Deadline
+HealthAxis,20,0,Deadline
+HealthBridge,25,7,Price
+HealthBridge Dynamics,20,7,Price
+HealthBridge Innovations,25,7.5,Price
+HealthBridge Solutions,25,7.5,Deadline
+HealthCore,25,7.5,Quality
+HealthCore Dynamics,30,0,Price
+HealthCore Innovations,25,7,Quality
+HealthCore Solutions,25,7.5,Deadline
+HealthEdge,25,7,Deadline
+HealthEquip,90,8,Quality
+HealthEquip Dynamics,25,7.5,Quality
+HealthEquip Innovations,25,0,Price
+HealthEquip Solutions,25,7,Deadline
+HealthEquip Technologies,20,0,Deadline
+HealthEssential Inc.,20,7,Quality
+HealthEssential Innovations,25,7,Price
+HealthFlex,25,0,Price
+HealthForge,25,7,Deadline
+HealthGenius Innovations,25,7,Quality
+HealthGuard Inc.,25,7,Quality
+HealthGuard Solutions,25,7,Quality
+HealthGuardian Technologies,20,0,Deadline
+HealthGuru,20,7,Deadline
+Healthify,20,7,Quality
+HealthLab,20,7,Price
+HealthLift Tech,20,7,Deadline
+HealthLink,20,7.5,Deadline
+HealthLink Equipments,20,0,Price
+HealthLogic,25,7.5,Deadline
+HealthMaster Inc.,25,7,Quality
+HealthMate,40,8,Quality
+HealthMaxx Solutions,25,8,Deadline
+HealthMed Innovations,20,7,Quality
+HealthMind,30,7.5,Quality
+HealthNet,20,7,Quality
+HealthNet Distributors,20,0,Price
+HealthNutrition Co,20,0,Deadline
+HealthPlus,25,0,Deadline
+HealthPro,25,7.5,Price
+HealthPro Solutions,25,0,Deadline
+HealthPulse,25,7,Deadline
+HealthQuest,20,8,Quality
+HealthScan Innovations,20,0,Deadline
+HealthScope,20,7.5,Quality
+HealthShapers,25,7,Deadline
+HealthShield Corp.,25,7,Quality
+HealthSolutions Corp.,25,0,Deadline
+HealthSpace,25,7,Quality
+Healthsphere,50,0,Deadline
+HealthStar,25,7,Price
+HealthTech Dynamics,20,7.5,Price
+HealthTech Innovations,25,7,Quality
+HealthTrek,25,7,Quality
+HealthVantage Corp.,25,8,Quality
+HealthVantage Innovations,20,7,Deadline
+HealthVibe,20,7,Quality
+HealthVista Corp.,30,8,Price
+HealthWave,20,7,Price
+HealthWaves,20,7,Quality
+HealthWhoCare,25,7.5,Deadline
+HealthWise Industries,20,0,Price
+HealthWorks,20,7,Deadline
+Healthy Spaces,25,7,Price
+HealthyLife,25,7,Deadline
+Healty Wealty Company,20,0,Price
+HeavyDuty Workwear,20,7,Quality
+Heavyguard,20,7.5,Quality
+HeavyHaul,25,7.5,Deadline
+HeavyTrux,25,7,Deadline
+Helix Holdings,25,0,Price
+Helix Industrial Automation,20,0,Deadline
+Helix Industries,25,7,Quality
+Helix Motors,25,7.5,Price
+HemoLab Tech,20,7.5,Deadline
+Heritage Home Goods,20,7.5,Price
+HeritageBank,20,8,Price
+High Rollers Casino Co.,25,0,Price
+HighPress,30,8,Price
+Hightech Solutions,20,7.5,Deadline
+HiMedTech,25,0,Price
+Hitlermunger,20,7,Deadline
+Hogsmeade Realty Corporation,20,7.5,Price
+Hogwarts School of Witchcraft and Wizardry,20,0,Price
+Holonet,25,7,Quality
+HomeClima,25,8,Quality
+HomelyStay,25,7,Deadline
+HomeShield Builders,25,7.5,Quality
+Homestead Construction,25,8,Deadline
+HomeSweetAl. ,20,8,Deadline
+Horizon Engineering,25,7.5,Deadline
+Horizon Hardware,25,0,Deadline
+Horizon Hotels & Infrastructure,25,7,Quality
+Horizon Industrial,25,0,Deadline
+Horizon Industrial Properties,20,0,Deadline
+Horizon Industries,25,7,Price
+Horizon Investment & Banking,25,7,Quality
+Horizon Manufacturing,25,7,Price
+Horizon Solutions,25,8,Deadline
+Horizon Systems,35,0,Price
+Horizon Trust Bank,25,7,Price
+HorizonTech,30,7,Price
+HorizonTrust Industries,25,7.5,Quality
+Housing,25,7.5,Price
+HR Dynamics,25,7,Price
+Human Builders,30,0,Deadline
+Hydraulix,25,7,Quality
+HydroGen Corporation,25,7,Quality
+Hydromation,20,7,Price
+Hydronova,30,7.5,Deadline
+HydroPools,30,0,Deadline
+HydroWorks,25,7,Deadline
+Hymax Solutions,35,8,Deadline
+Hyperion Corporation,20,7.5,Quality
+Hyperion Industrial Technologies,25,0,Price
+Hyperion Industries,25,7,Quality
+Hyperion Robotics,25,7,Deadline
+Hyperion Tech,35,7,Price
+HyperStream,25,7.5,Deadline
+HyperWave,20,0,Price
+Iconic Machineries,25,0,Deadline
+IdealWorks,30,7,Quality
+IgniteTech,20,8,Price
+Imaginarium Works,25,7,Price
+Impact Solutions,20,7,Price
+Indauto,35,7,Quality
+IndigoWorks,25,7.5,Price
+InduDrive,45,7,Price
+InduLearn,25,7,Deadline
+Indumotive,25,7,Deadline
+InduNet Solutions,25,7,Deadline
+IndusBank,25,7,Price
+IndusBank Securities Group,25,7.5,Quality
+IndusCapital,25,7.5,Quality
+IndusComm,20,7.5,Deadline
+IndusDiver,20,8,Price
+IndusFarm,40,8,Quality
+Indusgear,30,8,Price
+IndusHR Employment Solutions,20,0,Deadline
+IndusInno,35,7.5,Deadline
+IndusLab,65,7,Price
+IndusLegal Solutions,20,0,Deadline
+IndusMarkets,20,0,Price
+Indusonics,35,0,Deadline
+IndusPartners,20,0,Price
+IndusPro,25,0,Price
+IndusPro ServicesCo,25,7.5,Quality
+IndusSoft,20,8,Deadline
+IndusTech,25,7,Price
+IndusTechMed,20,7.5,Deadline
+IndustraCare,20,8,Quality
+IndustraFarm,25,7.5,Quality
+IndustraMed,20,7,Quality
+IndustraPak,25,0,Price
+Industrial AirLift,20,7.5,Price
+Industrial BioPharm,25,0,Price
+Industrial Bliss,25,0,Deadline
+Industrial Builders,25,0,Deadline
+Industrial Conglomerates,40,0,Price
+Industrial Connect,25,7,Price
+Industrial Distribution Co.,25,8,Price
+Industrial Distributors Inc.,25,7.5,Deadline
+Industrial Dynamics,20,7,Deadline
+Industrial Equipment Co.,30,7.5,Price
+Industrial Finance Corp,25,7.5,Price
+Industrial Innovate,20,7,Quality
+Industrial Innovations,20,7,Quality
+Industrial Innovators,40,7,Deadline
+Industrial Intelligence,25,7.5,Quality
+Industrial Jetstream,20,7,Price
+Industrial Movers Inc.Industrials & Moving Services,40,0,Deadline
+Industrial Steel Inc.,30,0,Deadline
+IndustrialCap,30,8,Price
+IndustrialEdX,20,0,Deadline
+IndustrialElite,25,7,Price
+IndustrialFirst National Bank,25,7.5,Deadline
+IndustrialGen,25,0,Deadline
+IndustrialGenius,30,7,Deadline
+IndustrialGenius Consulting,20,7.5,Price
+IndustrialHorizon,20,0,Deadline
+IndustrialInsight,25,7,Deadline
+IndustrialIQ,25,7.5,Price
+IndustrialLink,25,7,Price
+IndustrialLogic,20,8,Price
+IndustrialMed,25,0,Price
+IndustrialMed Supply,20,7,Price
+IndustrialMedics,25,7.5,Deadline
+IndustrialNet,25,7,Deadline
+IndustrialNovation,25,8,Quality
+IndustrialPro,25,7.5,Price
+IndustrialPulse,25,7,Deadline
+IndustrialSoft,25,7.5,Price
+Industrialtech,25,7,Quality
+IndustrialU,25,8,Deadline
+IndustrialVision,25,0,Deadline
+IndustrialWave,25,7,Price
+IndustrialWorks,25,8,Price
+IndustrialWorx,25,7.5,Price
+IndustriaTech,20,8,Price
+IndustriaTotal,20,8,Price
+IndustriBank,35,7,Quality
+Industricom,25,7,Price
+IndustriConsulting Solutions,20,7,Deadline
+IndustriEx,25,7.5,Quality
+IndustriFin,25,7.5,Quality
+Industrify,40,7,Quality
+IndustriNation,25,7,Deadline
+Industrisecure,25,7,Price
+Industrisoft Consulting,30,7,Deadline
+Industritronix,20,7,Price
+IndustriWave,20,0,Price
+IndustroEnergy,20,8,Quality
+Industronic Dynamics,20,0,Deadline
+Industronic Machines,25,8,Deadline
+Industronics,25,8,Deadline
+Industronix,25,7,Price
+IndustryEd,25,7.5,Quality
+IndustryIQ,25,0,Price
+IndustryPath,25,0,Price
+IndusVision,20,7,Deadline
+IndusXpert,20,8,Quality
+InduTech,35,0,Deadline
+InduTrac,25,7,Quality
+InduTrain,25,7.5,Deadline
+Induvest,20,7.5,Quality
+Infinite Innovations,25,0,Deadline
+Infinite Solutions Inc.,25,7,Quality
+Infinity Dynamics,25,7,Quality
+Infinity Industrial Products,25,0,Price
+Infinity Motors,25,7,Deadline
+Infinium Works,25,0,Deadline
+InfoCom,20,7.5,Deadline
+InfoIndustries,25,0,Deadline
+InfoLink Communications,25,0,Price
+InfoStream,20,7,Price
+Infotech,25,8,Deadline
+Infracon,25,7.5,Quality
+InfraForge,20,7,Deadline
+InfraGenius,25,7,Deadline
+InfraGeniusx,25,7,Price
+InfraLink,20,7.5,Quality
+InfraLogic,40,8,Quality
+InfraLogix,25,0,Price
+InfraMation,25,7,Price
+InfraMorph,20,7,Price
+InfraNetx,25,7,Price
+InfraNext,20,7.5,Deadline
+InfraPro,25,0,Price
+InfraQ,25,0,Price
+InfraScope,20,0,Price
+InfraScopePro,20,0,Price
+InfraSolve,30,0,Deadline
+InfraSpect,25,7,Quality
+InfraTech,25,7,Quality
+InfraTechPro,25,0,Deadline
+InfraTechx,40,7.5,Quality
+Infusion Dynamics,20,7,Deadline
+IngeniaLab,30,8,Price
+IngeniaNet,25,0,Price
+IngenieríaWeb,25,0,Deadline
+InkMaster,20,7.5,Deadline
+Inkwell Printing Solutions,20,7.5,Quality
+InnoIndustries,45,0,Price
+InnoMed,25,7.5,Price
+InnoMold Engineering,30,7.5,Deadline
+InnoPlan,20,7,Deadline
+InnoSoft,20,7.5,Deadline
+InnoSysTech,25,8,Quality
+InnoTech,25,7,Price
+InnoTech Solutions,25,8,Deadline
+InnoTechInd,25,7,Deadline
+InnovaciónNet,20,7.5,Price
+InnovaciónSoft,20,7.5,Price
+Innovar360,30,8,Quality
+Innovate Industrial,30,7.5,Quality
+Innovate Industries,25,7,Price
+Innovate Solutions,25,7,Price
+Innovatech,20,7.5,Deadline
+Innovatech Manufacturing,20,0,Deadline
+Innovatek,25,7,Deadline
+InnovateQ,20,7,Quality
+InnovateWorks,25,7.5,Deadline
+InnovateWorks Consulting,20,7.5,Deadline
+InnovateX,35,7.5,Quality
+Innovatia Solutions,25,7.5,Price
+Innovex,25,7.5,Quality
+InnoVision Consulting & Research,25,8,Price
+InnoVisionx,30,7,Quality
+InnoVitality,35,7,Quality
+InnoWorks,25,7,Deadline
+Inova Industrial,25,0,Price
+InovaIndustria,25,7.5,Deadline
+Inovatek,25,7,Quality
+Insight Innovations,30,0,Price
+InsightBridge,30,8,Price
+InsightBridge Consulting,40,7.5,Quality
+InsightTech,20,8,Deadline
+Inspectron,35,7,Quality
+InspectWorks,20,0,Deadline
+InspectX,25,0,Deadline
+InspireWorks,25,7,Price
+Integracon,45,7,Deadline
+Integrated Support Technologies,25,7.5,Deadline
+IntellaTech,25,7,Deadline
+Intellia Motors,20,7,Deadline
+Intelliconnect,25,7.5,Deadline
+Intellifab,20,0,Price
+Intellimation Engineering,25,7,Price
+Intellindustries,30,7.5,Price
+Intelliplast,20,7,Deadline
+Intellisense,20,0,Price
+Intellisys,25,7,Price
+Intellisystems,20,0,Deadline
+Intellitalk,30,7,Price
+Intellitrol,45,0,Deadline
+Intellitronix,30,7.5,Deadline
+Intellitronix Solutions,30,7.5,Quality
+InterActive Concepts,25,7.5,Price
+IntraIndustries,25,7.5,Quality
+IntraSoft,25,8,Deadline
+IntuitiveIndustries,20,7,Quality
+IntuitiveSys,25,0,Deadline
+Invasion 1812,20,8,Price
+Inventa Machines,25,7,Deadline
+InvenTek,25,8,Price
+Invicta Engineering,20,0,Deadline
+Ionixx Engineering,20,0,Deadline
+Iridium Machines,25,0,Price
+Iron Bank of Braavos,40,8,Price
+Iron Gate Capital,25,8,Price
+IronBeast,25,7,Quality
+IronBridge,25,7.5,Quality
+IronBridge Solutions,30,8,Deadline
+Ironclad Industrial,45,8,Quality
+Ironclad Industries,25,7,Deadline
+Ironclad Manufacturing,20,7,Deadline
+IronCore Industries,20,7,Deadline
+IronCore Manufacturing,20,0,Price
+IronCraft Solutions,20,7,Price
+IronForge,30,7,Price
+IronHarvest,20,0,Deadline
+IronMach,25,7,Deadline
+IronMind,25,7,Price
+IronNation,20,7.5,Quality
+IronPulse,40,7.5,Price
+Ironshield,20,0,Price
+IronSmith,25,0,Deadline
+IronTech,20,7,Quality
+IronWorks,25,7,Quality
+IronWorx,20,8,Deadline
+IT Dynamics,25,7.5,Deadline
+IT Minds Consulting,25,7,Deadline
+IT360,25,7,Quality
+ITech,20,7.5,Deadline
+ITLab,20,0,Deadline
+ITone,25,7,Price
+ITPro,20,0,Price
+Jedi Council,25,0,Price
+Jedi Temple Academy,40,0,Price
+Jetstream Drilling,30,7.5,Quality
+JobReady Industries,20,0,Deadline
+JobsRUs,25,0,Deadline
+JollyFields,20,7.5,Quality
+Jolt Construction,20,0,Deadline
+Journeyscape,25,7,Deadline
+Joyful,40,7.5,Quality
+JoyfulBuilders,20,0,Price
+Kalampur,25,0,Price
+Keystone Distributors,20,7,Quality
+Keystone Securities,20,8,Deadline
+Kinematica,45,7.5,Price
+Kinetic Controls,25,8,Quality
+Kinetic Engineering,20,8,Deadline
+Kinetic Solutions,20,8,Price
+Kinetic Systems,35,7.5,Quality
+Kinetic Utilities,25,7,Deadline
+KineticWorks,20,7,Deadline
+Kinetix Industrial,25,7.5,Quality
+Kinetix Industries,30,8,Price
+King's Landing Small Council,45,7,Deadline
+Konichiwa,20,0,Price
+LabTech Innovations,20,7.5,Price
+LakeShore,30,7,Price
+Landmark Industries,45,0,Price
+Lathe & Lunchroom Inc.,25,8,Quality
+LearningSphere,30,0,Price
+Legacy Asset Bank,30,8,Deadline
+Legacy Industrial and Development Group,25,7.5,Price
+Leisureland,35,7,Deadline
+Leman Bros,25,7,Quality
+Liathium,25,7.5,Quality
+Liberty Holdings,45,7,Deadline
+Liberty Home,25,7,Deadline
+LifeCare Facilities,20,0,Deadline
+LifeCare Innovations,25,7,Price
+Lifecraft,25,7.5,Quality
+LifeCycle Industries,20,7,Quality
+LifeEquip Dynamics,25,7,Price
+LifeEquip Innovations,35,0,Price
+LifeEquip Solutions,25,7,Deadline
+LifeEquip Technologies,40,7,Quality
+LifeGuard Equipments,25,7,Price
+Lifeguard Medical,20,8,Quality
+LifeGuardian Equip,25,0,Deadline
+LifeLab,25,0,Price
+LifeLine Industries,20,0,Price
+LifePro Equipments,25,7,Deadline
+LifePulse,20,7.5,Price
+LifeShield Dynamics,35,7.5,Price
+LifeTech,25,7.5,Price
+LifeWise Equipments,25,7,Quality
+LifeWise Solutions,25,7.5,Deadline
+Lighthouse Materials,20,0,Price
+LightLine,30,7,Deadline
+LightWave,30,0,Deadline
+Liliputingi Supplies,25,7,Quality
+LimeLeaf,35,7.5,Quality
+LinkCom,35,8,Quality
+LinkCore,25,8,Price
+LogicForge,30,7.5,Price
+LogicLeap,20,8,Quality
+LogiData,20,8,Quality
+Longevity,30,8,Quality
+Lubritech,30,8,Quality
+Lucky Ace Gaming,20,7,Quality
+LujoMáximo,50,0,Deadline
+Lumina Machineries,35,0,Price
+Lumina Tech,25,7,Price
+Luminary Works,20,8,Deadline
+Luminova,25,7,Quality
+Luxe Linens,20,8,Quality
+LuxeBuild,25,7,Quality
+LuxeThread,30,8,Price
+LuxeWear,25,7,Deadline
+LuxStay Hotels,45,7,Price
+MachinaMotive,25,7,Quality
+MachinaPro,25,7,Deadline
+Machinatek,25,0,Price
+Machine Mart,30,0,Deadline
+MachinEco,20,7,Price
+MachinEdge,30,7.5,Price
+MachineHorizon,25,7,Quality
+MachineMasters,25,7,Price
+MachineMind,25,7,Deadline
+MachineMind Innovations,25,8,Deadline
+Machinetronix,25,8,Quality
+MachineWorks,30,0,Price
+Machinex,25,0,Deadline
+Machinify,25,7.5,Deadline
+Machinix Corporation,25,8,Quality
+Machinix Solutions,20,7,Deadline
+MachinMind,25,0,Price
+MachinoTech,25,8,Price
+MachTech,25,8,Quality
+MagicMirror,20,8,Deadline
+Magma Manufacturing,25,7,Deadline
+Magnacore Industrial,20,0,Deadline
+MagnaFlow,25,7,Price
+Magnaquip,20,8,Quality
+MagnaTech,25,7.5,Quality
+Mainspring Industries,25,7.5,Deadline
+Majestic,25,7,Deadline
+Maker's Hub,20,8,Price
+Manufactron,20,7.5,Price
+ManufacTrust,40,0,Price
+Manufactura360,30,7,Quality
+ManufacturaDirecta,25,7,Deadline
+ManufacturaPlus,20,0,Deadline
+ManuPro,25,8,Deadline
+ManuSoft,30,7.5,Price
+ManuStream,25,7,Price
+MaquiCorp,20,8,Price
+MáquinaMax,25,8,Quality
+MaquinaSoft,30,7,Deadline
+Marcus Bank,30,8,Deadline
+Marina Industries & Resorts,20,0,Price
+Maritime Dynamics Inc.,20,0,Price
+Market Movers,35,7,Deadline
+Marvelous Machines Inc.,20,7.5,Quality
+MarvelParks,20,7,Price
+Mat360,20,0,Deadline
+MatDirecta,25,7.5,Price
+MaterialesPlus,20,0,Price
+MaterialExchange,20,8,Price
+MaterTech,30,0,Deadline
+MatInnova,25,0,Price
+MatLab,35,0,Deadline
+MatLab360,30,8,Quality
+MatLabNet,40,7,Quality
+MatPro,20,7,Quality
+Matrix Dynamics,25,7.5,Deadline
+Matrix Motors,20,7.5,Price
+Maverick Industrial,25,7,Quality
+MaxiBuild,20,0,Price
+Maximus Machines,25,7,Price
+MaxPower Industries,30,7.5,Deadline
+MeatWorks,25,7.5,Price
+Mecanix Corp.,25,0,Price
+Mechadynamics,25,7.5,Deadline
+Mechanicore,25,7,Quality
+Mechanic's Choice,20,7,Deadline
+Mechanixus,25,7,Price
+MechanoWorks,40,8,Quality
+Mechaworks,25,7.5,Price
+MechGen,20,0,Price
+MechMind,20,0,Price
+Mechpro,25,8,Deadline
+MechSignal,40,0,Deadline
+MedAssist,25,7,Deadline
+MedClean,25,0,Deadline
+MedClean Innovations,65,7,Quality
+MedCoke Supplies,25,0,Price
+MedCorp,30,0,Deadline
+MedCrest,20,0,Price
+MedEdge,30,8,Quality
+MedEquip,45,7.5,Quality
+MedEquip Innovations,25,7,Quality
+MedEquip Solutions,25,0,Deadline
+MedHero,25,0,Deadline
+MediaStream Enterprises,25,7,Deadline
+MedicalX,20,7,Price
+MedicaSoft,25,7,Deadline
+Medico,25,7,Deadline
+MediFlow,30,8,Quality
+MediGuard,20,7.5,Quality
+MediLab,25,7.5,Price
+Medilink,20,7.5,Quality
+Medilink Equipments,55,7.5,Quality
+Medimatrix,25,7,Deadline
+Medimotive,25,0,Deadline
+Medinet,50,0,Deadline
+MediPlus,30,7,Quality
+MediSense,20,7.5,Deadline
+MediServe Industries,25,7,Deadline
+Medisphere,20,8,Quality
+MediStream,25,0,Deadline
+MediSynth,30,7.5,Price
+Meditech Devices Inc.,20,7,Price
+Meditech Industries,25,0,Price
+Meditech Innovations,25,8,Deadline
+Meditech Innovations Corp.,20,7.5,Quality
+Meditek,25,8,Quality
+Meditron,25,7.5,Quality
+Meditronix,30,0,Price
+Mediworks,25,0,Deadline
+MedLab,35,7.5,Price
+MedLife Technologies,20,7,Deadline
+MedLink,25,7,Price
+MedNexus,20,0,Deadline
+MedNova Instruments,25,7,Quality
+MedPrime,40,0,Price
+MedPro,25,7,Deadline
+MedPro Equipments,20,8,Deadline
+MedServe,20,7,Quality
+MedSolutions,25,7.5,Quality
+MedSpan,25,7,Quality
+MedSpot,40,8,Quality
+MedSupplies,20,8,Deadline
+MedTech,25,7.5,Deadline
+MedTech Dynamics,25,0,Price
+MedTechWorks,40,8,Price
+Med-Tek,20,7,Deadline
+MedWise Innovations,25,8,Quality
+MegaForge,25,7,Price
+MegaMovers,40,8,Price
+Megaplex Manufacturing,25,7,Quality
+Mercury Rail,25,7,Deadline
+Meridian Industrial,25,7,Quality
+Meridian Machinery Group,30,0,Price
+Metaland,25,7.5,Price
+MetalBourse,25,7.5,Deadline
+Metalcon,20,7.5,Deadline
+MetalCraft Co.,25,7,Deadline
+MetalForge,35,7,Quality
+Metalite,30,0,Price
+MetalMasters,25,8,Deadline
+MetalMesh,20,8,Quality
+MetalMind,20,7,Price
+MetalMinds,30,7,Price
+Metaltex,35,8,Quality
+MetalWorks,25,7,Quality
+MetaPro,25,0,Deadline
+Metaverso,20,7,Quality
+Metrix Industries,20,7.5,Price
+Metro Machinery,20,7,Quality
+Metro Real Estate Developments,25,0,Deadline
+MetroWorks,25,0,Deadline
+Mid-Century Modern,20,0,Deadline
+MightyMover,25,8,Deadline
+Mill & Meal Foods Ltd.,25,0,Deadline
+Minas Morgul Council of the Nazgul,40,7.5,Deadline
+MindLink Consulting,25,7,Price
+MindMeld,25,7,Deadline
+MindMeld Media,25,7.5,Quality
+MindSpark Media,25,7,Deadline
+MinePro Services,20,0,Price
+Ministry of Magic,20,0,Price
+Mirax Industries,20,8,Deadline
+MobileMaven,25,7,Quality
+MobiMotion,30,0,Price
+ModaTek,35,7,Quality
+Modern Millworks,20,7,Quality
+Modern Press Inc.,25,7,Quality
+ModernPack,35,7.5,Price
+ModuPro,25,7.5,Deadline
+Momentum Industrial Corp,20,8,Deadline
+Momentum Industrial Solutions,25,7,Price
+Moneylosing,25,7,Price
+MonyebeGreen,25,8,Quality
+Moria Real Estate LLC,25,7,Quality
+MotionLabs,30,7.5,Price
+MotoMech Solutions,25,7,Deadline
+Motora Industrial,25,7,Deadline
+MotorForge,25,7,Quality
+MotorMarvel,25,7,Deadline
+MotorMight,30,7,Price
+Motorstorm Inc,25,7.5,Price
+Mountainview Real Estate Investments,20,0,Deadline
+MovingMates,40,8,Price
+MundoVoice,30,0,Deadline
+MyriadMedia,20,7,Price
+NanoAdhesive Co.,20,7.5,Price
+NanoLogic Systems,20,7.5,Quality
+NanoMed,20,8,Deadline
+NanoScale Scientific,20,7,Deadline
+NanoStream Industrial Solutions,25,0,Price
+NanoWorks,25,7,Quality
+NanoWorks Research Corp,25,7,Price
+Nantucket Nook,25,7,Price
+NationalAusteryZiliInc,20,7,Price
+Nature's Choice,25,7,Price
+Nebula Aerospace,25,7,Quality
+NeoStream,20,7,Price
+NetBridge,25,7.5,Deadline
+NetComm,20,0,Deadline
+NetCrafts,25,7,Deadline
+NetForge Infrastructure,25,0,Price
+NetGuard,25,0,Price
+NetOpsWorks,20,8,Deadline
+NetSavvy,25,7.5,Deadline
+NetVision Media,25,7.5,Quality
+Netvox,20,8,Price
+NetWave,20,0,Price
+Netwise Networks,25,8,Deadline
+NetworkWave Inc.,25,8,Price
+NetWorx,30,7,Price
+NeuroDevice,20,7,Quality
+Neuron Industrial Solutions,25,7.5,Deadline
+NeuroSense,25,7.5,Price
+NeuroTech Therapeutics,20,7,Quality
+New Caprica City Council,45,0,Price
+New Horizons,40,0,Price
+NewEdge,20,7.5,Quality
+NewGen Industrials,20,0,Deadline
+NewWave Construction,25,0,Price
+Nexa Consulting,20,8,Quality
+Nexa Dynamics,20,7,Deadline
+Nexa Materials,20,8,Quality
+Nexacore Chemicals,20,7.5,Price
+NexaCorp,25,0,Price
+NexaPharm,25,7,Quality
+NexaTech,25,0,Price
+NexCom,25,7,Deadline
+NexGen Innovations,25,7.5,Quality
+NexGeniusx,20,0,Deadline
+NexGenix,25,7,Price
+Nexia,30,0,Price
+NexiCore,30,7.5,Price
+NexiGen,25,7,Quality
+Nexindus,30,8,Price
+Nexion Industrial,25,7,Quality
+NexisOne,25,7,Deadline
+NexiSphere,25,7,Deadline
+NexisTech,25,7,Deadline
+NexoCom,30,0,Deadline
+Nexon Auto Parts,25,7.5,Deadline
+NexSonic,30,0,Deadline
+NexTech,35,0,Deadline
+NexTech Gaming Solutions,25,7,Deadline
+NexTechx,55,7,Deadline
+NextGen,20,7,Quality
+NextGen Advertising,25,7,Quality
+NextGen Construction,20,0,Price
+NextGen Engineering,20,7.5,Price
+NextGen Industrial Automation,35,0,Deadline
+NextGen Industries,20,7,Price
+NextGen Innovations,40,0,Price
+NextGen Mechanics,40,7.5,Price
+NextGen Media Group,25,0,Deadline
+NextGen Systems,35,7.5,Price
+NextGenIndustries,25,0,Price
+NextGenius,20,7,Price
+NextGenSoft,20,7,Deadline
+NextHorizon,25,7,Deadline
+NextLevel Industrials,25,7,Quality
+NextPhase,20,7.5,Price
+NextPhase Engineering,20,0,Price
+Nextronics,25,0,Price
+NextSoft,30,7.5,Price
+NextStream,25,7,Price
+NextWave,25,7,Quality
+Nexus Corporation,40,7.5,Price
+Nexus Group,25,7.5,Deadline
+Nexus Industrial,20,8,Deadline
+Nexus Industrial Innovations,25,0,Price
+Nexus Industrial Works,25,0,Deadline
+Nexus Medical Innovations,25,7,Price
+Nexus Robotics,30,7,Price
+Nexus Semiconductors,25,7,Price
+Nexus Software,25,7,Quality
+NexusLab,20,7,Price
+NexusMind,20,0,Deadline
+NexusTech,20,7,Deadline
+NexusWorks,35,7,Price
+NexusWorks Advertising,20,8,Price
+Nimbus Navigation,25,7,Deadline
+Noble Oil & Gas,20,7.5,Price
+Noble Spirits,25,0,Price
+North Star Industrial Development,25,7,Quality
+Northern Paper Products,65,7,Quality
+NorthStar Manufacturing,20,0,Deadline
+Northwind Industries,25,7.5,Quality
+Nouveau Nesting,40,7,Quality
+Nova Autotech,35,0,Price
+Nova Industrial,25,7,Price
+Nova Navigations,25,7,Quality
+Novacore,25,7,Deadline
+Novapex,25,0,Price
+NovaSense Technologies,25,7.5,Price
+NovaStream Technologies,25,0,Deadline
+NovaTech,25,7,Deadline
+Novatech Industrial Solutions,25,8,Deadline
+NovaTech Industries,25,7.5,Deadline
+NovatekCom,25,0,Deadline
+NovaTel Communications,20,8,Quality
+Novo Solutions,25,7.5,Deadline
+NovoForge,30,0,Deadline
+NovoWorks,20,8,Price
+Novus Group,20,0,Deadline
+NuLife Medical,20,0,Deadline
+NuMed Innovations,20,7,Price
+NutriBoost Agrochemicals,20,8,Price
+Nuvio Machines,20,0,Price
+Oak & Vine,25,0,Price
+Oakwood Real Estate Development,20,8,Deadline
+Oasis Health,20,7,Quality
+Obladi Obalda,30,0,Deadline
+Obsidian Drilling,25,0,Price
+OceanFront Cruise Line,25,7.5,Quality
+Oceanic Engineering Corp.,40,7,Deadline
+OceanTech,20,0,Deadline
+OceanWise,35,7.5,Quality
+OcioPlus,35,8,Price
+Octagon Oil & Gas,20,7,Quality
+OctoMech Industries,20,0,Price
+OfficeWorks Industrials,20,7,Quality
+OffiPro Solutions,25,7,Price
+OffiSource,25,8,Quality
+OilFusion,25,0,Price
+Olympus Capital Markets,25,0,Price
+Omega Industries,35,7.5,Price
+Omega Robotics,50,7.5,Deadline
+OmegaMatter,20,0,Price
+OmegaTech,25,7.5,Deadline
+Omni Consumer Products,20,8,Deadline
+Omni Electric Products,20,7.5,Price
+OmniBlend Manufacturing,25,7.5,Price
+OmniBridge Consulting,30,7.5,Deadline
+OmniChem Industries,25,8,Price
+OmniCom,25,0,Deadline
+OmniConglomerate,25,8,Price
+OmniCore Automation,30,0,Deadline
+OmniCorp,40,8,Quality
+OmniCorp Manufacturing,25,7,Quality
+OmniDyne Dynamics,35,7,Quality
+OmniFabrication,25,8,Price
+Omnimax Solutions,25,7,Deadline
+OmniMech Industries,25,0,Price
+OmniMedia,20,0,Price
+OmniPower,25,8,Price
+OmniServe Industries,40,8,Deadline
+OmniTech,30,7.5,Deadline
+OmniTech Industrial,30,7.5,Deadline
+OmnitechInd,30,7,Quality
+Omnivance,20,8,Price
+OmniWorks,25,8,Price
+Onyx Machinery,40,7,Deadline
+OnyxTech,25,7.5,Price
+OpenBook,25,0,Price
+Operatec,25,8,Price
+OptiCon Industries,20,0,Price
+OptiFlex Industries,20,0,Deadline
+OptiLogic,25,8,Deadline
+Optima Industrial,25,7,Deadline
+Optima Works,25,7.5,Quality
+OptiMach,30,7.5,Quality
+OptimalChem,20,7,Quality
+OptimalSystemics,25,0,Price
+OptimaTech,25,0,Deadline
+OptimaWorks,25,8,Price
+OptiMize,20,0,Price
+OptimizeTech,20,0,Price
+OptiMold Industries,20,7,Quality
+Optimum Industries,20,0,Deadline
+OptimumTech,25,7,Deadline
+OptiNet,20,7,Deadline
+OptiProbe,25,0,Deadline
+OptiStaff Workforce Management,20,8,Price
+OptiTech,45,0,Price
+OptiTest,25,7,Price
+OptiTrack,30,7.5,Price
+OptiWorks,25,7,Quality
+Optril,25,8,Deadline
+OrbiChem Corporation,25,7.5,Price
+Orbio Industrial,25,7.5,Deadline
+Orion Engineering,25,7,Quality
+Orion Motors,25,7.5,Price
+Oriontech,20,7.5,Quality
+OrthoTech Solutions,20,7,Quality
+OutsourceConnect,25,0,Price
+OutsourcedNow,25,7,Price
+OutsourcedTech,25,7.5,Price
+OutsourceEase,25,0,Deadline
+OutsourceLink,25,0,Deadline
+OutsourceMate,30,7.5,Deadline
+OutsourceWorks,20,7.5,Price
+OutsourceWorks Global,25,7,Price
+Outsourcify,25,7,Deadline
+OvationTech,25,7,Deadline
+Pacific,25,8,Quality
+Pacific Energy,45,0,Deadline
+Pacific Industrial and Development Corporation,20,8,Quality
+Pacific Materials,25,0,Deadline
+Pacific Packaging Co.,30,0,Deadline
+Pacific Palisades,35,7,Quality
+Pacifyl,40,0,Price
+Packwise Solutions,25,7,Deadline
+Palm Springs Pad,25,7,Quality
+PalmTree Resorts & Infrastructure,35,7.5,Quality
+PaperPro Packaging,25,7,Deadline
+Paperworks Inc.,25,7.5,Quality
+PaperWorks Packaging Corp.,35,8,Deadline
+Paradigm Industrial,25,7.5,Quality
+Paradigm Industrial Products,30,7,Deadline
+Paradigm Manufacturing,25,7,Deadline
+PasatiempoPro,35,7,Price
+Peak Efficiency Industries,25,8,Price
+Peak Industrial Group,25,0,Price
+Peak Industrial Resorts,30,7.5,Price
+Peak Innovations,30,7,Deadline
+Peak Performance,25,0,Deadline
+PediMed Innovations,20,7,Quality
+Penta Dynamics,25,7,Price
+PentaPublishing,25,0,Deadline
+PepeConsult,45,7.5,Deadline
+Perfect Build,25,0,Deadline
+PerfectLine,25,7,Deadline
+Perpetuum Machines,20,8,Price
+PetroWorks,25,0,Price
+PharmaLab Industries,30,0,Deadline
+Pharmalogic,20,8,Price
+PharmaLogistics,25,7,Quality
+PharmaNet,30,0,Deadline
+PharmaSoft,25,0,Deadline
+Philanthropic Industrial Group,45,8,Price
+Phoenix Industrial,40,7,Quality
+Phoenix Manufacturing,30,7.5,Price
+Phoenix Plastics,20,8,Deadline
+Phoenix Works,20,7,Quality
+PhysioNova,25,7,Deadline
+Pinnacle Heavy Industries,25,7.5,Quality
+Pinnacle Innovations,20,0,Price
+Pinnacle Plating,25,8,Quality
+Pinnacle Polymers,25,8,Price
+PinnaclePro,25,7,Price
+PinnacleTech,25,0,Deadline
+Pioneer Real Estate Investments,50,8,Price
+PixelCrafters,20,7,Deadline
+PixelForge,25,0,Deadline
+PixelLabs,20,7,Quality
+PixelMind Studios,25,0,Price
+PixelPerfect,25,7.5,Deadline
+PixelVision,25,8,Price
+PixelWave,30,7,Quality
+Pixelwave Broadcasting,30,0,Price
+PlantaPro,25,7.5,Price
+Plasmet,25,0,Price
+Plastico,25,7,Price
+Plate & Gear Manufacturing Co.,20,7,Deadline
+Platinum Oil & Gas,30,0,Deadline
+PlayPlanet,30,8,Price
+Polaris Aerospace,30,7,Quality
+Polycraft,25,7,Quality
+PolymerSolutions,25,7.5,Quality
+Polymet,30,8,Quality
+Polymetrix,35,7,Deadline
+Polytech,25,7,Price
+PontifexZoo,20,0,Price
+Poshmotlo,20,7,Deadline
+PowerCrane,30,0,Price
+PowerDrive,20,7,Price
+PowerForge Technologies,35,7.5,Price
+PowerGen,25,7.5,Price
+PowerGenius,45,7,Quality
+Powerhouse Equipment Co.,25,7,Deadline
+PowerLift,25,0,Deadline
+PowerLogic,25,0,Price
+Powerlynx,25,0,Price
+PowerMakers,30,7,Deadline
+PowerNet,30,0,Price
+PowerPak Industries,30,8,Deadline
+PowerParks,25,7,Deadline
+PowerPlay Engineering,25,7,Price
+PowerPlex,20,7,Quality
+PowerPlow,40,0,Price
+PowerPlus,20,7.5,Price
+PowerPulse,20,0,Deadline
+PowerTech,30,0,Deadline
+PowerTronics,25,7,Price
+PowerUpTech,40,8,Price
+PowerWave,25,7,Deadline
+Precise Medical Supply,25,7,Price
+Precision AirWorks,25,7.5,Price
+Precision Dynamics,20,7.5,Deadline
+Precision Dynamics Corp.,35,7,Quality
+Precision Engineering,25,7,Deadline
+Precision Fabric,25,7,Price
+Precision Forge,25,7,Quality
+Precision Industrial Labs,25,7,Price
+Precision Industrial Technologies,25,7,Price
+Precision Industrials,25,7,Deadline
+Precision Packaging,25,7.5,Price
+Precision Plastics,20,8,Price
+Precision Welding Solutions,25,7,Deadline
+PrecisionAuto,20,0,Price
+PrecisionBioTech,25,7.5,Deadline
+PrecisionCast,35,8,Quality
+PrecisionCo,20,0,Deadline
+PrecisionIndustries,25,7,Quality
+PrecisionPerformance,20,0,Price
+PrecisionPrint Solutions,30,7,Deadline
+PrecisionPro,25,7,Deadline
+PrecisionTechSys,25,7,Deadline
+PrecisionTools,30,7,Quality
+PrecisionWorks,25,7.5,Deadline
+Press & Pantry Cafes Inc.,25,7.5,Quality
+PrimalTek,20,0,Price
+PrimaWorks,25,8,Price
+Prime Distribution,20,7,Quality
+Prime Industrial Group,30,8,Deadline
+PrimeBuild Solutions,35,7.5,Deadline
+PrimeLab Sciences,25,7,Deadline
+PrimeMach,40,7.5,Quality
+PrimeMed,20,7,Deadline
+PrimeStream Industrial Systems,25,7,Price
+PrimeTech,25,7,Quality
+PrintCraze Inc.,20,7.5,Price
+PrintElite Co.,20,0,Deadline
+PrintIt,20,7,Quality
+PrintMaxx Solutions,25,7.5,Price
+PrintPro Services,20,8,Quality
+PrintProIndus,30,0,Deadline
+Pristine Labs,25,7.5,Quality
+ProBioTech,25,0,Price
+ProBuildTech,25,0,Price
+ProCall,20,8,Price
+ProcesaYa,45,7.5,Deadline
+ProcesoLab,20,0,Price
+ProcessGenius,25,7.5,Price
+ProcessPro,20,7,Quality
+ProcessRaven,25,7.5,Quality
+ProcessTech,40,7.5,Quality
+ProdigiTech,25,7,Price
+Prodigy Auto Parts,25,7,Deadline
+Prodigy Consulting Group,20,7.5,Quality
+Prodigy Industries,25,7.5,Price
+Prodigy Machining,20,8,Price
+Prodigy Manufacturing,20,7.5,Quality
+Prodigy Plastics,40,7,Deadline
+Prodigy Works,20,7.5,Price
+ProdigySoft,30,7,Deadline
+ProdigyTech,25,7,Price
+ProdTech Services,25,0,Deadline
+ProducciónDigital,20,7,Deadline
+ProducTech,25,0,Deadline
+Productive Care,30,7.5,Quality
+Producx,25,7,Quality
+ProdWorks,20,7,Quality
+ProEquip Co.,25,7,Price
+ProGen Medical Technologies,25,7,Price
+ProgramaciónWeb,25,7.5,Quality
+ProgramaYa,25,7,Quality
+PrograTech,30,7,Quality
+Proline Industrial,30,8,Quality
+Proline Systems,25,7,Quality
+ProMach,35,8,Deadline
+ProPack Innovations,25,8,Deadline
+ProPak Industries,25,0,Deadline
+ProPantry,25,7.5,Deadline
+ProTech Dynamics,25,0,Price
+ProTech Industries,40,7,Price
+ProTech Shoes,25,0,Price
+ProTechOne,40,7,Price
+Protektiv Industries,45,0,Price
+Proton Engineering,25,8,Deadline
+Protonics Engineering,25,7,Price
+Protonik,25,7,Deadline
+ProtonParts,35,7.5,Deadline
+Provenance Engineering,30,7.5,Quality
+ProxiCore Technologies,25,8,Quality
+ProxiForge,35,0,Deadline
+ProxiIT Consulting,25,7.5,Deadline
+ProxiMach,25,7.5,Price
+ProximaMed,25,7,Price
+ProxiMed Devices,20,7,Quality
+Proxit,25,7,Price
+Proxity,25,7,Price
+Pulpco,25,0,Price
+PulsePower,25,7.5,Quality
+Pure Impact,25,0,Deadline
+Pure Steel Corporation,25,0,Deadline
+PureAir,50,0,Price
+PureEnergy Industries,40,0,Deadline
+PureFlow,20,8,Quality
+PureFlow Distributors,20,8,Deadline
+PureLife,25,7,Deadline
+PureLiving,30,8,Deadline
+PurePack,20,8,Quality
+PurePulse,30,7,Deadline
+PureSolutions Health,25,8,Quality
+PureTech Industrial Technologies,25,7,Price
+PureWater,30,7,Quality
+PuriFlux,40,7,Quality
+Put In Pieces,35,7.5,Deadline
+PyroVision,25,7,Deadline
+Pyxis Semiconductors,20,7.5,Deadline
+QualityQuest,40,8,Quality
+Quantum Dynamics,20,7,Quality
+Quantum Engineering,30,0,Deadline
+Quantum Factory,25,7.5,Price
+Quantum Industries,25,7.5,Deadline
+Quantum Innovations,20,7.5,Quality
+Quantum Logistics,25,0,Deadline
+Quantum Machinery Co.,35,0,Deadline
+Quantum Processing Technologies,25,7,Deadline
+Quantum Quality Control,25,7,Price
+Quantum Quartz,30,7.5,Deadline
+Quantum Works,25,7,Quality
+QuantumIndustries,20,7,Price
+QuantumLogic,20,7.5,Quality
+QuantumPrint Solutions,35,8,Deadline
+QuantumSys,20,8,Price
+Quantumtron,25,7.5,Quality
+QuantumWorks,25,7,Deadline
+QuantumWorksInd,30,7,Quality
+QuickFix Builders,25,7.5,Price
+QuickLaunch,20,8,Deadline
+Radiance Medical,25,0,Price
+Radiant Machineries,25,7,Price
+Radiant Telecom,25,0,Deadline
+Radiant Ventures,25,7,Price
+RadioTech,25,7,Deadline
+Ranch Revival,25,7,Price
+Rapid Renovations,25,0,Price
+RapidMach,25,7,Quality
+Rapture City Council,35,7.5,Price
+Rayonix Manufacturing,20,0,Deadline
+RedLine,20,0,Price
+RedMóvil,25,8,Deadline
+RedRock Materials,20,7,Quality
+RedRock Solutions,20,8,Price
+Redwood Packaging,20,8,Price
+RedwoodWorks,25,7,Price
+RefineChem,20,7.5,Quality
+RefinePro,20,8,Price
+Refresh Engineering,25,7,Deadline
+Regal Rugs,20,7,Deadline
+Regalia,25,7.5,Deadline
+RegenTech Industries,25,7,Quality
+ReliaSure Insurance,25,8,Quality
+RenewaTech,35,8,Price
+RentLeas,25,7.5,Quality
+ResearchWorks Inc.,25,7.5,Deadline
+Respiro Dynamics,25,7,Deadline
+RespTech Solutions,25,7,Deadline
+Rhapsody Systems,35,7,Price
+Rigel Engineering,45,7,Deadline
+RoadMax,25,7,Quality
+RoadReady,30,0,Price
+RoboCare Solutions,20,8,Deadline
+RoboForge,25,7.5,Quality
+RoboIndus,20,7,Price
+RoboLogic,25,7.5,Deadline
+RoboTech,25,7.5,Price
+RobotIQ,25,7,Quality
+RoboWorks,25,0,Price
+Royal Flush Gaming,20,8,Deadline
+RRHH,20,7,Price
+RubberTech Industrials,25,7.5,Quality
+RubberWorks,20,0,Deadline
+Rustic Retreats,35,8,Price
+Rustic Roots,30,0,Deadline
+Safe Haven,25,7.5,Price
+SafeAccess,25,0,Deadline
+SafeBuild,20,7.5,Price
+SafeDrive,25,7,Deadline
+SafeHarbor Insurance,25,7.5,Quality
+SafeMed,20,7,Quality
+SafeStep Footwear,20,0,Deadline
+SafetyForce,30,7,Quality
+SafetyTech Systems,20,7.5,Price
+SaludConectada,20,7,Price
+SaludTech,25,7,Deadline
+SaludTotal,30,7.5,Deadline
+Savory Delights,25,0,Deadline
+Scandicraft,20,0,Deadline
+Screw & Saucer Cafes Ltd.,20,7,Price
+Seabreeze Resorts & Infrastructure,20,7,Deadline
+Secure Senses,30,7,Deadline
+SecureData Services,25,7,Quality
+SecureIndustries,25,8,Quality
+SecurePath Insurance,20,8,Price
+SecurePro Industries,25,8,Price
+SecureTechSys,55,0,Deadline
+Securitech Industrials,25,0,Deadline
+Securitech Industrix,25,7,Deadline
+Securitech Solutions,20,0,Price
+SensiProbe,25,7,Deadline
+SensiTech,20,7.5,Price
+Sentinel Defense,25,7,Deadline
+Sentinel Industrial Services,25,0,Deadline
+Serene Spaces,30,8,Deadline
+ServiCom,30,7.5,Deadline
+Shield & Hammer,20,7,Deadline
+ShiftWorks Engineering,30,7.5,Price
+SigmaTech,25,0,Deadline
+SignalGen,20,0,Deadline
+SignalLogic,65,0,Price
+SignalServe,55,0,Deadline
+SignalShift,25,8,Quality
+SignalTech,25,7.5,Quality
+SignalWave,25,7,Deadline
+Silicon Dynamics Inc.,20,7,Deadline
+SilkWorks,25,0,Price
+Silver Sands Gaming,55,0,Price
+SilverPeak Aviation,25,8,Quality
+SilverPeak Enterprises,25,7,Quality
+SilverPeak Equipment,30,7.5,Deadline
+SilverStar Solutions,40,7,Quality
+SilverStone,30,7.5,Deadline
+Silvus Machines,20,7,Quality
+Sisi,25,8,Quality
+Sistemas360,25,7.5,Quality
+SkillBuilders,20,8,Price
+SkillForge,25,7,Price
+SkillTech,25,0,Deadline
+SkillWorks,25,0,Price
+Skybridge Logistics,25,7,Deadline
+SkyBridge Robotics,20,7.5,Price
+SkyBridge Technologies,25,7,Price
+SkyCare,25,7.5,Price
+SkyClean,70,7,Deadline
+SkyConnect Enterprises,20,7.5,Deadline
+SkyHaul Industries,20,7,Deadline
+SkyLift,20,7,Quality
+Skyline Automation,20,8,Price
+Skyline Direct,20,7,Quality
+Skyline Industrial,20,7,Quality
+Skyline Industrial Investments,25,7.5,Price
+Skyline Industrial Products,25,7.5,Price
+Skyline Industries & Cruise Line,25,7,Quality
+Skyline Robotics,25,7,Price
+Skyline Systems,35,7,Price
+Skyline Technologies,25,7.5,Quality
+Skylink Services,30,0,Deadline
+SkyNet,25,7.5,Quality
+SkyRide,25,0,Price
+SkySonic,20,7.5,Deadline
+Skytech Industries,25,7,Quality
+SkyTrust,20,7.5,Quality
+SkyVision,20,8,Deadline
+Skyward Technologies,25,8,Deadline
+Skyway Manufacturing Co.,30,0,Price
+SkyWorks,30,8,Deadline
+SkyWorks Industrial Solutions,20,8,Quality
+Smart Sensors Inc,40,7,Price
+SmartBridge,20,7.5,Quality
+SmartBrite,25,7,Deadline
+SmartBuild,35,7.5,Deadline
+SmartEdge,25,7,Price
+SmartFact,55,7.5,Price
+SmartFactorySolutions,40,7,Deadline
+SmartForge,25,8,Deadline
+SmartGridTech,20,7,Quality
+SmartLab,25,7,Deadline
+SmartMech Industries,50,7.5,Price
+SmartMed Diagnostics,25,7,Price
+SmartMed Equipments,25,8,Quality
+SmartMed Innovations,20,7,Quality
+SmartMfg,30,0,Deadline
+SmartNet,20,7,Price
+SmartPlant,25,8,Price
+SmartPlay,25,0,Deadline
+SmartPlex Solutions,35,8,Quality
+SmartSoft,20,8,Price
+SmartSolutions Consulting,20,0,Price
+SmartStream,25,8,Price
+SmartWorks,20,7,Price
+SoCal Style,25,8,Quality
+SoftConnect,20,8,Quality
+Softeach,25,7,Quality
+SoftEcology,25,8,Quality
+SoftFactory,30,7,Quality
+SoftForge,25,0,Price
+SoftFuse,45,0,Deadline
+SoftNet,25,7,Quality
+SoftTech,30,0,Price
+SoftTrace,20,0,Price
+SoftVantage,30,8,Quality
+Software360,25,8,Price
+SoilStride,25,7,Price
+SoilTech Fertilizers,20,8,Deadline
+Solace Pharmaceuticals,25,7.5,Deadline
+Solar Steel,25,7,Quality
+SolarHaul,25,7,Price
+Solaris Energy,25,7.5,Deadline
+Solartek Industrial,30,0,Price
+SolarWorks Corp,30,8,Price
+SolidSteel,30,8,Price
+SolidStep Footwear,25,7.5,Price
+SolidTech,25,7,Price
+SolMat,20,8,Deadline
+SolucionaCom,30,0,Deadline
+SolucionaSoft,30,7.5,Quality
+SolucionaYa,40,0,Price
+Soluciones360,20,0,Deadline
+SolucionesSoft,20,7,Price
+SolucionesWeb,30,7.5,Deadline
+SolutionSavvy,25,7,Price
+SolutionsNow Consulting,30,0,Deadline
+Solvtech,20,7.5,Price
+SON,25,7,Quality
+SonicBridge,30,7.5,Deadline
+SonidoNet,20,8,Deadline
+Soper,25,7.5,Deadline
+Southwest Sanctuary,35,0,Price
+Soylent Corporation,25,0,Deadline
+Spark Systems,20,7.5,Deadline
+SparkLabs,55,0,Price
+Sparklight Media,25,7,Price
+SparkStation,20,7.5,Quality
+SpecoPolymers,20,0,Price
+Spectra Dynamics,25,0,Price
+Spectrum Publishing,25,7,Quality
+SpeedyShip,25,0,Price
+SpeedZone,25,7.5,Price
+SpinMark,25,7,Deadline
+Starfleet Academy,20,8,Deadline
+Stark Industries Energy Division,30,0,Price
+Starlight Advertising,40,7,Quality
+Starlight Hotels & Infrastructure,20,8,Quality
+Starlight Solutions,25,7.5,Quality
+StarLink,25,7,Price
+StarStruck,20,0,Price
+StarWorks Enterprises,25,0,Price
+Stasis,25,7.5,Deadline
+State of Mordor Goverment,30,8,Price
+Stealyourgirl,25,0,Deadline
+Steel & Smokehouse Corp.,20,8,Price
+Steel for Good,20,7,Quality
+SteelCo,20,7.5,Quality
+SteelCore Industries,20,8,Deadline
+SteelForge,25,7,Deadline
+SteelHawk,25,8,Deadline
+SteelMart,35,0,Price
+SteelScape,20,7,Quality
+SteelStream,25,7,Deadline
+SteelStride,30,0,Deadline
+SteelTech,35,0,Price
+SteelToe Footwear,25,7,Deadline
+Steelwave Drilling,45,0,Deadline
+Stellar Aeronautics,30,7,Deadline
+Stellar Defense Corp,30,8,Quality
+Stellar Holdings,25,7.5,Deadline
+Stellar Industrial Technologies,25,8,Price
+Stellar Manufacturing,30,8,Quality
+StellarNova,20,7,Deadline
+SteriMed,20,8,Quality
+Sterling Drilling,20,7.5,Price
+Sterling Industrial,25,7.5,Deadline
+Sterling Railways,30,7.5,Price
+Sterling Real Estate Holdings,25,8,Price
+Sterling Systems,30,0,Deadline
+SterlingTrust Corporation,30,7.5,Price
+Stone Ridge,25,0,Price
+StrategyMind,25,7.5,Deadline
+Stratosphere Industries,40,0,Price
+Streamline,30,0,Price
+Streamline Co,35,7.5,Deadline
+Streamline Dynamics,25,8,Quality
+Streamline Industrial Trust,25,7,Deadline
+Streamline Industries,25,0,Price
+Streamline Media,25,0,Price
+Streamline Solutions,30,8,Deadline
+StreamlineSys,25,7.5,Price
+StreamlineTech,25,7,Quality
+StreamTech,25,7,Quality
+StriveForce Solutions,20,7,Deadline
+Stronghold,20,7.5,Deadline
+StructuraTech,25,7.5,Quality
+SubaMachine,25,0,Price
+Summit Banking & Industries,25,7.5,Quality
+Summit Industrial,20,0,Price
+Summit Manufacturing,40,8,Price
+Summit Packaging Co.,25,8,Price
+Summit Real Estate Holdings,25,0,Deadline
+Summit Resorts & Infrastructure,20,7,Deadline
+Summit Securities Group,25,7,Quality
+Summit Ventures,35,0,Deadline
+SummitBank,50,7,Price
+Sunbelt Real Estate Development,20,7.5,Quality
+Sunnyside Manufacturing,25,7,Deadline
+SunOptic,25,7,Deadline
+Sunscape Hotels & Infrastructure,40,8,Deadline
+Sunstream Manufacturing,30,8,Deadline
+SunTech,25,7,Quality
+SunWorks,25,7,Deadline
+SuperMovers,25,7,Quality
+SupplyBridge,45,7,Deadline
+SupplyStream,35,7,Deadline
+Surgical Science,20,7,Price
+SurgiScope,25,0,Deadline
+SustainAll,20,8,Quality
+Swift Industrial,25,7,Deadline
+Swift Industrie,40,7.5,Deadline
+SwiftCom,25,7,Price
+SwiftCore,20,7,Deadline
+SwiftFabrication,25,8,Deadline
+SwiftFlow,20,7.5,Price
+SwiftHive Solutions,25,7,Price
+SwiftHorizon,25,8,Deadline
+SwiftPack,25,7.5,Quality
+SwiftSoft,20,0,Deadline
+SwiftStack,25,0,Price
+Swiftstream,25,7,Price
+Swiftstream Media,25,7,Deadline
+SwiftTech,20,0,Price
+SwiftTrack,25,7,Quality
+SwiftWorks,25,0,Deadline
+SwiftWorks Inc.,25,7,Deadline
+SwiftWorks Industries,20,7,Quality
+SylphCo,30,8,Quality
+Symmetrix Systems,25,7,Quality
+Synapse Communications,30,8,Deadline
+Synapse Industries,30,0,Deadline
+Synapse Integration,35,7,Quality
+SynapseSphere,25,7.5,Price
+SynapseTech,25,8,Deadline
+Synaptic Technologies,40,7,Price
+Syncronix,25,7,Price
+Synergen Robotics,35,7,Deadline
+Synergic Chemicals,25,7.5,Deadline
+Synergy Solutions,25,7,Deadline
+Synergy Works,25,7,Price
+SynergySoft,30,0,Deadline
+Synthec,20,7.5,Quality
+Synthel,20,7,Price
+Synthet,30,0,Deadline
+Synthetix,20,7,Deadline
+Synthetix Analytics,25,7,Price
+Synthetix Labs,25,0,Price
+Synthetix Systems,25,0,Deadline
+Synthetix Systems Inc.,20,0,Price
+SynthoChem,20,7,Price
+Synthronix,25,7.5,Deadline
+SysTech,40,7,Price
+Systemic Innovations,25,0,Deadline
+SystemicIndustries,25,7,Quality
+SystemicWorks,20,7.5,Quality
+SystemSource,30,0,Deadline
+SystemWorks Consulting,35,8,Quality
+Systera,25,7,Quality
+SysTrack,25,7.5,Price
+TalentWorks Industrial Solutions,30,8,Price
+TalkLab,20,7.5,Quality
+Tech Works,25,7,Deadline
+Techbond,20,8,Deadline
+TechBridge,25,0,Deadline
+TechBuild,25,7,Price
+TechCity,20,8,Deadline
+TechConnect,20,0,Price
+TechCrest Manufacturing,20,7,Deadline
+TechDental Innovations,25,7,Deadline
+TechDrive,25,7,Deadline
+Tech-Ed,20,7,Price
+TechEdge Industries,25,7,Deadline
+TechEquip,25,0,Price
+TechFab,25,7,Deadline
+TechFlow,25,7.5,Price
+TechForge,25,7.5,Price
+Techfront,25,7,Quality
+TechFusion,30,7,Deadline
+TechGen,25,7,Deadline
+TechHaven,20,0,Deadline
+TechHive,20,7.5,Price
+TechLink,20,0,Price
+TechLogic,20,7.5,Quality
+TechMach,20,0,Deadline
+TechMax,20,8,Deadline
+Techmax Industries,45,7,Deadline
+TechMed,25,7,Quality
+TechNet Industrial Services,35,8,Price
+TechNexus,30,7,Price
+Technico,30,8,Quality
+Techno Genesis,25,7,Deadline
+TechnoFuse,40,7,Price
+TechnoGenius,35,8,Quality
+TechNova Consult,20,8,Deadline
+TechOutsourced,35,7.5,Deadline
+TechPlanner,35,7,Quality
+TechPro,25,8,Price
+TechPulse,25,7,Deadline
+TechRidge,25,0,Price
+TechSavvy,50,7,Quality
+TechShore,25,7,Deadline
+TechSignal,30,7,Deadline
+TechSonic,25,7,Quality
+Techspan,30,7.5,Quality
+Techspanic,30,7.5,Quality
+TechStream,25,7,Price
+TechStream Communications,20,8,Quality
+TechSurgeon,25,7,Price
+TechSwift,20,7,Price
+TechSynth,25,7.5,Deadline
+TechTactix,20,7.5,Price
+TechTent,55,0,Deadline
+TechTrak,45,7,Price
+TechTrend Advisors,25,7,Price
+TechVortex,20,7,Quality
+TechWave,25,7,Price
+TechWise,25,8,Quality
+TechWise Manufacturing,35,7.5,Price
+TechWorks,25,7,Deadline
+TecnoIndustria,20,0,Price
+TecnoLab,25,7,Price
+TecnologíaDigital,25,8,Price
+TecnologíaIndustrial,25,8,Quality
+TecnologíaTotal,25,7,Quality
+TecnologíaWeb,20,8,Quality
+TecnoMateriales,25,7.5,Quality
+Tectronix,25,7.5,Deadline
+Telefabrix,30,7,Quality
+TeleSoft,20,0,Deadline
+TelestoTech,25,7,Quality
+Teletronix,35,7.5,Price
+Telewise,35,7,Deadline
+Telient,20,0,Deadline
+Teligentix,25,7,Deadline
+TerraForge Engineering,20,8,Deadline
+TerraGen Biotech,30,7,Deadline
+TerraGrow Industries,35,0,Deadline
+TerraNet Industrial Systems,20,8,Price
+TerraNova Industries,20,0,Deadline
+TerraTech,40,0,Price
+TerraWorks,30,0,Price
+TestForge,20,0,Price
+TestMate,25,0,Price
+Tetra Machines,25,7,Quality
+The Ad Machine Works,25,7.5,Price
+The Industrial School,30,7.5,Quality
+The Solution Factory,30,8,Deadline
+Thermopower,25,7.5,Quality
+Thomaslight,40,0,Price
+ThriveTech,25,0,Deadline
+Thunderbolt Defense,35,0,Price
+Timberlandia,30,7,Price
+Timeless Treasures,25,0,Price
+Titan Construction,25,7,Deadline
+Titan Engineering,25,8,Quality
+Titan Heavy Industries,20,7,Deadline
+Titan Industrial,25,8,Deadline
+Titan Industrial Co.,25,7,Deadline
+Titan Industries,35,7,Price
+Titan Manufacturing,30,0,Price
+Titan Oil Services,25,7,Price
+Titan Tech Industries,25,0,Deadline
+Titan Textiles,20,0,Price
+Titan Works,25,7,Deadline
+TitanForge,20,7,Quality
+TitanTainers,25,7,Quality
+TitanTech Industries,25,0,Deadline
+TitanWorks,25,0,Price
+Tobacotri,25,7,Quality
+ToolCom,20,7,Quality
+ToolGenius,50,8,Quality
+ToolTopia,20,8,Deadline
+TopFlight,20,7,Deadline
+TorsionPro,40,7.5,Quality
+TotalSupport Solutions,40,0,Price
+ToughShield Workwear,25,7.5,Quality
+TrackMaster,25,7,Price
+Tranquil Textiles,25,0,Deadline
+TransCo,20,8,Quality
+TranscomNet,25,0,Price
+Transwave Technologies,20,8,Quality
+TravelsCo,20,8,Price
+Traxxon Solutions,25,0,Price
+TriAxis Manufacturing,25,7,Price
+Triporistas,45,0,Price
+TriStar Industrial,40,7.5,Deadline
+Trivea Resorts,30,0,Deadline
+TrueConnect,25,7,Quality
+TrueNorth Aviation,20,0,Price
+TrueNorth Industries,20,0,Deadline
+TruNorth IT Consulting,20,8,Price
+TruVision,25,7,Quality
+Tuscan Villa,30,8,Price
+Tyrell Corporation,25,8,Deadline
+Ultima Machineries,25,8,Quality
+Ultrasoundic,20,7.5,Price
+Umbrella Corporation,40,8,Price
+Umpala,35,7.5,Quality
+UnionStream Corporation,30,7.5,Deadline
+UnitedWorks,45,8,Deadline
+UniVerse,25,7,Deadline
+Urban Clean,20,7,Price
+Urban Innovations,50,7,Price
+Urban Upcycling,20,7.5,Quality
+UtilityPro,30,0,Price
+Utopia Industrial,60,7,Quality
+Valtus Manufacturing Solutions,50,7.5,Quality
+Vanguard,25,7,Deadline
+Vanguard Dynamics,25,7,Quality
+Vanguard Industrial,20,7,Price
+Vanguard Industrial Properties,25,7.5,Deadline
+Vanguard Manufacturing,35,7,Quality
+Vanguard Metals,35,0,Deadline
+Vantage AutoTech,25,7,Deadline
+Vantage Chemicals,20,7,Quality
+Vantage Engineering,40,8,Quality
+Vantage Materials,20,7,Deadline
+Vantage Media,20,7.5,Deadline
+Vantage Point Telecom,20,0,Price
+Vantage Systems,25,7.5,Quality
+Vantage Works,30,0,Price
+VantagePoint,20,7,Deadline
+Vaxicore,20,7.5,Deadline
+VehicleVirtuoso,20,7.5,Deadline
+Vehicore,25,0,Price
+Veloce Hospitality,20,7,Price
+Velocity Automotive,25,0,Price
+Velocity Communications,20,8,Price
+Velocity Industrial,35,7,Deadline
+Velocity Industries,30,8,Deadline
+Velocity Motors,25,7,Deadline
+Velocity Ventilation,35,8,Quality
+VelocityWorks,20,7.5,Deadline
+VeloTech,25,7,Price
+VeloTrak,25,8,Price
+VelvetGloves,30,0,Deadline
+Ventri,25,0,Price
+VerdiMed,20,7.5,Quality
+Veritas Operations,25,0,Price
+VeritasVenture,20,7,Deadline
+VersaElectronics,20,8,Price
+Vertex Dynamics,25,7,Quality
+Vertex Industrial Supply,25,8,Price
+VertexTel,25,0,Deadline
+Vextonix,25,7,Deadline
+VibeWorks,25,8,Deadline
+VidaCore Biotech,20,7,Quality
+VidaSalud,20,7.5,Deadline
+VidaSana,25,0,Deadline
+VigesMax,25,0,Deadline
+VinDistilCo,25,7,Price
+Vintage Reserve,25,7,Deadline
+Vintage Vibes,30,0,Deadline
+VioHealth,20,8,Price
+VioleX,25,7,Price
+Viono Medical,25,7,Price
+VioTech,25,7,Quality
+VirtualCom,25,7,Price
+VirtualVerse,20,8,Deadline
+Virtue Machining,20,0,Deadline
+VirtuFactory,25,7.5,Deadline
+Visionary Press,25,0,Price
+VisionaryTech,20,0,Price
+VisionComm,20,7,Price
+VisionGuard,35,7.5,Quality
+VisionIndustries,20,0,Deadline
+VisionTechSys,20,8,Deadline
+Vistasol Chemicals,25,7.5,Quality
+VitaEquip Innovations,30,0,Price
+VitaEquip Solutions,20,0,Price
+VitaGear Innovations,25,7,Price
+Vital Solutions,20,7.5,Deadline
+VitalBridge Solutions,60,7,Quality
+VitalCore Technologies,25,7,Deadline
+VitalEquip Inc.,20,0,Price
+VitalForce,25,8,Quality
+VitalGear Corp.,25,7,Deadline
+VitaLife Solutions,20,7.5,Deadline
+Vitaline Solutions,20,0,Deadline
+Vitality Health,25,7.5,Price
+Vitality Industries,20,7.5,Price
+VitalityTech,20,7,Price
+Vitalitywise,20,0,Price
+VitalLife Corp.,20,0,Price
+VitalMed Equipments,25,7,Quality
+VitalMed Innovations,20,7,Quality
+VitalPro Solutions,20,0,Deadline
+VitalPulse Solutions,20,7.5,Quality
+VitalSign Innovations,25,7,Quality
+VitalSolutions Inc.,20,7.5,Deadline
+VitalTech,25,7,Deadline
+VitalTrack,20,7,Deadline
+VitalWise Inc.,25,8,Quality
+VitalWorks Inc.,25,8,Price
+VivaCore Technologies,25,7.5,Price
+Vivi,40,8,Deadline
+Vizipro,30,7,Deadline
+VoiceCom,30,8,Price
+VoiceTech,25,7,Deadline
+Voltage Ventures,25,7,Deadline
+Voltcom Communications,30,7,Quality
+Voltex Industrial,40,7,Quality
+Voltex Industries,25,7.5,Quality
+VoltGen,45,0,Price
+Voltic Industries,25,7,Price
+Voltix Energy,20,0,Deadline
+VoltRider,25,7,Quality
+Voltwave,30,7.5,Price
+Vortex Innovations,30,8,Deadline
+Vortex Manufacturing,25,7,Price
+VortexIndustries,20,0,Price
+VortexTech,25,7.5,Quality
+Voxite Industries,35,0,Deadline
+VozDigital,20,7.5,Deadline
+Vulcan High Council,20,0,Deadline
+WaterCorp,25,8,Quality
+Waveform Wireless,25,7,Deadline
+WaveMaster,30,7,Price
+WavePoint,25,8,Deadline
+WaveTech,25,7,Quality
+Wayne Enterprises Real Estate Division,35,7,Price
+WealthFusion,35,7.5,Deadline
+Web360,25,7,Price
+WebForge Solutions,30,7,Deadline
+WebPro,35,0,Price
+WebTech,25,0,Deadline
+WebWelding,35,0,Deadline
+WebWorks,25,8,Quality
+Weld & Whisk Diners Ltd.,20,7,Deadline
+WeldWorks,25,8,Quality
+WellSpring,20,7.5,Deadline
+West End Management,25,7.5,Price
+Weyland-Yutani Corporation,20,7,Price
+WheelsHub,35,7,Quality
+Whitetips,30,8,Deadline
+Wildcard Holdings,20,7.5,Quality
+Willow Woodworks,30,7,Deadline
+Windmill Industries,40,8,Quality
+WindStar Energy,30,7.5,Deadline
+Winning Streak Casinos,20,8,Price
+Wonka Industries,20,7,Price
+WoodCrafters,25,8,Price
+WoodWorks,25,7,Price
+WorkFlowX,25,0,Price
+Workforce Builders,25,7.5,Deadline
+WorkforceForge,30,7,Quality
+WorkforcePro,25,0,Deadline
+WorkforceWise,25,7,Price
+Workhorse Industries,25,7,Price
+WorkLearn,20,7.5,Quality
+Workplace Essentials,30,7,Quality
+WorkSafe Industries,20,7,Quality
+WorldLink,25,7,Deadline
+Xcelerate Construction,35,7.5,Quality
+Xenon Dynamics,20,7,Deadline
+Xiphos Semiconductors,25,7.5,Deadline
+Xylium Robotics,25,7,Deadline
+YellowStone Industries,25,7,Deadline
+ZenBridge,25,7,Quality
+Zenify,20,0,Price
+Zenith Aerospace,20,0,Deadline
+Zenith Dynamics,55,7,Price
+Zenith Engineering,20,8,Deadline
+Zenith Environmental,25,7.5,Price
+Zenith Industrial,30,0,Deadline
+Zenith Industrial Solutions,25,7,Quality
+Zenith Materials,25,7,Deadline
+Zenith Semiconductors,25,7,Deadline
+Zenith Tires & Engineering,30,0,Deadline
+Zenith Zippers,25,8,Deadline
+ZenithSoft,25,0,Deadline
+ZenithWorks Industrial Systems,30,7.5,Deadline
+Zentech Machines,20,0,Price
+ZipCom,20,7.5,Quality
