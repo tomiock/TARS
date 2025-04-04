@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {      //procesamos la 
                 `;  
 
                 translatorsList.appendChild(card);
+                console.debug(translator.avatar);
 
                 // Añadir el event listener para el botón de "Más Información"
                 const infoButton = card.querySelector(".info-button");
