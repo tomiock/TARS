@@ -1,0 +1,426 @@
+{
+    "translators": [
+        {
+            "name": "Aaron",
+            "languages": [
+                {
+                    "Source Language": "English",
+                    "Target Language": "Spanish (Iberian)",
+                    "Hourly_rate": 19
+                }
+            ],
+            "hours_available": 10,
+            "quality": 8,
+            "finish_day": "5th March",
+            "done_in": "5h",
+            "cost": "25 eurazos",
+            "avatar": "Imagenes/perfilavatar.png"
+        },
+        {
+            "name": "Abdon Isaias",
+            "languages": [
+                {
+                    "Source Language": "English",
+                    "Target Language": "Catalan",
+                    "Hourly_rate": 16
+                },
+                {
+                    "Source Language": "English",
+                    "Target Language": "English",
+                    "Hourly_rate": 24
+                },
+                {
+                    "Source Language": "English",
+                    "Target Language": "Spanish (Global)",
+                    "Hourly_rate": 13
+                },
+                {
+                    "Source Language": "English",
+                    "Target Language": "Spanish (Iberian)",
+                    "Hourly_rate": 17
+                },
+                {
+                    "Source Language": "English",
+                    "Target Language": "Spanish (LA)",
+                    "Hourly_rate": 13
+                },
+                {
+                    "Source Language": "French",
+                    "Target Language": "Spanish (Iberian)",
+                    "Hourly_rate": 15
+                },
+                {
+                    "Source Language": "German",
+                    "Target Language": "Spanish (Iberian)",
+                    "Hourly_rate": 18
+                },
+                {
+                    "Source Language": "Italian",
+                    "Target Language": "Spanish (Iberian)",
+                    "Hourly_rate": 15
+                }
+            ],
+            "hours_available": 10,
+            "quality": 8,
+            "finish_day": "5th March",
+            "done_in": "5h",
+            "cost": "25 eurazos",
+            "avatar": "Imagenes/perfilavatar.png"
+        },
+        {
+            "name": "Abdon Luis",
+            "languages": [
+                {
+                    "Source Language": "English",
+                    "Target Language": "Spanish (Iberian)",
+                    "Hourly_rate": 16
+                }
+            ],
+            "hours_available": 10,
+            "quality": 8,
+            "finish_day": "5th March",
+            "done_in": "5h",
+            "cost": "25 eurazos",
+            "avatar": "Imagenes/perfilavatar.png"
+        },
+        {
+            "name": "Abdon",
+            "languages": [
+                {
+                    "Source Language": "English",
+                    "Target Language": "Spanish (Global)",
+                    "Hourly_rate": 17
+                },
+                {
+                    "Source Language": "English",
+                    "Target Language": "Spanish (Iberian)",
+                    "Hourly_rate": 24
+                },
+                {
+                    "Source Language": "English",
+                    "Target Language": "Spanish (LA)",
+                    "Hourly_rate": 17
+                }
+            ],
+            "hours_available": 10,
+            "quality": 8,
+            "finish_day": "5th March",
+            "done_in": "5h",
+            "cost": "25 eurazos",
+            "avatar": "Imagenes/perfilavatar.png"
+        },
+        {
+            "name": "Abel Irene",
+            "languages": [
+                {
+                    "Source Language": "English",
+                    "Target Language": "Spanish (Iberian)",
+                    "Hourly_rate": 17
+                }
+            ],
+            "hours_available": 10,
+            "quality": 8,
+            "finish_day": "5th March",
+            "done_in": "5h",
+            "cost": "25 eurazos",
+            "avatar": "Imagenes/perfilavatar.png"
+        },
+        {
+            "name": "Abelardo",
+            "languages": [
+                {
+                    "Source Language": "Catalan",
+                    "Target Language": "Catalan",
+                    "Hourly_rate": 16
+                },
+                {
+                    "Source Language": "Catalan",
+                    "Target Language": "Spanish (Global)",
+                    "Hourly_rate": 23
+                },
+                {
+                    "Source Language": "Catalan",
+                    "Target Language": "Spanish (Iberian)",
+                    "Hourly_rate": 17
+                },
+                {
+                    "Source Language": "English",
+                    "Target Language": "Basque",
+                    "Hourly_rate": 32
+                },
+                {
+                    "Source Language": "English",
+                    "Target Language": "Catalan",
+                    "Hourly_rate": 20
+                },
+                {
+                    "Source Language": "English",
+                    "Target Language": "Spanish (Global)",
+                    "Hourly_rate": 17
+                },
+                {
+                    "Source Language": "English",
+                    "Target Language": "Spanish (Iberian)",
+                    "Hourly_rate": 23
+                },
+                {
+                    "Source Language": "English",
+                    "Target Language": "Spanish (LA)",
+                    "Hourly_rate": 17
+                },
+                {
+                    "Source Language": "French",
+                    "Target Language": "Catalan",
+                    "Hourly_rate": 20
+                },
+                {
+                    "Source Language": "French",
+                    "Target Language": "Spanish (Iberian)",
+                    "Hourly_rate": 19
+                },
+                {
+                    "Source Language": "Italian",
+                    "Target Language": "Catalan",
+                    "Hourly_rate": 18
+                },
+                {
+                    "Source Language": "Italian",
+                    "Target Language": "Spanish (Global)",
+                    "Hourly_rate": 19
+                },
+                {
+                    "Source Language": "Italian",
+                    "Target Language": "Spanish (Iberian)",
+                    "Hourly_rate": 19
+                },
+                {
+                    "Source Language": "Spanish (Global)",
+                    "Target Language": "Catalan",
+                    "Hourly_rate": 18
+                },
+                {
+                    "Source Language": "Spanish (Iberian)",
+                    "Target Language": "Catalan",
+                    "Hourly_rate": 18
+                },
+                {
+                    "Source Language": "Spanish (Iberian)",
+                    "Target Language": "English",
+                    "Hourly_rate": 35
+                },
+                {
+                    "Source Language": "Spanish (Iberian)",
+                    "Target Language": "Spanish (Iberian)",
+                    "Hourly_rate": 17
+                },
+                {
+                    "Source Language": "Spanish (LA)",
+                    "Target Language": "Spanish (Iberian)",
+                    "Hourly_rate": 22
+                }
+            ],
+            "hours_available": 10,
+            "quality": 8,
+            "finish_day": "5th March",
+            "done_in": "5h",
+            "cost": "25 eurazos",
+            "avatar": "Imagenes/perfilavatar.png"
+        },
+        {
+            "name": "Abigail",
+            "languages": [
+                {
+                    "Source Language": "Catalan",
+                    "Target Language": "English",
+                    "Hourly_rate": 30
+                },
+                {
+                    "Source Language": "Catalan",
+                    "Target Language": "Spanish (Iberian)",
+                    "Hourly_rate": 14
+                },
+                {
+                    "Source Language": "English (UK)",
+                    "Target Language": "English (UK)",
+                    "Hourly_rate": 21
+                },
+                {
+                    "Source Language": "English (US)",
+                    "Target Language": "English (US)",
+                    "Hourly_rate": 20
+                },
+                {
+                    "Source Language": "English",
+                    "Target Language": "Bulgarian",
+                    "Hourly_rate": 40
+                },
+                {
+                    "Source Language": "English",
+                    "Target Language": "Catalan",
+                    "Hourly_rate": 17
+                },
+                {
+                    "Source Language": "English",
+                    "Target Language": "French",
+                    "Hourly_rate": 27
+                },
+                {
+                    "Source Language": "English",
+                    "Target Language": "German",
+                    "Hourly_rate": 32
+                },
+                {
+                    "Source Language": "English",
+                    "Target Language": "Greek",
+                    "Hourly_rate": 41
+                },
+                {
+                    "Source Language": "English",
+                    "Target Language": "Hungarian",
+                    "Hourly_rate": 35
+                },
+                {
+                    "Source Language": "English",
+                    "Target Language": "Italian",
+                    "Hourly_rate": 20
+                },
+                {
+                    "Source Language": "English",
+                    "Target Language": "Japanese",
+                    "Hourly_rate": 30
+                },
+                {
+                    "Source Language": "English",
+                    "Target Language": "Korean",
+                    "Hourly_rate": 48
+                },
+                {
+                    "Source Language": "English",
+                    "Target Language": "Polish",
+                    "Hourly_rate": 29
+                },
+                {
+                    "Source Language": "English",
+                    "Target Language": "Russian",
+                    "Hourly_rate": 24
+                },
+                {
+                    "Source Language": "English",
+                    "Target Language": "Slovak",
+                    "Hourly_rate": 34
+                },
+                {
+                    "Source Language": "English",
+                    "Target Language": "Spanish (Global)",
+                    "Hourly_rate": 14
+                },
+                {
+                    "Source Language": "English",
+                    "Target Language": "Spanish (Iberian)",
+                    "Hourly_rate": 19
+                },
+                {
+                    "Source Language": "English",
+                    "Target Language": "Swedish",
+                    "Hourly_rate": 49
+                },
+                {
+                    "Source Language": "English",
+                    "Target Language": "Urdu",
+                    "Hourly_rate": 29
+                },
+                {
+                    "Source Language": "French",
+                    "Target Language": "English",
+                    "Hourly_rate": 28
+                },
+                {
+                    "Source Language": "German",
+                    "Target Language": "English",
+                    "Hourly_rate": 37
+                },
+                {
+                    "Source Language": "German",
+                    "Target Language": "English (US)",
+                    "Hourly_rate": 22
+                },
+                {
+                    "Source Language": "German",
+                    "Target Language": "Spanish (Iberian)",
+                    "Hourly_rate": 20
+                },
+                {
+                    "Source Language": "Italian",
+                    "Target Language": "Spanish (Iberian)",
+                    "Hourly_rate": 16
+                },
+                {
+                    "Source Language": "Polish",
+                    "Target Language": "English (US)",
+                    "Hourly_rate": 38
+                },
+                {
+                    "Source Language": "Spanish (Iberian)",
+                    "Target Language": "Catalan",
+                    "Hourly_rate": 15
+                },
+                {
+                    "Source Language": "Spanish (Iberian)",
+                    "Target Language": "English",
+                    "Hourly_rate": 29
+                },
+                {
+                    "Source Language": "Spanish (Iberian)",
+                    "Target Language": "English (UK)",
+                    "Hourly_rate": 31
+                },
+                {
+                    "Source Language": "Spanish (Iberian)",
+                    "Target Language": "English (US)",
+                    "Hourly_rate": 26
+                },
+                {
+                    "Source Language": "Spanish (Iberian)",
+                    "Target Language": "French",
+                    "Hourly_rate": 28
+                },
+                {
+                    "Source Language": "Spanish (Iberian)",
+                    "Target Language": "German",
+                    "Hourly_rate": 30
+                },
+                {
+                    "Source Language": "Spanish (Iberian)",
+                    "Target Language": "Italian",
+                    "Hourly_rate": 22
+                },
+                {
+                    "Source Language": "Spanish (Iberian)",
+                    "Target Language": "Norwegian",
+                    "Hourly_rate": 50
+                },
+                {
+                    "Source Language": "Spanish (Iberian)",
+                    "Target Language": "Portuguese (Iberian)",
+                    "Hourly_rate": 15
+                },
+                {
+                    "Source Language": "Spanish (Iberian)",
+                    "Target Language": "Russian",
+                    "Hourly_rate": 32
+                },
+                {
+                    "Source Language": "Spanish (Iberian)",
+                    "Target Language": "Spanish (Iberian)",
+                    "Hourly_rate": 14
+                }
+            ],
+            "hours_available": 10,
+            "quality": 8,
+            "finish_day": "5th March",
+            "done_in": "5h",
+            "cost": "25 eurazos",
+            "avatar": "Imagenes/perfilavatar.png"
+        }
+    ]
+}

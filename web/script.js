@@ -1,64 +1,73 @@
-document.addEventListener("DOMContentLoaded", function () {
-    let translatorsData = []; // Variable para almacenar los traductores
 
-    // Cargar los traductores desde el JSON
-    fetch("Traductores.json")
+
+document.addEventListener("DOMContentLoaded", function() {      //procesamos la información del json
+    fetch("diezTraductores.json")       
         .then(response => response.json())
         .then(data => {
-            translatorsData = data.translators; // Guardamos los traductores
-            displayTranslators(translatorsData); // Mostramos todos al inicio
-        })
-        .catch(error => console.error("Error al cargar los datos de traductores:", error));
+            const translatorsList = document.getElementById("translators-list");
+            data.translators.forEach(translator => {
+                const card = document.createElement("div");
+                card.classList.add("translator-card");      //creamos cada una de las tarjetas de los traductores con su información
+                                                            //dividimos las tarjetas en tres secciones: avatar, detalles (nombre y horarios) y el coste y los botones
+                card.innerHTML = `      
+                    <img src="${translator.avatar}" alt="Avatar de ${translator.name}" class="avatar">
+                    
+                    <div class="translator-details">        
+                        <h3>${translator.name}</h3>
+                        <p><strong>Quality:</strong> ${translator.quality}/10</p>
+                        <p><strong>Available Hours:</strong> ${translator.hours_available}</p>
+                        <p><strong>Finish Date:</strong> ${translator.finish_day}</p>
+                        <p><strong>Completion Time:</strong> ${translator.done_in}</p>
+                        
+                    </div>
 
-    function displayTranslators(translators) {
-        const container = document.getElementById("translators-list");
-        container.innerHTML = ""; // Limpiar antes de agregar nuevos datos
-        
-        if (translators.length === 0) {
-            container.innerHTML = "<p>No se encontraron traductores.</p>";
-            return;
-        }
-        
-        translators.forEach(translator => {
-            const percentage = (translator.quality / 10) * 180; // Convertimos calidad a grados (0-180)
-            const offset = 180 - percentage; // Ajuste correcto de la barra semicircular
-        
-            const translatorDiv = document.createElement("div");
-            translatorDiv.classList.add("translator-card");
-            translatorDiv.innerHTML = `
-                <img src="${translator.avatar}" alt="Avatar de ${translator.name}" class="avatar">
-                <h3>${translator.name}</h3>
-                <p><strong>Idiomas:</strong> ${translator.languages.join(", ")}</p>
-                <p><strong>Disponibilidad:</strong> ${translator.availability}</p>
-        
-                <!-- Barra semicircular de calidad -->
-                <div class="quality-container">
-                    <svg viewBox="0 0 100 50" class="quality-meter">
-                        <path d="M 10 50 A 40 40 0 0 1 90 50" stroke="#ddd" stroke-width="10" fill="transparent"/>
-                        <path d="M 10 50 A 40 40 0 0 1 90 50" stroke="#28a745" stroke-width="10" fill="transparent"
-                            stroke-dasharray="180" stroke-dashoffset="${offset}"/>
-                    </svg>
-                    <p class="quality-text">${translator.quality}/10</p>
-                </div>
-            
-                <h4>Historial de Proyectos:</h4>
-                <ul>
-                    ${translator.history.map(proj => `<li>${proj.project} (${proj.languagePair})</li>`).join("")}
-                </ul>
-            `;
-            container.appendChild(translatorDiv);
+                    <div class="translator-buttons-and-cost">
+
+                        <p class="translator-cost"><strong>Cost:</strong> ${translator.cost}</p>
+                        <button class="accept-button">Accept</button>
+                        <button class="info-button">More Info</button>
+                        
+                    </div>
+
+                `;  
+
+                translatorsList.appendChild(card);
+
+                // Añadir el event listener para el botón de "Más Información"
+                const infoButton = card.querySelector(".info-button");
+                infoButton.addEventListener("click", function () {
+                    // Mostramos el panel de información
+                    const panel = document.getElementById("translator-info-panel");
+                    const translatorInfoText = document.getElementById("translator-details-text");
+
+                    // Aquí puedes poner la información adicional del traductor
+                    translatorInfoText.textContent = `Details about ${translator.name}: ${translator.details || "No additional details available."}`;
+                    
+                    panel.classList.add("show");
+                });
             });
-        }
-        
 
-    // Evento para filtrar por calidad mínima
-    document.getElementById("filter-quality").addEventListener("click", function () {
-        const minQuality = parseInt(document.getElementById("min-quality").value, 10);
-        if (!isNaN(minQuality)) {
-            const filteredTranslators = translatorsData.filter(translator => translator.quality >= minQuality);
-            displayTranslators(filteredTranslators);
-        }
-    });
-
+        })
+        .catch(error => console.error("Error loading translators:", error));            //por si aca
 });
 
+document.addEventListener("DOMContentLoaded", function () {             //al pulsar el botón, nos manda a la página de los traductores
+    const searchButton = document.getElementById("search-translators");
+
+    if (searchButton) {
+        searchButton.addEventListener("click", function (event) {
+            event.preventDefault(); // Evita que el formulario se envíe normalmente
+            window.location.href = "translators_avail.html"; 
+        });
+    }
+});
+
+document.getElementById("back-to-form").addEventListener("click", function() {      //botón provisional para cambiar de página
+    window.location.href = "forms.html"; 
+});
+
+
+document.getElementById("close-panel").addEventListener("click", function () {
+    const panel = document.getElementById("translator-info-panel");
+    panel.classList.remove("show");
+});

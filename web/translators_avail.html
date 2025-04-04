@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translators Available</title>
+    <link rel="stylesheet" href="styles_trans.css">
+</head>
+<body>
+    <form id="formulario">
+        <input type="text" id="manufacturer" placeholder="Manufacturer" name="manufacturer" >
+        
+
+        <select id="sector" name="sector">
+            <option value="">Sector</option>
+        </select>
+
+        <select id="industry" name="industry">
+            <option value="">Industry</option>
+        </select>
+
+        <select id="industry-group" name="industry-group">
+            <option value="">Industry Group</option>
+        </select>
+
+        <select id="sub-industry" name="sub-industry">
+            <option value="">Sub Industry</option>
+        </select>
+
+        <input type="text" id="original-language" placeholder="Original Language" name="original-language" >
+
+        <input type="text" id="target-language" placeholder="Target Language" name="target-language" >
+
+        <input type="number" id="budget" placeholder="Budget" name="budget" >
+
+        <input type="text" id="project-id" placeholder="Project ID" name="project-id" >
+
+        <select id="task-type" name="task-type">
+            <option value="">Task Type</option>
+        </select>
+
+        <select id="pm" name="pm">
+            <option value="">PM</option>
+        </select>
+
+    </form>
+    
+    <!--<button type="submit" id="search-translators">Search Translators</button>-->
+
+    <button id="back-to-form">Back to Form</button>
+
+
+    <div id="translators-available">
+        <div id="left-panel">
+            <div id="translators-list"></div>
+        </div>
+        
+        <div id="right-panel">
+            <h2>Alternative Possibilities</h2>
+            <div id="possible-trans-list"></div>
+        </div>
+
+    </div>
+    
+    <!--PANEL DE MÁS INFORMACIÓN-->
+    <div id="translator-info-panel" class="hidden">
+        <button id="close-panel">✖</button>
+        <div id="translator-info-content">
+            <h2>Translator Details</h2>
+            <p id="translator-details-text">Aran si hubiera trabajado...</p>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,304 @@
+body{
+    font-family: Arial, sans-serif;
+    color: #393939;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*ALTERNATIVE POSSIBILITIES (TÍTULO)*/
+h2{         
+    text-align: center;
+    padding: 10px;
+    color: #393939;
+}
+
+
+
+
+
+
+
+
+/*FORMULARIO*/
+form{
+
+    background: #cacaca;
+    width: 85%;
+    height: 100%;
+    padding: 30px;
+    margin: 40px auto 20px auto;
+    box-shadow: 0 0 10px #09090986;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    box-sizing: border-box;
+}
+/*INPUTS DEL FORMULARIO*/
+
+input, select{
+
+    width: 10%;
+    min-width: 100px;
+    height: 46px;
+    padding: 10px;
+    border: 1px solid #d7d7d7;
+    border-radius: 20px;
+    font-size:medium;
+    
+}
+#manufacturer{
+    min-width: 30%;
+}
+#original-language, #target-language{
+    width: 20%;
+}
+
+select{
+
+    width: 15%;
+    height: 65px;
+    
+}
+#pm{
+    max-width: 8.5%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*BOTÓN PARA VOLVER A BUSCAR, no sé si lo acabaré poniendo*/
+#search-translators{
+    width: 25%;
+    padding: 8px;
+    margin-top: auto;
+    margin-bottom: 10px;
+    background-color: #ff1d1d;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-size: medium;
+
+}
+#search-translators:hover {
+    background-color: #ff8686;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*TRADUCTORES DISPONIBLES*/
+#translators-available {
+    display: flex;
+    width: 100%;
+    max-width: 1300px;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+
+
+/*LOS DOS PANELES*/
+#left-panel {
+    flex: 3;
+    padding: 20px;
+    margin: 20px;
+    overflow-y: auto;
+    max-width: 75%;
+    background: #e2e2e2;
+    border-radius: 10px;
+    
+}
+#right-panel {
+    background-color: #cbcbcb;
+    flex: 3;
+    padding: 20px;
+    margin: 20px;
+    overflow-y: auto;
+    max-width: 25%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+
+
+
+
+/*DEL PANEL DE LA IZQUIERDA PARA CADA TRADUCTOR*/
+.translator-card {
+    background: white;
+    max-width: 700px;
+    max-height: 250px;
+    width: 100%;
+    padding: 20px;
+    margin: 15px auto;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px #00000034;
+    transition: transform 0.2s;
+    display: flex;
+
+}
+.translator-card:hover {
+    transform: scale(1.02);
+}
+
+
+
+
+
+
+
+
+
+/*INFORMACIÓN DE LA TARJETA*/
+.avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: auto 50px auto 30px;
+}
+
+/*NOMBRE, HORARIOS, ETC.*/
+.translator-details{
+
+    width: 45%;
+    padding: 10px;
+    border-right: 1px solid #ddd; 
+}
+
+/*NOMBRE DEL TRADUCTOR*/
+h3{
+
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/*COSTE Y BOTONES DE ACEPTAR E INFO*/
+.translator-buttons-and-cost{
+
+    padding: 20px;
+    margin:  10px auto 10px 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    width: 40%;
+}
+
+/*BOTONES*/
+.translator-buttons-and-cost button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s;
+}
+
+/*BOTÓN DE ACEPTAR*/
+.accept-button {
+    background-color: #ff1d1d;
+    color: white;
+}
+.accept-button:hover {
+    background-color: #ff8686;
+}
+
+
+/*BOTÓN DE INFORMACIÓN*/
+.info-button {
+    background-color: #b0b0b0;
+    color: black;
+
+}
+.info-button:hover {
+    background-color: #cacaca;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*PANEL DE MÁS INFORMACIÓN*/
+#translator-info-panel {
+    position: fixed;
+    bottom: -100%;
+    left: 50%;
+    width: 75%;
+    max-width: 1200px;
+    height: 90%;
+    background: white;
+    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: bottom 0.5s ease-in-out;
+    z-index: 1000;
+    border-radius: 20px;
+    transform: translateX(-50%); 
+
+}
+
+
+#translator-info-panel.show {
+    bottom: 0;
+}
+
+#close-panel {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#translator-info-content {
+    margin-top: 40px;
+    text-align: center;
+}
