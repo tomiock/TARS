@@ -60,6 +60,11 @@ EOF
                         pythonPackages.pandas
                         pythonPackages.venvShellHook
                         pythonPackages.watchdog
+
+                        pythonPackages.torch
+                        pythonPackages.transformers
+                        pythonPackages.sentence-transformers
+
                         pythonPackages.ipykernel
                         pkgs.uv # pip alternative
                         installScript
