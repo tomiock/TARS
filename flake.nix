@@ -59,6 +59,7 @@ EOF
                         pythonPackages.numpy
                         pythonPackages.pandas
                         pythonPackages.venvShellHook
+                        pythonPackages.watchdog
                         pythonPackages.ipykernel
                         pkgs.uv # pip alternative
                         installScript
