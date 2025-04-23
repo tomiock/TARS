@@ -1,0 +1,14 @@
+## Sampling for the dataset creation
+
+### Large Dataset
+- Make 25% train-eval split
+- 1 out of 4 samples for eval data
+- Eval data has equal representation across time
+
+### Smaller Datasets
+- Make 25% train-eval split
+- 1 out of 4 samples for eval data
+- Eval data has equal representation across time
+- Divide training into equal chunks (e.g. 5)
+- A model can be trained on each training chunk, to then compare to the whole eval. That way we can know which chunk of the historical data generalizes more.
+- The chunks may be divided according to time (e.g. one chunk each 2 year/6 months).
