@@ -62,6 +62,7 @@ EOF
                         pythonPackages.watchdog
 
                         pythonPackages.torch
+                        pythonPackages.pytorch-metric-learning
                         pythonPackages.transformers
                         pythonPackages.sentence-transformers
 

@@ -4,3 +4,6 @@ watchdog
 transformers
 datasets
 sentence-transformers
+
+torch
+pytorch-metric-learning
