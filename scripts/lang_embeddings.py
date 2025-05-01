@@ -79,9 +79,7 @@ class EmbeddingLookup:
 
     def __init__(
         self,
-        lang_to_index: dict,
-        original_embeddings: np.ndarray,
-        latent_embeddings: np.ndarray,
+        loaded_data: dict,
     ):
         """
         Initializes the EmbeddingLookup class.
@@ -91,6 +89,11 @@ class EmbeddingLookup:
             original_embeddings (np.ndarray): The original high-dimensional embeddings.
             latent_embeddings (np.ndarray): The latent low-dimensional embeddings.
         """
+
+        lang_to_index = loaded_data.get("lang_to_index")
+        original_embeddings = loaded_data.get("original_embeddings")
+        latent_embeddings = loaded_data.get("latent_embeddings")
+
         if not isinstance(lang_to_index, dict):
             raise TypeError("lang_to_index must be a dictionary.")
         if (
