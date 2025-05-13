@@ -1,5 +1,3 @@
-import pickle
-
 import torch
 import pandas as pd
 import numpy as np
@@ -9,6 +7,8 @@ from pytorch_metric_learning.miners import TripletMarginMiner
 
 from torch.utils.data import Dataset, DataLoader
 from torch import nn
+
+from tqdm import tqdm
 
 
 class PositivesDataset(Dataset):
@@ -136,33 +136,72 @@ class Autoencoder(nn.Module):
 
 
 if __name__ == "__main__":
-    positives = pd.read_pickle('data/positives.pkl')
+    positives = pd.read_pickle("data/positives.pkl")
 
     dataset = PositivesDataset(positives)
     dataloader = DataLoader(dataset, batch_size=32, shuffle=True, collate_fn=collate_fn)
 
     model = Autoencoder(
-        task_dim=12,
+        task_dim=42,
         translator_dim=42,
         latent_dim=10,
-        hidden_dim=12,
+        hidden_dim=36,
     )
 
-    for features, labels, entity_types in dataloader:
-        for i in range(len(features)):
-            single_features = features[i]
-            single_label = labels[i]
-            single_entity = entity_types[i]
+    miner = TripletMarginMiner()
+    loss = TripletMarginLoss()
 
-            if single_entity.item() == 0:  # this is a task
-                embeddings, reconstruction = model(
-                    single_features.unsqueeze(0), single_entity
-                )
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.0001)
 
-            elif single_entity.item() == 1:  # this is a tranlator
-                embeddings, reconstruction = model(
-                    single_features.unsqueeze(0), single_entity
-                )
+    num_epochs = 10
 
+    for epoch in range(num_epochs):
+        total_epoch_metric_loss = 0
+        num_batches = 0
+        for features, labels, entity_types in dataloader:
+            all_embeddings = []
+            all_labels = []
+            all_reconstruccions = []
+
+            for i in range(len(features)):
+                single_features = features[i]
+                single_label = labels[i]
+                single_entity = entity_types[i]
+
+                if single_entity.item() == 0:  # this is a task
+                    embeddings, reconstruction = model(single_features, single_entity)
+
+                elif single_entity.item() == 1:  # this is a tranlator
+                    embeddings, reconstruction = model(single_features, single_entity)
+
+                else:
+                    raise ValueError
+
+                all_embeddings.append(embeddings)
+                all_labels.append(single_label)
+                all_reconstruccions.append(reconstruction)
+
+            all_embeddings = torch.stack(all_embeddings)
+            all_labels = torch.stack(all_labels)
+            all_reconstruccions = torch.stack(all_reconstruccions)
+
+            hard_triplets = miner(all_embeddings, all_labels)
+
+            metric_loss_value = torch.tensor(0.0)
+
+            if len(hard_triplets) > 0:
+                metric_loss_value = loss(all_embeddings, all_labels, hard_triplets)
             else:
-                raise ValueError
+                print('ERRORRR')
+
+            metric_loss_value.backward()
+            optimizer.step()
+
+            total_epoch_metric_loss += metric_loss_value.item()
+            num_batches += 1
+
+            avg_epoch_metric_loss = (
+                total_epoch_metric_loss / num_batches if num_batches > 0 else 0.0
+            )
+
+        print(f'training loss: {avg_epoch_metric_loss:.6f}, epoch: {epoch}')
