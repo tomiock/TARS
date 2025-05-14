@@ -277,3 +277,8 @@ if __name__ == "__main__":
     translators_embedded, tasks_embedded = inference(
         batch=batch_test, model_tasks=model_task, model_translators=model_translator
     )
+
+    assert translators_embedded.shape == tasks_embedded.shape
+
+    # WE CAN USE DISTANCES between the embeds to calculate which translator would be assigned to each task
+    # do at the end of the epoch with all of the validationd data
