@@ -1,0 +1,20 @@
+method: grid
+metric:
+  name: val_mrr
+  goal: maximize
+
+parameters:
+  batch_size:
+    values: [64, 128, 256]
+  learning_rate:
+    values: [0.0001, 0.0007, 0.002]
+  margin:
+    values: [0.1, 0.2, 0.5, 1.0]
+  epochs:
+    value: 20
+
+# this tells wandb to run your script (no extra args needed,
+# since your script reads everything from wandb.config)
+command:
+  - python3
+  - accuracy3.py

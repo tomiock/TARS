@@ -226,7 +226,7 @@ def inference(
 
 
 if __name__ == "__main__":
-    positives = pd.read_pickle("data/positives.pkl")
+    positives = pd.read_pickle("../data/positives.pkl")
 
     dataset = PositivesDataset(positives)
     train_set, val_set = torch.utils.data.random_split(dataset, [0.8, 0.2])
@@ -262,7 +262,7 @@ if __name__ == "__main__":
     optimizer_translator = torch.optim.Adam(model_translator.parameters(), lr=0.0001)
     optimizer_task = torch.optim.Adam(model_task.parameters(), lr=0.0001)
 
-    num_epochs = 10
+    num_epochs = 3
 
     for epoch in range(num_epochs):
         train_loss = train_step(
