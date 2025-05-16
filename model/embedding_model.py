@@ -9,6 +9,7 @@ from pytorch_metric_learning.distances import LpDistance, CosineSimilarity
 
 from torch.utils.data import Dataset, DataLoader
 from torch import nn
+from torch.nn import functional as F
 
 from tqdm import tqdm  # For progress bars
 
@@ -138,15 +139,21 @@ def train_step(
         optimizer_task.zero_grad()
         optimizer_translator.zero_grad()
 
-        t_emb, _ = model_task(tasks)
-        tr_emb, _ = model_translator(translators)
+        t_emb, t_rec = model_task(tasks)
+        tr_emb, tr_rec = model_translator(translators)
 
         embeds = torch.cat([t_emb, tr_emb], dim=0)
         lbls = torch.cat([labels, labels], dim=0)
 
         hard_triplets = miner_func(embeds, lbls)
 
+        rec_loss_t = F.mse_loss(t_rec, tasks)
+        rec_loss_tr = F.mse_loss(tr_rec, translators)
+
+        rec_losses = rec_loss_t + rec_loss_tr
+
         loss_val = loss_func(embeds, lbls, hard_triplets)
+        loss_val += rec_losses
         loss_val.backward()
 
         optimizer_task.step()
@@ -179,8 +186,8 @@ def eval_step(
                 labels.to(device),
             )
 
-            t_emb, _ = model_task(tasks)
-            tr_emb, _ = model_translator(translators)
+            t_emb, t_rec = model_task(tasks)
+            tr_emb, tr_rec = model_translator(translators)
 
             embeds = torch.cat([t_emb, tr_emb], dim=0)
             lbls = torch.cat([labels, labels], dim=0)
@@ -188,7 +195,14 @@ def eval_step(
             hard_triplets = miner_func(embeds, lbls)
 
             if hard_triplets[0].numel() > 0:
+                rec_loss_t = F.mse_loss(t_rec, tasks)
+                rec_loss_tr = F.mse_loss(tr_rec, translators)
+
+                rec_losses = rec_loss_t + rec_loss_tr
+
                 loss_val = loss_func(embeds, lbls, hard_triplets)
+                loss_val += rec_losses
+
                 total_loss += loss_val.item()
                 count += 1
 
@@ -274,16 +288,21 @@ def inference(
     return tr_emb.cpu(), t_emb.cpu()
 
 
+def loss_function(distance_loss, ):
+    pass
+
+
 if __name__ == "__main__":
     wandb.init(
         project="translation-retrieval-sweep",
         config={
-            "batch_size": 128,
+            "batch_size": 256,
             "learning_rate": 1e-4,
-            "latent_dim": 10,
+            "latent_dim": 5,
             "hidden_dim": 36,
             "margin": 0.2,
-            "epochs": 3,
+            "epochs": 40,
+            "loss": "Triplet + Reconstrucction",
         },
     )
 
