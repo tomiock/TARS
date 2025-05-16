@@ -1,5 +1,6 @@
 import torch
 import pandas as pd
+import matplotlib.pyplot as plt
 import numpy as np
 import wandb
 
@@ -12,6 +13,7 @@ from torch import nn
 from torch.nn import functional as F
 
 from tqdm import tqdm  # For progress bars
+from sklearn.preprocessing import StandardScaler, scale
 
 from typing import Optional, Callable, Dict, List
 
@@ -28,7 +30,7 @@ def create_features(features: List[str], data: pd.Series) -> List[float]:
 
 
 class PositivesDataset(Dataset):
-    def __init__(self, dataframe: pd.DataFrame):
+    def __init__(self, dataframe: pd.DataFrame, task_scaler, translator_scaler):
         self.dataframe = dataframe
         self.pair_labels = dataframe.index.tolist()
         self.task_samples, self.translator_samples = [], []
@@ -58,6 +60,31 @@ class PositivesDataset(Dataset):
             self.task_samples.append(np.array(t, dtype=np.float32))
             self.translator_samples.append(np.array(tr, dtype=np.float32))
 
+        if task_scaler and hasattr(task_scaler, "mean_") and self.task_samples:
+            # hasattr(task_scaler, 'mean_') is a simple check if the scaler has been fitted.
+            # Stack list of 1D arrays into a 2D array for scaler's transform method
+            task_samples_2d = np.stack(self.task_samples)
+            # Transform the data
+            scaled_task_samples_2d = task_scaler.transform(task_samples_2d)
+            # Unstack back into a list of 1D arrays, ensuring float32 dtype
+            self.task_samples = [
+                scaled_task_samples_2d[i].astype(np.float32)
+                for i in range(scaled_task_samples_2d.shape[0])
+            ]
+
+        if (
+            translator_scaler
+            and hasattr(translator_scaler, "mean_")
+            and self.translator_samples
+        ):
+            translator_samples_2d = np.stack(self.translator_samples)
+            scaled_translator_samples_2d = translator_scaler.transform(
+                translator_samples_2d
+            )
+            self.translator_samples = [
+                scaled_translator_samples_2d[i].astype(np.float32)
+                for i in range(scaled_translator_samples_2d.shape[0])
+            ]
         assert len(self.task_samples) == len(self.translator_samples), (
             "Mismatch between task and translator samples"
         )
@@ -123,13 +150,11 @@ def train_step(
     optimizer_translator: torch.optim.Optimizer,
     device: torch.device,
 ) -> float:
-
     model_task.train()
     model_translator.train()
     total_loss = 0.0
 
     for tasks, translators, labels in tqdm(train_dataloader, desc="Training"):
-
         tasks, translators, labels = (
             tasks.to(device),
             translators.to(device),
@@ -171,7 +196,6 @@ def eval_step(
     miner_func: BaseMiner,
     device: torch.device,
 ) -> float:
-
     model_task.eval()
     model_translator.eval()
 
@@ -217,7 +241,6 @@ def calculate_accuracy_metrics(
     k_values: List[int] = [1, 5, 10],
     device: Optional[torch.device] = None,
 ) -> Dict[str, float | Dict[int, float]]:
-
     model_task.eval()
     model_translator.eval()
 
@@ -232,7 +255,6 @@ def calculate_accuracy_metrics(
         for tasks, translators, pair_labels in tqdm(
             val_dataloader, desc="Embedding Val Set"
         ):
-
             t, tr = tasks.to(device), translators.to(device)
             te, _ = model_task(t)
             tre, _ = model_translator(tr)
@@ -248,6 +270,9 @@ def calculate_accuracy_metrics(
     num = task_embs.size(0)
     D = torch.cdist(task_embs.to(device), tr_embs.to(device))
     ranks = D.argsort(dim=1)
+
+    plt.hist(D.numpy().flatten(),bins=1000)
+    wandb.log({'val/distances': plt})
 
     precision_at_k = {k: 0 for k in k_values}
     reciprocal_ranks = []
@@ -288,7 +313,9 @@ def inference(
     return tr_emb.cpu(), t_emb.cpu()
 
 
-def loss_function(distance_loss, ):
+def loss_function(
+    distance_loss,
+):
     pass
 
 
@@ -297,12 +324,12 @@ if __name__ == "__main__":
         project="translation-retrieval-sweep",
         config={
             "batch_size": 256,
-            "learning_rate": 1e-4,
-            "latent_dim": 5,
-            "hidden_dim": 36,
-            "margin": 0.2,
-            "epochs": 40,
-            "loss": "Triplet + Reconstrucction",
+            "learning_rate": 1e-3,
+            "latent_dim": 42,
+            "hidden_dim": 42,
+            "margin": 2,
+            "epochs": 100,
+            "loss": "Triplet",
         },
     )
 
@@ -318,7 +345,13 @@ if __name__ == "__main__":
     positives_df = pd.read_pickle("../data/positives.pkl")
     if not positives_df.index.is_unique:
         positives_df = positives_df.reset_index(drop=True)
-    dataset = PositivesDataset(positives_df)
+
+    scaler_taks = StandardScaler()
+    scaler_translators = StandardScaler()
+
+    dataset = PositivesDataset(positives_df,
+                               scaler_taks,
+                               scaler_translators)
 
     train_size = int(0.8 * len(dataset))
     val_size = len(dataset) - train_size
@@ -352,15 +385,13 @@ if __name__ == "__main__":
         translator_dim=TRANSLATOR_DIM, latent_dim=LATENT_DIM, hidden_dim=HIDDEN_DIM
     ).to(device)
 
-    wandb.watch(model_task, log="all", log_freq=10)
-    wandb.watch(model_translator, log="all", log_freq=10)
-
-    miner = TripletMarginMiner(distance=LpDistance(p=2))
+    miner = TripletMarginMiner(distance=LpDistance(p=2), type_of_triplets="all")
     loss_fn = TripletMarginLoss(distance=LpDistance(p=2), margin=cfg.margin)
 
-    optimizer_task = torch.optim.Adam(
-        model_task.parameters(), lr=cfg.learning_rate
-    )
+    wandb.watch(model_task, log="all", log_freq=10, criterion=loss_fn)
+    wandb.watch(model_translator, log="all", log_freq=10, criterion=loss_fn)
+
+    optimizer_task = torch.optim.Adam(model_task.parameters(), lr=cfg.learning_rate)
     optimizer_translator = torch.optim.Adam(
         model_translator.parameters(), lr=cfg.learning_rate
     )
