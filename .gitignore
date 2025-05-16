@@ -5,4 +5,8 @@ result
 .idea/
 *.pyc
 
+*.pth
+
 _/
+
+**/wandb/
