@@ -63,6 +63,7 @@ EOF
 
                         pythonPackages.torch
                         pythonPackages.pytorch-metric-learning
+                        pythonPackages.wandb
                         pythonPackages.transformers
                         pythonPackages.sentence-transformers
 
