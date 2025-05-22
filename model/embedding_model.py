@@ -14,7 +14,7 @@ from torch import nn
 from torch.nn import functional as F
 
 from tqdm import tqdm  # For progress bars
-from sklearn.preprocessing import StandardScaler, scale
+from sklearn.preprocessing import StandardScaler
 
 from typing import Optional, Callable, Dict, List
 
@@ -257,6 +257,14 @@ def calculate_accuracy_metrics(
             val_dataloader, desc="Embedding Val Set"
         ):
             t, tr = tasks.to(device), translators.to(device)
+            bins = torch.linspace(-10, 10, 100)
+
+            hist_t = torch.histogram(t, bins=bins)
+            hist_tr = torch.histogram(tr, bins=bins)
+
+            plt.plot(hist_t.bin_edges[:-1])
+            plt.show()
+
             te, _ = model_task(t)
             tre, _ = model_translator(tr)
 
@@ -271,9 +279,6 @@ def calculate_accuracy_metrics(
     num = task_embs.size(0)
     D = torch.cdist(task_embs.to(device), tr_embs.to(device))
     ranks = D.argsort(dim=1)
-
-    plt.hist(D.numpy().flatten(),bins=1000)
-    wandb.log({'val/distances': plt})
 
     precision_at_k = {k: 0 for k in k_values}
     reciprocal_ranks = []
@@ -314,18 +319,21 @@ def inference(
     return tr_emb.cpu(), t_emb.cpu()
 
 
-#FUNCIONES PARA LA WEB
-
 def encode_task(model_task: nn.Module, task_tensor: torch.Tensor) -> torch.Tensor:
     return model_task.encoder(task_tensor)
 
-def encode_translators(model_translator: nn.Module, translator_tensor: torch.Tensor) -> torch.Tensor:
+
+def encode_translators(
+    model_translator: nn.Module, translator_tensor: torch.Tensor
+) -> torch.Tensor:
     return model_translator.encoder(translator_tensor)
+
 
 def preprocess_task(client_preferences: dict, tokenizer) -> torch.Tensor:
     # Tokeniza y vectoriza los datos del cliente
     task_vector = tokenizer(client_preferences)  # Devuelve un vector 1D
     return torch.tensor(task_vector, dtype=torch.float32)
+
 
 def preprocess_translators(translators_df: pd.DataFrame) -> torch.Tensor:
     # Convierte las columnas de string a listas y concatena los 3 embeddings
@@ -336,20 +344,37 @@ def preprocess_translators(translators_df: pd.DataFrame) -> torch.Tensor:
     tgt_embeds = translators_df["TARGET_LANG_EMBED"].apply(parse_array)
     ind_embeds = translators_df["INDUSTRY_EMBED"].apply(parse_array)
 
-    full_vectors = [np.concatenate([src, tgt, ind]) for src, tgt, ind in zip(src_embeds, tgt_embeds, ind_embeds)]
+    full_vectors = [
+        np.concatenate([src, tgt, ind])
+        for src, tgt, ind in zip(src_embeds, tgt_embeds, ind_embeds)
+    ]
     return torch.tensor(full_vectors, dtype=torch.float32)
 
-def recommend_translators(client_preferences: dict, translators_df, model_tasks, model_translators, tokenizer, device=None):
+
+def recommend_translators(
+    client_preferences: dict,
+    translators_df,
+    model_tasks,
+    model_translators,
+    tokenizer,
+    device=None,
+):
     if device is None:
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # Paso 1: Preprocesar entradas
-    task_tensor = preprocess_task(client_preferences, tokenizer).unsqueeze(0).to(device)   # (1, D)
-    translators_tensor = preprocess_translators(translators_df, tokenizer).to(device)      # (N, D)
+    task_tensor = (
+        preprocess_task(client_preferences, tokenizer).unsqueeze(0).to(device)
+    )  # (1, D)
+    translators_tensor = preprocess_translators(translators_df, tokenizer).to(
+        device
+    )  # (N, D)
 
     # Paso 2: Codificar embeddings
-    task_emb = encode_task(model_tasks, task_tensor)              # (1, E)
-    translators_emb = encode_translators(model_translators, translators_tensor)  # (N, E)
+    task_emb = encode_task(model_tasks, task_tensor)  # (1, E)
+    translators_emb = encode_translators(
+        model_translators, translators_tensor
+    )  # (N, E)
 
     # Paso 3: Calcular similitud
     similarities = torch.nn.functional.cosine_similarity(task_emb, translators_emb)
@@ -360,12 +385,6 @@ def recommend_translators(client_preferences: dict, translators_df, model_tasks,
     # Paso 5: Devolver info
     top_translators = translators_df.iloc[top_indices]
     return top_translators.to_dict(orient="records")
-
-
-def loss_function(
-    distance_loss,
-):
-    pass
 
 
 if __name__ == "__main__":
@@ -398,9 +417,7 @@ if __name__ == "__main__":
     scaler_taks = StandardScaler()
     scaler_translators = StandardScaler()
 
-    dataset = PositivesDataset(positives_df,
-                               scaler_taks,
-                               scaler_translators)
+    dataset = PositivesDataset(positives_df, scaler_taks, scaler_translators)
 
     train_size = int(0.8 * len(dataset))
     val_size = len(dataset) - train_size
@@ -437,6 +454,9 @@ if __name__ == "__main__":
     miner = TripletMarginMiner(distance=LpDistance(p=2), type_of_triplets="all")
     loss_fn = TripletMarginLoss(distance=LpDistance(p=2), margin=cfg.margin)
 
+    loss_fn = loss_fn.to(device)
+    miner = miner.to(device)
+
     wandb.watch(model_task, log="all", log_freq=10, criterion=loss_fn)
     wandb.watch(model_translator, log="all", log_freq=10, criterion=loss_fn)
 
@@ -454,7 +474,7 @@ if __name__ == "__main__":
             miner,
             optimizer_task,
             optimizer_translator,
-            device,
+            device=device,
         )
 
         val_loss = eval_step(
