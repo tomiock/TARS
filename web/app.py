@@ -2,8 +2,8 @@ from flask import Flask, request, render_template, jsonify
 import pandas as pd
 import torch
 from embedding_model import recommend_translators
-from model_loader import load_models  # asumiendo que tienes una función para cargar tus modelos
-from tokenizer import tokenizer_func  # tu función tokenizer personalizada
+from model_loader import load_models  
+from tokenizer import tokenizer_func
 
 app = Flask(__name__)
 
