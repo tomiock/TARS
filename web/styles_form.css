@@ -50,10 +50,11 @@ select{
 }
 
 button {
-    width: 100%;
+    width: 20%;
+    height: 40px;
     padding: 8px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 50px auto;
+    display: block;
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: #ff1d1d;
