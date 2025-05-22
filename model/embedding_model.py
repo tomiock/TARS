@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import wandb
+import ast
 
 from pytorch_metric_learning.losses import TripletMarginLoss
 from pytorch_metric_learning.miners import TripletMarginMiner, BaseMiner
@@ -311,6 +312,54 @@ def inference(
         tr_emb, _ = model_translators(translators)
 
     return tr_emb.cpu(), t_emb.cpu()
+
+
+#FUNCIONES PARA LA WEB
+
+def encode_task(model_task: nn.Module, task_tensor: torch.Tensor) -> torch.Tensor:
+    return model_task.encoder(task_tensor)
+
+def encode_translators(model_translator: nn.Module, translator_tensor: torch.Tensor) -> torch.Tensor:
+    return model_translator.encoder(translator_tensor)
+
+def preprocess_task(client_preferences: dict, tokenizer) -> torch.Tensor:
+    # Tokeniza y vectoriza los datos del cliente
+    task_vector = tokenizer(client_preferences)  # Devuelve un vector 1D
+    return torch.tensor(task_vector, dtype=torch.float32)
+
+def preprocess_translators(translators_df: pd.DataFrame) -> torch.Tensor:
+    # Convierte las columnas de string a listas y concatena los 3 embeddings
+    def parse_array(s):
+        return np.array(ast.literal_eval(s))  # convierte el string en lista
+
+    src_embeds = translators_df["SOURCE_LANG_EMBED"].apply(parse_array)
+    tgt_embeds = translators_df["TARGET_LANG_EMBED"].apply(parse_array)
+    ind_embeds = translators_df["INDUSTRY_EMBED"].apply(parse_array)
+
+    full_vectors = [np.concatenate([src, tgt, ind]) for src, tgt, ind in zip(src_embeds, tgt_embeds, ind_embeds)]
+    return torch.tensor(full_vectors, dtype=torch.float32)
+
+def recommend_translators(client_preferences: dict, translators_df, model_tasks, model_translators, tokenizer, device=None):
+    if device is None:
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+    # Paso 1: Preprocesar entradas
+    task_tensor = preprocess_task(client_preferences, tokenizer).unsqueeze(0).to(device)   # (1, D)
+    translators_tensor = preprocess_translators(translators_df, tokenizer).to(device)      # (N, D)
+
+    # Paso 2: Codificar embeddings
+    task_emb = encode_task(model_tasks, task_tensor)              # (1, E)
+    translators_emb = encode_translators(model_translators, translators_tensor)  # (N, E)
+
+    # Paso 3: Calcular similitud
+    similarities = torch.nn.functional.cosine_similarity(task_emb, translators_emb)
+
+    # Paso 4: Top-N
+    top_indices = torch.topk(similarities, k=10).indices.cpu().numpy()
+
+    # Paso 5: Devolver info
+    top_translators = translators_df.iloc[top_indices]
+    return top_translators.to_dict(orient="records")
 
 
 def loss_function(
