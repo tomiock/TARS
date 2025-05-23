@@ -154,7 +154,7 @@ def train_step(
     model_translator.train()
     total_loss = 0.0
 
-    for tasks, translators, labels in tqdm(train_dataloader, desc="Training"):
+    for tasks, translators, labels in train_dataloader:
         tasks, translators, labels = (
             tasks.to(device),
             translators.to(device),
@@ -188,8 +188,8 @@ def train_step(
         total_loss += loss_val.item()
 
     wandb.log({
-        f"task_embedding_distribution": wandb.Histogram(t_emb.detach()),
-        f"translator_embedding_distribution": wandb.Histogram(tr_emb.detach())
+        f"task_embedding_distribution": wandb.Histogram(t_emb.detach().cpu()),
+        f"translator_embedding_distribution": wandb.Histogram(tr_emb.detach().cpu())
     })
 
     return total_loss / len(train_dataloader)
@@ -210,7 +210,7 @@ def eval_step(
     count = 0
 
     with torch.no_grad():
-        for tasks, translators, labels in tqdm(val_dataloader, desc="Validation Loss"):
+        for tasks, translators, labels in val_dataloader:
             tasks, translators, labels = (
                 tasks.to(device),
                 translators.to(device),
@@ -259,9 +259,7 @@ def calculate_accuracy_metrics(
     task_embs, tr_embs, labels = [], [], []
 
     with torch.no_grad():
-        for tasks, translators, pair_labels in tqdm(
-            val_dataloader, desc="Embedding Val Set"
-        ):
+        for tasks, translators, pair_labels in val_dataloader:
             t, tr = tasks.to(device), translators.to(device)
 
             te, _ = model_task(t)
@@ -277,7 +275,7 @@ def calculate_accuracy_metrics(
 
     num = task_embs.size(0)
     D = torch.cdist(task_embs.to(device), tr_embs.to(device))
-    ranks = D.argsort(dim=1)
+    ranks = D.argsort(dim=1).cpu()
 
     precision_at_k = {k: 0 for k in k_values}
     reciprocal_ranks = []
