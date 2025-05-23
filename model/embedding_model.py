@@ -1,6 +1,5 @@
 import torch
 import pandas as pd
-import matplotlib.pyplot as plt
 import numpy as np
 import wandb
 import ast
@@ -427,15 +426,13 @@ if __name__ == "__main__":
         train_set,
         batch_size=cfg.batch_size,
         shuffle=True,
-        num_workers=2,
-        pin_memory=(device.type == "cuda"),
+        num_workers=10,
     )
     val_loader = DataLoader(
         val_set,
         batch_size=cfg.batch_size,
         shuffle=False,
-        num_workers=2,
-        pin_memory=(device.type == "cuda"),
+        num_workers=10,
     )
 
     sample_task, sample_translator, _ = dataset[0]
@@ -451,7 +448,7 @@ if __name__ == "__main__":
         translator_dim=TRANSLATOR_DIM, latent_dim=LATENT_DIM, hidden_dim=HIDDEN_DIM
     ).to(device)
 
-    miner = TripletMarginMiner(distance=LpDistance(p=2), type_of_triplets="all")
+    miner = TripletMarginMiner(distance=LpDistance(p=2), type_of_triplets="hard")
     loss_fn = TripletMarginLoss(distance=LpDistance(p=2), margin=cfg.margin)
 
     loss_fn = loss_fn.to(device)
