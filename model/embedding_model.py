@@ -168,6 +168,7 @@ def train_step(
         t_emb, t_rec = model_task(tasks)
         tr_emb, tr_rec = model_translator(translators)
 
+
         embeds = torch.cat([t_emb, tr_emb], dim=0)
         lbls = torch.cat([labels, labels], dim=0)
 
@@ -186,6 +187,12 @@ def train_step(
         optimizer_translator.step()
 
         total_loss += loss_val.item()
+
+    wandb.log({
+        f"task_embedding_distribution": wandb.Histogram(t_emb.detach()),
+        f"translator_embedding_distribution": wandb.Histogram(tr_emb.detach())
+    })
+
     return total_loss / len(train_dataloader)
 
 
@@ -257,13 +264,6 @@ def calculate_accuracy_metrics(
             val_dataloader, desc="Embedding Val Set"
         ):
             t, tr = tasks.to(device), translators.to(device)
-            bins = torch.linspace(-10, 10, 100)
-
-            hist_t = torch.histogram(t, bins=bins)
-            hist_tr = torch.histogram(tr, bins=bins)
-
-            plt.plot(hist_t.bin_edges[:-1])
-            plt.show()
 
             te, _ = model_task(t)
             tre, _ = model_translator(tr)
