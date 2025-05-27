@@ -7,3 +7,5 @@ sentence-transformers
 
 torch
 pytorch-metric-learning
+wandb
+matplotlib

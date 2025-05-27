@@ -5,9 +5,9 @@ metric:
 
 parameters:
   batch_size:
-    values: [64, 128, 256]
+    values: [256]
   learning_rate:
-    values: [0.0001, 0.0007, 0.002]
+    values: [0.00001]
   margin:
     values: [0.1, 0.2, 0.5, 1.0]
   epochs:
@@ -17,4 +17,4 @@ parameters:
 # since your script reads everything from wandb.config)
 command:
   - python3
-  - accuracy3.py
+  - embedding_model.py
