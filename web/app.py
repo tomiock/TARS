@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'model')))
+
 from flask import Flask, request, render_template, jsonify
 import pandas as pd
 import torch
@@ -10,18 +14,23 @@ app = Flask(__name__)
 # Cargar modelos y CSV una sola vez
 model_tasks, model_translators = load_models(
                                                 
-    task_path="models/task_ae.pth",
-    translator_path="models/trans_ae.pth",
-    task_dim=...,             #PREGUNTAR TASK_AE DIM
-    translator_dim=...,       #PREGUNTAR TRANS_AE DIM
-    latent_dim=...,           #PREGUNTAR LATENT DIM
+    task_path="../model/task_ae.pth",
+    translator_path="../model/trans_ae.pth",
+    task_dim=42,             #PREGUNTAR TASK_AE DIM
+    translator_dim=42,       #PREGUNTAR TRANS_AE DIM
+    latent_dim=10,           #PREGUNTAR LATENT DIM
+    hidden_dim=36
                                             )
-translators_df = pd.read_csv("translators_enhanced.csv")
+translators_df = pd.read_csv("../data/translators_enhanced.csv")
 
 # Página de inicio con formulario
 @app.route('/forms.html')
 def form():
     return render_template('forms.html')
+
+@app.route('/translators_avail.html')
+def translators_avail():
+    return render_template('translators_avail.html')
 
 # Endpoint que procesa el formulario y devuelve traductores recomendados
 @app.route('/recommend', methods=['POST'])
@@ -51,7 +60,7 @@ def recommend():
     )
 
     # Retorna página HTML con traductores recomendados
-    return render_template('translators_avail.html', translators=recommended)
+    return jsonify(recommended)
 
 if __name__ == '__main__':
     app.run(debug=True)
