@@ -361,13 +361,16 @@ def recommend_translators(
     model_translators: nn.Module,
     tokenizer: Callable,
     device: Optional[torch.device] = None,
-    top_k: int = 5
+    top_k: int = 10
 ) -> pd.DataFrame:
     if device is None:
             device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # Paso 1: Preprocesar entradas
-    task_tensor = preprocess_task(client_preferences, tokenizer).unsqueeze(0).to(device)
+    task_tensor = preprocess_task(client_preferences, tokenizer)  # → debería retornar un tensor de shape [42]
+    print("Shape before unsqueeze:", task_tensor.shape)
+    task_tensor = task_tensor.unsqueeze(0).to(device)  # → shape [1, 42]
+    print("Shape after unsqueeze:", task_tensor.shape)
     translators_tensor = preprocess_translators(translators_df).to(device)
 
     # Paso 2: Codificar embeddings
