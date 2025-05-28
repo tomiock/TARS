@@ -335,7 +335,13 @@ def preprocess_task(client_preferences: dict, tokenizer) -> torch.Tensor:
 def preprocess_translators(translators_df: pd.DataFrame) -> torch.Tensor:
     # Convierte las columnas de string a listas y concatena los 3 embeddings
     def parse_array(s):
-        return np.array(ast.literal_eval(s))  # convierte el string en lista
+        try:
+            # Reemplaza múltiples espacios por una sola coma
+            cleaned = ",".join(s.strip("[]").split())
+            return np.fromstring(cleaned, sep=",")
+        except Exception as e:
+            print(f"Error parseando: {s} -> {e}")
+            return None
 
     src_embeds = translators_df["SOURCE_LANG_EMBED"].apply(parse_array)
     tgt_embeds = translators_df["TARGET_LANG_EMBED"].apply(parse_array)
@@ -350,38 +356,35 @@ def preprocess_translators(translators_df: pd.DataFrame) -> torch.Tensor:
 
 def recommend_translators(
     client_preferences: dict,
-    translators_df,
-    model_tasks,
-    model_translators,
-    tokenizer,
-    device=None,
-):
+    translators_df: pd.DataFrame,
+    model_tasks: nn.Module,
+    model_translators: nn.Module,
+    tokenizer: Callable,
+    device: Optional[torch.device] = None,
+    top_k: int = 5
+) -> pd.DataFrame:
     if device is None:
-        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+            device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # Paso 1: Preprocesar entradas
-    task_tensor = (
-        preprocess_task(client_preferences, tokenizer).unsqueeze(0).to(device)
-    )  # (1, D)
-    translators_tensor = preprocess_translators(translators_df, tokenizer).to(
-        device
-    )  # (N, D)
+    task_tensor = preprocess_task(client_preferences, tokenizer).unsqueeze(0).to(device)
+    translators_tensor = preprocess_translators(translators_df).to(device)
 
     # Paso 2: Codificar embeddings
     task_emb = encode_task(model_tasks, task_tensor)  # (1, E)
-    translators_emb = encode_translators(
-        model_translators, translators_tensor
-    )  # (N, E)
+    translators_emb = encode_translators(model_translators, translators_tensor)  # (N, E)
 
-    # Paso 3: Calcular similitud
-    similarities = torch.nn.functional.cosine_similarity(task_emb, translators_emb)
+    # Paso 3: Calcular distancias
+    distances = CosineSimilarity(task_emb, translators_emb)  # (N,)
 
-    # Paso 4: Top-N
-    top_indices = torch.topk(similarities, k=10).indices.cpu().numpy()
+    # Paso 4: Seleccionar top-K
+    topk_indices = torch.topk(distances, k=top_k, largest=False).indices.cpu().numpy()
 
-    # Paso 5: Devolver info
-    top_translators = translators_df.iloc[top_indices]
-    return top_translators.to_dict(orient="records")
+    # Paso 5: Devolver DataFrame con los mejores traductores
+    recommended = translators_df.iloc[topk_indices].copy()
+    recommended["distance"] = distances[topk_indices].cpu().numpy()
+
+    return recommended.sort_values(by="distance")
 
 
 if __name__ == "__main__":

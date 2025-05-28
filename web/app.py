@@ -18,8 +18,8 @@ model_tasks, model_translators = load_models(
     translator_path="../model/trans_ae.pth",
     task_dim=42,             #PREGUNTAR TASK_AE DIM
     translator_dim=42,       #PREGUNTAR TRANS_AE DIM
-    latent_dim=10,           #PREGUNTAR LATENT DIM
-    hidden_dim=36
+    latent_dim=42,           #PREGUNTAR LATENT DIM
+    hidden_dim=64
                                             )
 translators_df = pd.read_csv("../data/translators_enhanced.csv")
 
@@ -45,11 +45,12 @@ def recommend():
         'task_type': request.form['task_type'],
         'original_language': request.form['original_language'],
         'target_language': request.form['target_language'],
-        'budget': float(request.form['budget']),
+        'budget': request.form['budget'],
         'project_id': request.form['project_id'],
-        'finish_date': request.form['finish_date']
+        'finish_date': request.form['finish_date'],
+        'pm': request.form['pm']
     }
-
+    
     # Ejecuta recomendación
     recommended = recommend_translators(
         client_preferences=client_preferences,
