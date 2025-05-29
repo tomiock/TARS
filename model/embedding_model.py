@@ -2,7 +2,6 @@ import torch
 import pandas as pd
 import numpy as np
 import wandb
-import ast
 
 from pytorch_metric_learning.losses import TripletMarginLoss
 from pytorch_metric_learning.miners import TripletMarginMiner, BaseMiner
