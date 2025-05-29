@@ -17,6 +17,132 @@ from sklearn.preprocessing import StandardScaler
 from typing import Optional, Callable, Dict, List
 
 
+def main():
+    wandb.init(
+        project="translation-retrieval-sweep",
+        config={
+            "batch_size": 256,
+            "learning_rate": 1e-3,
+            "latent_dim": 42,
+            "hidden_dim": 42,
+            "margin": 2,
+            "epochs": 100,
+            "loss": "Triplet",
+        },
+    )
+
+    cfg = wandb.config
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    wandb.config.update({"device": str(device)})
+
+    # Log data artifact
+    data_art = wandb.Artifact("positives-data", type="dataset")
+    data_art.add_file("../data/positives.pkl")
+    wandb.log_artifact(data_art)
+
+    positives_df = pd.read_pickle("../data/positives.pkl")
+    if not positives_df.index.is_unique:
+        positives_df = positives_df.reset_index(drop=True)
+
+    scaler_taks = StandardScaler()
+    scaler_translators = StandardScaler()
+
+    dataset = PositivesDataset(positives_df, scaler_taks, scaler_translators)
+
+    train_size = int(0.8 * len(dataset))
+    val_size = len(dataset) - train_size
+    train_set, val_set = torch.utils.data.random_split(dataset, [train_size, val_size])
+
+    train_loader = DataLoader(
+        train_set,
+        batch_size=cfg.batch_size,
+        shuffle=True,
+        num_workers=10,
+    )
+    val_loader = DataLoader(
+        val_set,
+        batch_size=cfg.batch_size,
+        shuffle=False,
+        num_workers=10,
+    )
+
+    sample_task, sample_translator, _ = dataset[0]
+    TASK_DIM = sample_task.shape[0]
+    TRANSLATOR_DIM = sample_translator.shape[0]
+    LATENT_DIM = cfg.latent_dim
+    HIDDEN_DIM = cfg.hidden_dim
+
+    model_task = Task_AE(
+        task_dim=TASK_DIM, latent_dim=LATENT_DIM, hidden_dim=HIDDEN_DIM
+    ).to(device)
+    model_translator = Translator_AE(
+        translator_dim=TRANSLATOR_DIM, latent_dim=LATENT_DIM, hidden_dim=HIDDEN_DIM
+    ).to(device)
+
+    miner = TripletMarginMiner(distance=LpDistance(p=2), type_of_triplets="hard")
+    loss_fn = TripletMarginLoss(distance=LpDistance(p=2), margin=cfg.margin)
+
+    loss_fn = loss_fn.to(device)
+    miner = miner.to(device)
+
+    wandb.watch(model_task, log="all", log_freq=10, criterion=loss_fn)
+    wandb.watch(model_translator, log="all", log_freq=10, criterion=loss_fn)
+
+    optimizer_task = torch.optim.Adam(model_task.parameters(), lr=cfg.learning_rate)
+    optimizer_translator = torch.optim.Adam(
+        model_translator.parameters(), lr=cfg.learning_rate
+    )
+
+    for epoch in range(cfg.epochs):
+        train_loss = train_step(
+            train_loader,
+            model_task,
+            model_translator,
+            loss_fn,
+            miner,
+            optimizer_task,
+            optimizer_translator,
+            device=device,
+        )
+
+        val_loss = eval_step(
+            val_loader, model_task, model_translator, loss_fn, miner, device
+        )
+
+        metrics = calculate_accuracy_metrics(
+            val_loader,
+            model_task,
+            model_translator,
+            distance_metric=LpDistance(p=2),
+            k_values=[1, 3, 5, 10],
+            device=device,
+        )
+
+        wandb.log(
+            {
+                "epoch": epoch + 1,
+                "train_loss": train_loss,
+                "val_loss": val_loss,
+                "val_mrr": metrics["mrr"],
+                **{f"precision@{k}": p for k, p in metrics["precision_at_k"].items()},
+            }
+        )
+
+        print(
+            f"Epoch {epoch + 1}/{cfg.epochs} - train_loss: {train_loss:.4f} - val_loss: {val_loss:.4f} - mrr: {metrics['mrr']:.4f}"
+        )
+
+    torch.save(model_task.state_dict(), "task_ae.pth")
+    torch.save(model_translator.state_dict(), "trans_ae.pth")
+    model_art = wandb.Artifact("ae-models", type="model")
+    model_art.add_file("task_ae.pth")
+    model_art.add_file("trans_ae.pth")
+    wandb.log_artifact(model_art)
+
+    print("Training finished.")
+    wandb.finish()
+
+
 def create_features(features: List[str], data: pd.Series) -> List[float]:
     return_data = []
     for col in features:
@@ -166,7 +292,6 @@ def train_step(
         t_emb, t_rec = model_task(tasks)
         tr_emb, tr_rec = model_translator(translators)
 
-
         embeds = torch.cat([t_emb, tr_emb], dim=0)
         lbls = torch.cat([labels, labels], dim=0)
 
@@ -186,10 +311,14 @@ def train_step(
 
         total_loss += loss_val.item()
 
-    wandb.log({
-        f"task_embedding_distribution": wandb.Histogram(t_emb.detach().cpu()),
-        f"translator_embedding_distribution": wandb.Histogram(tr_emb.detach().cpu())
-    })
+    wandb.log(
+        {
+            f"task_embedding_distribution": wandb.Histogram(t_emb.detach().cpu()),
+            f"translator_embedding_distribution": wandb.Histogram(
+                tr_emb.detach().cpu()
+            ),
+        }
+    )
 
     return total_loss / len(train_dataloader)
 
@@ -344,7 +473,6 @@ def preprocess_translators(translators_df: pd.DataFrame) -> torch.Tensor:
             print(f"Error parseando: {s} -> {e}")
             return np.zeros(1, dtype=np.float32)
 
-
     translator_tensors = []
 
     print("Translator DF columns:", translators_df.columns)
@@ -353,11 +481,12 @@ def preprocess_translators(translators_df: pd.DataFrame) -> torch.Tensor:
     for _, row in translators_df.iterrows():
         vector_parts = []
 
-
         # Valores escalares
         vector_parts.append(np.array([row["FORECAST_mean"]], dtype=np.float32))
         vector_parts.append(np.array([row["HOURLY_RATE_mean"]], dtype=np.float32))
-        vector_parts.append(np.array([row["QUALITY_EVALUATION_mean"]], dtype=np.float32))
+        vector_parts.append(
+            np.array([row["QUALITY_EVALUATION_mean"]], dtype=np.float32)
+        )
 
         vector_parts.append(parse_array(row["SOURCE_LANG"]))
         vector_parts.append(parse_array(row["TARGET_LANG"]))
@@ -366,13 +495,10 @@ def preprocess_translators(translators_df: pd.DataFrame) -> torch.Tensor:
         vector_parts.append(parse_array(row["TASK_TYPE"]))
         vector_parts.append(parse_array(row["PM"]))
 
-
-
         full_vector = np.concatenate(vector_parts)
         translator_tensors.append(full_vector)
 
     return torch.tensor(translator_tensors, dtype=torch.float32)
-
 
 
 def recommend_translators(
@@ -382,13 +508,15 @@ def recommend_translators(
     model_translators: nn.Module,
     tokenizer: Callable,
     device: Optional[torch.device] = None,
-    top_k: int = 10
+    top_k: int = 10,
 ) -> pd.DataFrame:
     if device is None:
-            device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # Paso 1: Preprocesar entradas
-    task_tensor = preprocess_task(client_preferences, tokenizer)  # → debería retornar un tensor de shape [42]
+    task_tensor = preprocess_task(
+        client_preferences, tokenizer
+    )  # → debería retornar un tensor de shape [42]
     print("Shape before unsqueeze:", task_tensor.shape)
     task_tensor = task_tensor.unsqueeze(0).to(device)  # → shape [1, 42]
     print("Shape after unsqueeze:", task_tensor.shape)
@@ -396,7 +524,9 @@ def recommend_translators(
 
     # Paso 2: Codificar embeddings
     task_emb = encode_task(model_tasks, task_tensor)  # (1, E)
-    translators_emb = encode_translators(model_translators, translators_tensor)  # (N, E)
+    translators_emb = encode_translators(
+        model_translators, translators_tensor
+    )  # (N, E)
 
     # Paso 3: Calcular distancias
     distances = CosineSimilarity(task_emb, translators_emb)  # (N,)
@@ -409,129 +539,3 @@ def recommend_translators(
     recommended["distance"] = distances[topk_indices].cpu().numpy()
 
     return recommended.sort_values(by="distance")
-
-
-if __name__ == "__main__":
-    wandb.init(
-        project="translation-retrieval-sweep",
-        config={
-            "batch_size": 256,
-            "learning_rate": 1e-3,
-            "latent_dim": 42,
-            "hidden_dim": 42,
-            "margin": 2,
-            "epochs": 100,
-            "loss": "Triplet",
-        },
-    )
-
-    cfg = wandb.config
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    wandb.config.update({"device": str(device)})
-
-    # Log data artifact
-    data_art = wandb.Artifact("positives-data", type="dataset")
-    data_art.add_file("../data/positives.pkl")
-    wandb.log_artifact(data_art)
-
-    positives_df = pd.read_pickle("../data/positives.pkl")
-    if not positives_df.index.is_unique:
-        positives_df = positives_df.reset_index(drop=True)
-
-    scaler_taks = StandardScaler()
-    scaler_translators = StandardScaler()
-
-    dataset = PositivesDataset(positives_df, scaler_taks, scaler_translators)
-
-    train_size = int(0.8 * len(dataset))
-    val_size = len(dataset) - train_size
-    train_set, val_set = torch.utils.data.random_split(dataset, [train_size, val_size])
-
-    train_loader = DataLoader(
-        train_set,
-        batch_size=cfg.batch_size,
-        shuffle=True,
-        num_workers=10,
-    )
-    val_loader = DataLoader(
-        val_set,
-        batch_size=cfg.batch_size,
-        shuffle=False,
-        num_workers=10,
-    )
-
-    sample_task, sample_translator, _ = dataset[0]
-    TASK_DIM = sample_task.shape[0]
-    TRANSLATOR_DIM = sample_translator.shape[0]
-    LATENT_DIM = cfg.latent_dim
-    HIDDEN_DIM = cfg.hidden_dim
-
-    model_task = Task_AE(
-        task_dim=TASK_DIM, latent_dim=LATENT_DIM, hidden_dim=HIDDEN_DIM
-    ).to(device)
-    model_translator = Translator_AE(
-        translator_dim=TRANSLATOR_DIM, latent_dim=LATENT_DIM, hidden_dim=HIDDEN_DIM
-    ).to(device)
-
-    miner = TripletMarginMiner(distance=LpDistance(p=2), type_of_triplets="hard")
-    loss_fn = TripletMarginLoss(distance=LpDistance(p=2), margin=cfg.margin)
-
-    loss_fn = loss_fn.to(device)
-    miner = miner.to(device)
-
-    wandb.watch(model_task, log="all", log_freq=10, criterion=loss_fn)
-    wandb.watch(model_translator, log="all", log_freq=10, criterion=loss_fn)
-
-    optimizer_task = torch.optim.Adam(model_task.parameters(), lr=cfg.learning_rate)
-    optimizer_translator = torch.optim.Adam(
-        model_translator.parameters(), lr=cfg.learning_rate
-    )
-
-    for epoch in range(cfg.epochs):
-        train_loss = train_step(
-            train_loader,
-            model_task,
-            model_translator,
-            loss_fn,
-            miner,
-            optimizer_task,
-            optimizer_translator,
-            device=device,
-        )
-
-        val_loss = eval_step(
-            val_loader, model_task, model_translator, loss_fn, miner, device
-        )
-
-        metrics = calculate_accuracy_metrics(
-            val_loader,
-            model_task,
-            model_translator,
-            distance_metric=LpDistance(p=2),
-            k_values=[1, 3, 5, 10],
-            device=device,
-        )
-
-        wandb.log(
-            {
-                "epoch": epoch + 1,
-                "train_loss": train_loss,
-                "val_loss": val_loss,
-                "val_mrr": metrics["mrr"],
-                **{f"precision@{k}": p for k, p in metrics["precision_at_k"].items()},
-            }
-        )
-
-        print(
-            f"Epoch {epoch + 1}/{cfg.epochs} - train_loss: {train_loss:.4f} - val_loss: {val_loss:.4f} - mrr: {metrics['mrr']:.4f}"
-        )
-
-    torch.save(model_task.state_dict(), "task_ae.pth")
-    torch.save(model_translator.state_dict(), "trans_ae.pth")
-    model_art = wandb.Artifact("ae-models", type="model")
-    model_art.add_file("task_ae.pth")
-    model_art.add_file("trans_ae.pth")
-    wandb.log_artifact(model_art)
-
-    print("Training finished.")
-    wandb.finish()
