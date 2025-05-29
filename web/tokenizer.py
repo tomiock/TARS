@@ -4,18 +4,14 @@ vectorizer = TfidfVectorizer()
 
 def tokenizer_func(client_preferences):
     text_fields = [
-        client_preferences.get('manufacturer', ''),
-        client_preferences.get('sector', ''),
         client_preferences.get('industry', ''),
-        client_preferences.get('industry_group', ''),
-        client_preferences.get('sub_industry', ''),
         client_preferences.get('task_type', ''),
-        client_preferences.get('original_language', ''),
+        client_preferences.get('source_language', ''),
         client_preferences.get('target_language', ''),
-        client_preferences.get('project_id'),
-        client_preferences.get('budget'),
         client_preferences.get('pm', ''),
-        client_preferences.get('finish_date', '')
+        client_preferences.get('hourly_rate', ''),
+        client_preferences.get('forecast', '')
+
     ]
     input_text = " ".join([str(val).strip().lower() for val in text_fields if val])
     if not input_text:

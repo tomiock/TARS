@@ -37,17 +37,12 @@ def translators_avail():
 def recommend():
     # Recoge datos del formulario
     client_preferences = {
-        'manufacturer': request.form['manufacturer'],
-        'sector': request.form['sector'],
         'industry': request.form['industry'],
-        'industry_group': request.form['industry_group'],
-        'sub_industry': request.form['sub_industry'],
         'task_type': request.form['task_type'],
-        'original_language': request.form['original_language'],
+        'source_language': request.form['source_language'],
         'target_language': request.form['target_language'],
-        'budget': request.form['budget'],
-        'project_id': request.form['project_id'],
-        'finish_date': request.form['finish_date'],
+        'forecast' : request.form['forecast'],
+        'hourly_rate': request.form['hourly_rate'],
         'pm': request.form['pm']
     }
     

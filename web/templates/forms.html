@@ -10,23 +10,7 @@
 <body>
     <h1>TranslAItion</h1>
     <form id="formulario">
-        <select id="manufacturer" name="manufacturer" required>
-            <option value="">Manufacturer</option>
-            <option value="MetaPro">MetaPro</option>
-            <option value="SunTech">SunTech</option>
-            <option value="NexisOne">NexisOne</option>
-            <option value="Global Trading Solutions">Global Trading Solutions</option>
-        </select>
-        
 
-        <select id="sector" name="sector" required>
-            <option value="">Select Sector</option>
-            <option value="Information Technology">Information Technology</option>
-            <option value="Industrials">Industrials</option>
-            <option value="Communication Services">Communication Services</option>
-            <option value="Health Care">Health Care</option>
-            <option value="Consumer Discretionary">Consumer Discretionary</option>
-        </select>
 
         <select id="industry" name="industry" required>
             <option value="">Select Industry</option>
@@ -35,36 +19,19 @@
             <option value="Trading Companies & Distributors">Trading Companies & Distributors</option>
         </select>
 
-        <select id="industry-group" name="industry_group" required>
-            <option value="">Select Industry Group</option>
-            <option value="Technology Hardware & Equipment">Technology Hardware & Equipment</option>
-            <option value="Software & Services">Software & Services</option>
-            <option value="Health Care Providers">Health Care Providers</option>
-        </select>
-
-        <select id="sub-industry" name="sub_industry" required>
-            <option value="">Select Sub Industry</option>
-            <option value="Technology Hardware, Storage & Peripherals">Technology Hardware, Storage & Peripherals</option>
-            <option value="Communications Equipment">Communications Equipment</option>
-            <option value="Systems Software">Systems Software</option>
-        </select>
-
         <select id="task-type" name="task_type" required>
             <option value="">Task Type</option>
             <option value="ProofReading">ProofReading</option>
             <option value="Translation">Translation</option>
         </select>
 
-        <input type="text" id="original-language" placeholder="Original Language" name="original_language" required>
+        <input type="text" id="source-language" placeholder="Original Language" name="source_language" required>
 
         <input type="text" id="target-language" placeholder="Target Language" name="target_language" required>
 
-        <input type="number" min="0" id="budget" step="0.01" placeholder="Budget" name="budget" required>
+        <input type="number" id="forecast" placeholder="Forecast" name="forecast" required>
 
-        <input type="text" id="project-id" placeholder="Project ID" name="project_id" required>
-
-        <input type="date" id="finish-date" name="finish_date" placeholder="Finish Date" required>
-
+        <input type="number" id="hourly_rate" placeholder="Hourly Rate" name="hourly_rate" required>
 
         <select id="pm" name="pm" required>
             <option value="">Select PM</option>
