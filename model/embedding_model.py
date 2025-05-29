@@ -333,25 +333,47 @@ def preprocess_task(client_preferences: dict, tokenizer) -> torch.Tensor:
 
 
 def preprocess_translators(translators_df: pd.DataFrame) -> torch.Tensor:
-    # Convierte las columnas de string a listas y concatena los 3 embeddings
     def parse_array(s):
         try:
-            # Reemplaza múltiples espacios por una sola coma
+            if isinstance(s, list) or isinstance(s, np.ndarray):
+                return np.array(s, dtype=np.float32)
+            if isinstance(s, (int, float, np.float32, np.float64)):
+                return np.array([s], dtype=np.float32)
             cleaned = ",".join(s.strip("[]").split())
-            return np.fromstring(cleaned, sep=",")
+            return np.fromstring(cleaned, sep=",", dtype=np.float32)
         except Exception as e:
             print(f"Error parseando: {s} -> {e}")
-            return None
+            return np.zeros(1, dtype=np.float32)
 
-    src_embeds = translators_df["SOURCE_LANG_EMBED"].apply(parse_array)
-    tgt_embeds = translators_df["TARGET_LANG_EMBED"].apply(parse_array)
-    ind_embeds = translators_df["INDUSTRY_EMBED"].apply(parse_array)
 
-    full_vectors = [
-        np.concatenate([src, tgt, ind])
-        for src, tgt, ind in zip(src_embeds, tgt_embeds, ind_embeds)
-    ]
-    return torch.tensor(full_vectors, dtype=torch.float32)
+    translator_tensors = []
+
+    print("Translator DF columns:", translators_df.columns)
+    print("Sample row:", translators_df.iloc[0])
+
+    for _, row in translators_df.iterrows():
+        vector_parts = []
+
+
+        # Valores escalares
+        vector_parts.append(np.array([row["FORECAST_mean"]], dtype=np.float32))
+        vector_parts.append(np.array([row["HOURLY_RATE_mean"]], dtype=np.float32))
+        vector_parts.append(np.array([row["QUALITY_EVALUATION_mean"]], dtype=np.float32))
+
+        vector_parts.append(parse_array(row["SOURCE_LANG"]))
+        vector_parts.append(parse_array(row["TARGET_LANG"]))
+        vector_parts.append(parse_array(row["HOURLY_RATE"]))
+        vector_parts.append(parse_array(row["MANUFACTURER_INDUSTRY"]))
+        vector_parts.append(parse_array(row["TASK_TYPE"]))
+        vector_parts.append(parse_array(row["PM"]))
+
+
+
+        full_vector = np.concatenate(vector_parts)
+        translator_tensors.append(full_vector)
+
+    return torch.tensor(translator_tensors, dtype=torch.float32)
+
 
 
 def recommend_translators(
