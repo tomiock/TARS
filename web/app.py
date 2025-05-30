@@ -55,8 +55,12 @@ def recommend():
         tokenizer=tokenizer_func
     )
 
+    print("Contenido de recommended:")
+    print(recommended)
     # Retorna página HTML con traductores recomendados
-    return jsonify(recommended)
+    return jsonify({"translators": recommended.to_dict(orient='records')})
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

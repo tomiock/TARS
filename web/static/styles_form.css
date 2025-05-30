@@ -1,68 +1,88 @@
 body {
-    font-family: Arial, sans-serif;
-    color:#393939;
-    margin: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #393939;
+    margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background: #f2f2f2;
 }
 
 h1 {
-    
     text-align: center;
-    padding: 20px;
+    padding: 30px 20px;
     color: #de0000;
+    font-size: 2rem;
+    letter-spacing: 1px;
 }
 
-form{
-
-    background: #cacaca;
-    max-width: 85%;
-    max-height: 60%;
+form {
+    background: #ffffff;
+    max-width: 900px;
     padding: 40px;
-    margin: auto;
-    box-shadow: 0 0 20px #09090986;
-    border-radius: 20px;
+    margin: 40px auto;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
     display: flex;
-    flex-wrap: wrap;    
-    gap: 2%;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
     box-sizing: border-box;
-
 }
 
-input, select{
-
-    width: auto;
-    min-width: 150px;
-    height: 46px;
-    padding: 10px;
-    margin: 10px auto;
-    border: 1px solid #d7d7d7;
-    border-radius: 20px;
-    font-size: medium;
+input, select {
+    flex: 1 1 250px;
+    height: 48px;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border: 1px solid #dcdcdc;
+    border-radius: 12px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: border 0.2s ease;
 }
 
+input:focus, select:focus {
+    border-color: #de0000;
+    outline: none;
+    background-color: #fff;
+}
 
-select{
-
-    width: auto;
-    height: 65px;
+select {
+    height: 52px;
 }
 
 button {
-    width: 20%;
-    height: 40px;
-    padding: 8px;
-    margin: 50px auto;
-    display: block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #ff1d1d;
-    color: white;
-    cursor: pointer;
+    width: 200px;
+    height: 50px;
+    padding: 10px;
+    margin: 10px auto 10px;
     border: none;
+    border-radius: 25px;
+    background: linear-gradient(145deg, #de0000, #ff4f4f);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-    background-color: #ff8686;
+    background: linear-gradient(145deg, #ff4f4f, #de0000);
+    transform: scale(1.03);
+}
+
+@media (max-width: 600px) {
+    form {
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+    }
+
+    input, select {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
 }

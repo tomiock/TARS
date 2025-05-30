@@ -1,5 +1,5 @@
-body{
-    font-family: Arial, sans-serif;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #393939;
     margin: 0;
     padding: 0;
@@ -9,220 +9,165 @@ body{
     align-items: center;
 }
 
-/*ALTERNATIVE POSSIBILITIES (TÍTULO)*/
-h2{         
+h2 {
     text-align: center;
-    padding: 10px;
-    color: #393939;
+    padding: 20px;
+    color: #de0000;
+    font-size: 2rem;
 }
 
-
-
-
-
-
-
-
-/*FORMULARIO*/
-form{
-
-    background: #cacaca;
-    width: 85%;
-    height: 100%;
+form {
+    background: #ffffff;
+    width: 90%;
     padding: 30px;
-    margin: 40px auto 20px auto;
-    box-shadow: 0 0 10px #09090986;
-    border-radius: 20px;
+    margin: 20px auto;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
     justify-content: center;
     box-sizing: border-box;
 }
-/*INPUTS DEL FORMULARIO*/
 
-input, select{
-
-    width: 10%;
-    min-width: 100px;
+input, select {
     height: 46px;
-    padding: 10px;
-    border: 1px solid #d7d7d7;
-    border-radius: 20px;
-    font-size:medium;
-    
-}
-#manufacturer{
-    min-width: 30%;
-}
-#original-language, #target-language{
-    width: 20%;
-}
+    padding: 10px 15px;
+    border: 1px solid #dcdcdc;
+    border-radius: 12px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: border 0.2s ease;
 
+}
 select{
-
-    width: 15%;
-    height: 65px;
-    
-}
-#pm{
-    max-width: 8.5%;
+    height: 70px;
 }
 
+input:focus, select:focus {
+    border-color: #de0000;
+    outline: none;
+    background-color: #fff;
+}
 
+#manufacturer {
+    min-width: 250px;
+    flex: 2 1 auto;
+}
 
+#original-language, #target-language {
+    min-width: 150px;
+    flex: 1 1 auto;
+}
 
+#pm {
+    max-width: 90px;
+}
 
-
-
-
-
-
-
-
-
-/*BOTÓN PARA VOLVER A BUSCAR, no sé si lo acabaré poniendo*/
-#search-translators{
-    width: 25%;
-    padding: 8px;
-    margin-top: auto;
-    margin-bottom: 10px;
+#search-translators {
+    width: 200px;
+    padding: 10px;
     background-color: #ff1d1d;
     color: white;
     cursor: pointer;
+    font-size: 1rem;
     border: none;
-    font-size: medium;
-
+    border-radius: 25px;
+    transition: background 0.3s;
 }
+
 #search-translators:hover {
     background-color: #ff8686;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*TRADUCTORES DISPONIBLES*/
+/* MAIN CONTAINER */
 #translators-available {
     display: flex;
-    width: 100%;
-    max-width: 1300px;
-    flex-direction: row;
     flex-wrap: wrap;
-
+    gap: 20px;
+    padding: 20px;
+    max-width: 1400px;
+    width: 100%;
+    justify-content: center;
 }
 
+/* PANELS */
+#left-panel, #right-panel {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    overflow-y: auto;
+}
 
-
-/*LOS DOS PANELES*/
 #left-panel {
     flex: 3;
-    padding: 20px;
-    margin: 20px;
-    overflow-y: auto;
-    max-width: 75%;
-    background: #e2e2e2;
-    border-radius: 10px;
-    
+    min-width: 600px;
 }
+
 #right-panel {
-    background-color: #cbcbcb;
-    flex: 3;
-    padding: 20px;
-    margin: 20px;
-    overflow-y: auto;
-    max-width: 25%;
-    height: 100%;
-    border-radius: 10px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
 }
 
-
-
-
-
-/*DEL PANEL DE LA IZQUIERDA PARA CADA TRADUCTOR*/
+/* TRANSLATOR CARD */
 .translator-card {
     background: white;
-    max-width: 700px;
-    max-height: 250px;
-    width: 100%;
+    border-radius: 16px;
     padding: 20px;
-    margin: 15px auto;
-    border-radius: 8px;
-    box-shadow: 0px 5px 15px #00000034;
-    transition: transform 0.2s;
+    margin: 15px 0;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
     display: flex;
-
+    align-items: center;
+    transition: transform 0.2s ease;
 }
+
 .translator-card:hover {
     transform: scale(1.02);
 }
 
-
-
-
-
-
-
-
-
-/*INFORMACIÓN DE LA TARJETA*/
-.avatar{
+.avatar {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    margin: auto 50px auto 30px;
+    object-fit: cover;
+    margin-right: 30px;
 }
 
-/*NOMBRE, HORARIOS, ETC.*/
-.translator-details{
-
-    width: 45%;
-    padding: 10px;
-    border-right: 1px solid #ddd; 
+.translator-details {
+    flex: 2;
+    padding-right: 20px;
+    border-right: 1px solid #eee;
 }
 
-/*NOMBRE DEL TRADUCTOR*/
-h3{
-
-    font-size: 1.4em;
+h3 {
+    font-size: 1.5rem;
     margin-bottom: 10px;
-    font-weight: bold;
+    color: #de0000;
 }
 
-/*COSTE Y BOTONES DE ACEPTAR E INFO*/
-.translator-buttons-and-cost{
-
-    padding: 20px;
-    margin:  10px auto 10px 15px;
-    text-align: center;
+.translator-buttons-and-cost {
+    flex: 1;
+    padding-left: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    margin-top: 10px;
-    width: 40%;
+    align-items: center;
+    gap: 12px;
 }
 
-/*BOTONES*/
+/* Buttons */
 .translator-buttons-and-cost button {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: bold;
     cursor: pointer;
-    font-size: 1em;
-    transition: background 0.3s;
+    transition: background 0.3s ease;
+    border: none;
 }
 
-/*BOTÓN DE ACEPTAR*/
 .accept-button {
     background-color: #ff1d1d;
     color: white;
@@ -231,55 +176,31 @@ h3{
     background-color: #ff8686;
 }
 
-
-/*BOTÓN DE INFORMACIÓN*/
 .info-button {
     background-color: #b0b0b0;
     color: black;
-
 }
 .info-button:hover {
     background-color: #cacaca;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*PANEL DE MÁS INFORMACIÓN*/
+/* Translator Info Panel */
 #translator-info-panel {
     position: fixed;
     bottom: -100%;
     left: 50%;
-    width: 75%;
+    width: 90%;
     max-width: 1200px;
     height: 90%;
     background: white;
     box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.2);
-    padding: 20px;
+    padding: 30px;
     transition: bottom 0.5s ease-in-out;
     z-index: 1000;
     border-radius: 20px;
-    transform: translateX(-50%); 
-
+    transform: translateX(-50%);
+    overflow-y: auto;
 }
-
 
 #translator-info-panel.show {
     bottom: 0;
@@ -289,16 +210,63 @@ h3{
     position: absolute;
     top: 15px;
     right: 15px;
-    background: red;
+    background: #de0000;
     color: white;
     border: none;
-    padding: 5px 10px;
-    font-size: 1.2em;
+    padding: 8px 12px;
+    font-size: 1.2rem;
+    border-radius: 12px;
     cursor: pointer;
-    border-radius: 10px;
 }
 
 #translator-info-content {
-    margin-top: 40px;
+    margin-top: 50px;
     text-align: center;
+    font-size: 1rem;
+}
+
+#filter-relaxation, #alternative-suggestions {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #a5a5a5;
+}
+
+#alternative-suggestions ul {
+    padding-left: 20px;
+    list-style-type: disc;
+    font-size: 0.95em;
+}
+
+#alternative-suggestions li {
+    margin-bottom: 8px;
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+    #translators-available {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #left-panel, #right-panel {
+        width: 95%;
+        max-width: none;
+    }
+
+    .translator-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .translator-details, .translator-buttons-and-cost {
+        border: none;
+        padding: 0;
+        width: 100%;
+    }
+
+    .translator-buttons-and-cost {
+        flex-direction: row;
+        justify-content: center;
+    }
 }

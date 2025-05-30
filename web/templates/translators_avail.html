@@ -44,7 +44,6 @@
     
     <!--<button type="submit" id="search-translators">Search Translators</button>-->
 
-    <button id="back-to-form">Back to Form</button>
 
 
     <div id="translators-available">
@@ -54,7 +53,22 @@
         
         <div id="right-panel">
             <h2>Alternative Possibilities</h2>
-            <div id="possible-trans-list"></div>
+            <div id="filter-relaxation">
+                <h4>Relax Filters</h4>
+                <label>
+                <input type="checkbox" id="allow-lower-quality"> Quality ≥ 7
+                </label><br>
+                <label>
+                <input type="checkbox" id="allow-partial-availability"> Partial Availability
+                </label>
+            </div>
+
+            <div id="alternative-suggestions">
+                <h4>Suggested Alternatives</h4>
+                <ul id="alt-list">
+                <!-- JS will populate this -->
+                </ul>
+            </div>
         </div>
 
     </div>

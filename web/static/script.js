@@ -13,28 +13,30 @@ document.addEventListener("DOMContentLoaded", function () {
         method: "POST",
         body: formData
     })
+
     .then(response => response.json())
     .then(data => {
+        console.log(data); // <-- Aquí ves la estructura real
+
         const translatorsList = document.getElementById("translators-list");
         data.translators.forEach(translator => {
             const card = document.createElement("div");
             card.classList.add("translator-card");
 
             card.innerHTML = `
-                <img src="${translator.avatar}" alt="Avatar de ${translator.name}" class="avatar">
-                <div class="translator-details">        
-                    <h3>${translator.name}</h3>
-                    <p><strong>Quality:</strong> ${translator.quality}/10</p>
-                    <p><strong>Available Hours:</strong> ${translator.hours_available}</p>
-                    <p><strong>Finish Date:</strong> ${translator.finish_day}</p>
-                    <p><strong>Completion Time:</strong> ${translator.done_in}</p>
-                </div>
-                <div class="translator-buttons-and-cost">
-                    <p class="translator-cost"><strong>Cost:</strong> ${translator.cost}</p>
-                    <button class="accept-button">Accept</button>
-                    <button class="info-button">More Info</button>
-                </div>
-            `;
+                    <div class="translator-details">
+                        <h3>${translator.TRANSLATOR}</h3>
+                        <p><strong>Quality:</strong> ${translator.QUALITY_EVALUATION_mean.toFixed(1)}/10</p>
+                        <p><strong>Hourly Rate:</strong> $${translator.HOURLY_RATE_mean.toFixed(2)}</p>
+                        <p><strong>Industry:</strong> ${translator.MANUFACTURER_INDUSTRY}</p>
+                        <p><strong>Source Lang:</strong> ${translator.SOURCE_LANG}</p>
+                        <p><strong>Target Lang:</strong> ${translator.TARGET_LANG}</p>
+                    </div>
+                    <div class="translator-buttons-and-cost">
+                        <button class="accept-button">Accept</button>
+                        <button class="info-button">More Info</button>
+                    </div>
+                `;
             translatorsList.appendChild(card);
 
             const infoButton = card.querySelector(".info-button");
@@ -47,6 +49,46 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     })
     .catch(error => console.error("Error loading translators:", error));
+        // Traductores alternativos simulados (normalmente esto vendría del backend)
+    const alternativeTranslators = [
+    { name: "Lucía García", languages: "ES→EN", quality: 7, available: false },
+    { name: "Marco Rossi", languages: "IT→FR", quality: 8, available: true },
+    { name: "Lena Müller", languages: "DE→EN", quality: 6, available: true },
+    ];
+
+    const altList = document.getElementById("alt-list");
+    const lowerQualityCheckbox = document.getElementById("allow-lower-quality");
+    const partialAvailabilityCheckbox = document.getElementById("allow-partial-availability");
+
+    function updateAlternativeSuggestions() {
+    altList.innerHTML = "";
+
+    const allowLowQ = lowerQualityCheckbox.checked;
+    const allowPartial = partialAvailabilityCheckbox.checked;
+
+    const filtered = alternativeTranslators.filter(t => {
+        const qualityOK = allowLowQ ? t.quality >= 7 : t.quality >= 8;
+        const availabilityOK = allowPartial ? true : t.available;
+        return qualityOK && availabilityOK;
+    });
+
+    if (filtered.length === 0) {
+        altList.innerHTML = "<li>No suggestions available with current settings.</li>";
+    } else {
+        filtered.forEach(t => {
+        const li = document.createElement("li");
+        li.textContent = `${t.name} (${t.languages}) – Quality: ${t.quality}`;
+        altList.appendChild(li);
+        });
+    }
+    }
+
+    lowerQualityCheckbox.addEventListener("change", updateAlternativeSuggestions);
+    partialAvailabilityCheckbox.addEventListener("change", updateAlternativeSuggestions);
+
+    // Inicialización
+    updateAlternativeSuggestions();
+
 });
 
 

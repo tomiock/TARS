@@ -2,6 +2,7 @@ import torch
 import pandas as pd
 import numpy as np
 import wandb
+import ast
 
 from pytorch_metric_learning.losses import TripletMarginLoss
 from pytorch_metric_learning.miners import TripletMarginMiner, BaseMiner
@@ -15,132 +16,6 @@ from tqdm import tqdm  # For progress bars
 from sklearn.preprocessing import StandardScaler
 
 from typing import Optional, Callable, Dict, List
-
-
-def main():
-    wandb.init(
-        project="translation-retrieval-sweep",
-        config={
-            "batch_size": 256,
-            "learning_rate": 1e-3,
-            "latent_dim": 42,
-            "hidden_dim": 42,
-            "margin": 2,
-            "epochs": 100,
-            "loss": "Triplet",
-        },
-    )
-
-    cfg = wandb.config
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    wandb.config.update({"device": str(device)})
-
-    # Log data artifact
-    data_art = wandb.Artifact("positives-data", type="dataset")
-    data_art.add_file("../data/positives.pkl")
-    wandb.log_artifact(data_art)
-
-    positives_df = pd.read_pickle("../data/positives.pkl")
-    if not positives_df.index.is_unique:
-        positives_df = positives_df.reset_index(drop=True)
-
-    scaler_taks = StandardScaler()
-    scaler_translators = StandardScaler()
-
-    dataset = PositivesDataset(positives_df, scaler_taks, scaler_translators)
-
-    train_size = int(0.8 * len(dataset))
-    val_size = len(dataset) - train_size
-    train_set, val_set = torch.utils.data.random_split(dataset, [train_size, val_size])
-
-    train_loader = DataLoader(
-        train_set,
-        batch_size=cfg.batch_size,
-        shuffle=True,
-        num_workers=10,
-    )
-    val_loader = DataLoader(
-        val_set,
-        batch_size=cfg.batch_size,
-        shuffle=False,
-        num_workers=10,
-    )
-
-    sample_task, sample_translator, _ = dataset[0]
-    TASK_DIM = sample_task.shape[0]
-    TRANSLATOR_DIM = sample_translator.shape[0]
-    LATENT_DIM = cfg.latent_dim
-    HIDDEN_DIM = cfg.hidden_dim
-
-    model_task = Task_AE(
-        task_dim=TASK_DIM, latent_dim=LATENT_DIM, hidden_dim=HIDDEN_DIM
-    ).to(device)
-    model_translator = Translator_AE(
-        translator_dim=TRANSLATOR_DIM, latent_dim=LATENT_DIM, hidden_dim=HIDDEN_DIM
-    ).to(device)
-
-    miner = TripletMarginMiner(distance=LpDistance(p=2), type_of_triplets="hard")
-    loss_fn = TripletMarginLoss(distance=LpDistance(p=2), margin=cfg.margin)
-
-    loss_fn = loss_fn.to(device)
-    miner = miner.to(device)
-
-    wandb.watch(model_task, log="all", log_freq=10, criterion=loss_fn)
-    wandb.watch(model_translator, log="all", log_freq=10, criterion=loss_fn)
-
-    optimizer_task = torch.optim.Adam(model_task.parameters(), lr=cfg.learning_rate)
-    optimizer_translator = torch.optim.Adam(
-        model_translator.parameters(), lr=cfg.learning_rate
-    )
-
-    for epoch in range(cfg.epochs):
-        train_loss = train_step(
-            train_loader,
-            model_task,
-            model_translator,
-            loss_fn,
-            miner,
-            optimizer_task,
-            optimizer_translator,
-            device=device,
-        )
-
-        val_loss = eval_step(
-            val_loader, model_task, model_translator, loss_fn, miner, device
-        )
-
-        metrics = calculate_accuracy_metrics(
-            val_loader,
-            model_task,
-            model_translator,
-            distance_metric=LpDistance(p=2),
-            k_values=[1, 3, 5, 10],
-            device=device,
-        )
-
-        wandb.log(
-            {
-                "epoch": epoch + 1,
-                "train_loss": train_loss,
-                "val_loss": val_loss,
-                "val_mrr": metrics["mrr"],
-                **{f"precision@{k}": p for k, p in metrics["precision_at_k"].items()},
-            }
-        )
-
-        print(
-            f"Epoch {epoch + 1}/{cfg.epochs} - train_loss: {train_loss:.4f} - val_loss: {val_loss:.4f} - mrr: {metrics['mrr']:.4f}"
-        )
-
-    torch.save(model_task.state_dict(), "task_ae.pth")
-    torch.save(model_translator.state_dict(), "trans_ae.pth")
-    model_art = wandb.Artifact("ae-models", type="model")
-    model_art.add_file("task_ae.pth")
-    model_art.add_file("trans_ae.pth")
-    wandb.log_artifact(model_art)
-
-    print("Training finished.")
-    wandb.finish()
 
 
 def create_features(features: List[str], data: pd.Series) -> List[float]:
@@ -292,6 +167,7 @@ def train_step(
         t_emb, t_rec = model_task(tasks)
         tr_emb, tr_rec = model_translator(translators)
 
+
         embeds = torch.cat([t_emb, tr_emb], dim=0)
         lbls = torch.cat([labels, labels], dim=0)
 
@@ -311,14 +187,10 @@ def train_step(
 
         total_loss += loss_val.item()
 
-    wandb.log(
-        {
-            f"task_embedding_distribution": wandb.Histogram(t_emb.detach().cpu()),
-            f"translator_embedding_distribution": wandb.Histogram(
-                tr_emb.detach().cpu()
-            ),
-        }
-    )
+    wandb.log({
+        f"task_embedding_distribution": wandb.Histogram(t_emb.detach().cpu()),
+        f"translator_embedding_distribution": wandb.Histogram(tr_emb.detach().cpu())
+    })
 
     return total_loss / len(train_dataloader)
 
@@ -448,9 +320,7 @@ def encode_task(model_task: nn.Module, task_tensor: torch.Tensor) -> torch.Tenso
     return model_task.encoder(task_tensor)
 
 
-def encode_translators(
-    model_translator: nn.Module, translator_tensor: torch.Tensor
-) -> torch.Tensor:
+def encode_translators(model_translator: nn.Module, translator_tensor: torch.Tensor) -> torch.Tensor:
     return model_translator.encoder(translator_tensor)
 
 
@@ -475,30 +345,40 @@ def preprocess_translators(translators_df: pd.DataFrame) -> torch.Tensor:
 
     translator_tensors = []
 
-    print("Translator DF columns:", translators_df.columns)
-    print("Sample row:", translators_df.iloc[0])
-
     for _, row in translators_df.iterrows():
         vector_parts = []
 
         # Valores escalares
         vector_parts.append(np.array([row["FORECAST_mean"]], dtype=np.float32))
         vector_parts.append(np.array([row["HOURLY_RATE_mean"]], dtype=np.float32))
-        vector_parts.append(
-            np.array([row["QUALITY_EVALUATION_mean"]], dtype=np.float32)
-        )
+        vector_parts.append(np.array([row["QUALITY_EVALUATION_mean"]], dtype=np.float32))
 
-        vector_parts.append(parse_array(row["SOURCE_LANG"]))
-        vector_parts.append(parse_array(row["TARGET_LANG"]))
-        vector_parts.append(parse_array(row["HOURLY_RATE"]))
-        vector_parts.append(parse_array(row["MANUFACTURER_INDUSTRY"]))
-        vector_parts.append(parse_array(row["TASK_TYPE"]))
-        vector_parts.append(parse_array(row["PM"]))
+        # Embeddings
+        vector_parts.append(parse_array(row["SOURCE_LANG_EMBED"]))
+        vector_parts.append(parse_array(row["TARGET_LANG_EMBED"]))
+        vector_parts.append(parse_array(row["INDUSTRY_EMBED"]))
+
+        # Podrías seguir añadiendo los campos originales si tienen sentido
+        # vector_parts.append(parse_array(row["HOURLY_RATE"]))
+        # vector_parts.append(parse_array(row["MANUFACTURER_INDUSTRY"]))
+        # vector_parts.append(parse_array(row["TASK_TYPE"]))
+        # vector_parts.append(parse_array(row["PM"]))
 
         full_vector = np.concatenate(vector_parts)
+        if len(full_vector) < 42:
+            padding = np.zeros(42 - len(full_vector), dtype=np.float32)
+            full_vector = np.concatenate([full_vector, padding])
+        elif len(full_vector) > 42:
+            print(f"⚠️ Fila {i} tiene longitud {len(full_vector)} > {42}, truncando.")
+            full_vector = full_vector[:42]  # también puedes lanzar error si prefieres
+
         translator_tensors.append(full_vector)
 
-    return torch.tensor(translator_tensors, dtype=torch.float32)
+    tensor = torch.tensor(translator_tensors, dtype=torch.float32)
+    print(f"Final translator tensor shape: {tensor.shape}")
+    return tensor
+
+
 
 
 def recommend_translators(
@@ -508,34 +388,49 @@ def recommend_translators(
     model_translators: nn.Module,
     tokenizer: Callable,
     device: Optional[torch.device] = None,
-    top_k: int = 10,
+    top_k: int = 15
 ) -> pd.DataFrame:
     if device is None:
-        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+            device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # Paso 1: Preprocesar entradas
-    task_tensor = preprocess_task(
-        client_preferences, tokenizer
-    )  # → debería retornar un tensor de shape [42]
+    task_tensor = preprocess_task(client_preferences, tokenizer)  # → debería retornar un tensor de shape [42]
     print("Shape before unsqueeze:", task_tensor.shape)
     task_tensor = task_tensor.unsqueeze(0).to(device)  # → shape [1, 42]
     print("Shape after unsqueeze:", task_tensor.shape)
     translators_tensor = preprocess_translators(translators_df).to(device)
 
+    print(model_tasks.encoder[0])
+    print(f"Task tensor shape: {task_tensor.shape}")
+    print(f"First encoder layer: {model_tasks.encoder[0]}\n")
+
+    print(model_translators.encoder[0])
+    print("Translator tensor shape:", translators_tensor.shape)
+    print("Ejemplo vector:", translators_tensor[0])
+    for i, vec in enumerate(translators_tensor):
+        if vec.shape[0] != 42:
+            print(f"Row {i} tiene dimensión {vec.shape[0]}")
+
+
     # Paso 2: Codificar embeddings
     task_emb = encode_task(model_tasks, task_tensor)  # (1, E)
-    translators_emb = encode_translators(
-        model_translators, translators_tensor
-    )  # (N, E)
+    translators_emb = encode_translators(model_translators, translators_tensor)  # (N, E)
 
     # Paso 3: Calcular distancias
-    distances = CosineSimilarity(task_emb, translators_emb)  # (N,)
+    distances = F.cosine_similarity(task_emb, translators_emb, dim=1)
 
     # Paso 4: Seleccionar top-K
-    topk_indices = torch.topk(distances, k=top_k, largest=False).indices.cpu().numpy()
+    # Obtén los 20 traductores más cercanos
+    topk_all = torch.topk(distances, k=50, largest=False).indices.cpu().numpy()
+    topk_distances = distances[topk_all].detach().cpu().numpy()
+    inv_distances = 1 / (topk_distances + 1e-6)
+    probs = inv_distances / np.sum(inv_distances)
+
+    # Selecciona aleatoriamente 10 (o el número que quieras) de esos 20
+    topk_randomized = np.random.choice(topk_all, size=top_k, replace=False, p=probs)
 
     # Paso 5: Devolver DataFrame con los mejores traductores
-    recommended = translators_df.iloc[topk_indices].copy()
-    recommended["distance"] = distances[topk_indices].cpu().numpy()
+    recommended = translators_df.iloc[topk_randomized].copy()
+    recommended["distance"] = distances[topk_randomized].detach().cpu().numpy()
 
     return recommended.sort_values(by="distance")

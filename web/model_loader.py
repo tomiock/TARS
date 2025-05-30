@@ -4,10 +4,10 @@ from embedding_model import Task_AE, Translator_AE
 
 def load_models(task_path="models/task_ae.pth",
                 translator_path="models/trans_ae.pth",
-                task_dim=42,
+                task_dim=8,
                 translator_dim=42,
                 latent_dim=42,
-                hidden_dim=42,
+                hidden_dim=64,
                 device=None):
     
     if device is None:
