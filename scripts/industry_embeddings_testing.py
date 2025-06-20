@@ -5,22 +5,11 @@ from industry_embeddings import EmbeddingLookup
 
 
 # Load the data
-with open("scripts/industry_embeddings.pkl", "rb") as f:
+with open("industry_embeddings.pkl", "rb") as f:
     loaded_data = pickle.load(f)
 
 # Create the lookup
 lookup = EmbeddingLookup(loaded_data)
-
-
-"""     To see all industries in set:
-
-lookup = EmbeddingLookup(loaded_data)
-
-print("Available industries:")
-for industry in sorted(lookup.lang_to_index.keys()):
-    print(industry)
-
-"""
 
 def compare_industry(industry, industry_2):
 
@@ -44,6 +33,3 @@ industry3 = "Health Care Facilities"
 compare_industry(industry1, industry2)
 compare_industry(industry1, industry3)
 compare_industry(industry2, industry3)
-
-
-

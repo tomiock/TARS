@@ -161,7 +161,7 @@ def load_embedding_data(filename: str) -> dict | None:
 
 
 if __name__ == "__main__":
-    df_tasks = pd.read_csv("data/data_enhanced.csv", decimal=".")
+    df_tasks = pd.read_csv("../data/data_enhanced.csv", decimal=".")
 
     print("Loaded the CSV...")
 
@@ -209,7 +209,7 @@ if __name__ == "__main__":
     print()
     print()
 
-    output_filename = "scripts/industry_embeddings.pkl"
+    output_filename = "industry_embeddings.pkl"
 
     save_embedding_data(
         filename=output_filename,
@@ -222,7 +222,7 @@ if __name__ == "__main__":
     original_embeddings_np = embed_industry
     latent_embeddings_np = encoded_data_cpu
 
-    input_filename = "scripts/industry_embeddings.pkl"
+    input_filename = "industry_embeddings.pkl"
     loaded_data = load_embedding_data(input_filename)
 
     print()

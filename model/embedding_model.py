@@ -426,11 +426,7 @@ def recommend_translators(
     inv_distances = 1 / (topk_distances + 1e-6)
     probs = inv_distances / np.sum(inv_distances)
 
-    # Selecciona aleatoriamente 10 (o el número que quieras) de esos 20
-    topk_randomized = np.random.choice(topk_all, size=top_k, replace=False, p=probs)
-
-    # Paso 5: Devolver DataFrame con los mejores traductores
-    recommended = translators_df.iloc[topk_randomized].copy()
-    recommended["distance"] = distances[topk_randomized].detach().cpu().numpy()
+    recommended = translators_df.iloc[topk_all].copy()
+    recommended["distance"] = distances[topk_all].detach().cpu().numpy()
 
     return recommended.sort_values(by="distance")
