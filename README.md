@@ -2,7 +2,7 @@
 
 Before executing code, disable `wandb` by typing `wandb disable` on the terminal.
 
-All of the files need to be executed from inside the respective folders. The main file for the training loop resides on `model`, from inside there execute `python3 embedding_model.py`.
+All of the files need to be executed from inside their respective folders. The main file for the training loop resides on `model`, from inside there execute `python3 embedding_model.py`.
 
 Another important file would be `model/create_dataset.py` which created the dataframe used by the pytorch model.
 
