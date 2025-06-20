@@ -17,6 +17,10 @@ from sklearn.preprocessing import StandardScaler
 
 from typing import Optional, Callable, Dict, List
 
+import matplotlib.pyplot as plt
+from sklearn.manifold import TSNE
+import io
+
 
 def create_features(features: List[str], data: pd.Series) -> List[float]:
     return_data = []
@@ -33,7 +37,7 @@ class PositivesDataset(Dataset):
     def __init__(self, dataframe: pd.DataFrame, task_scaler, translator_scaler):
         self.dataframe = dataframe
         self.pair_labels = dataframe.index.tolist()
-        self.task_samples, self.translator_samples = [], []
+        
         self.task_features = [
             "SOURCE_LANG_task",
             "TARGET_LANG_task",
@@ -46,27 +50,75 @@ class PositivesDataset(Dataset):
             "SOURCE_LANG_EMBED_translator",
             "TARGET_LANG_EMBED_translator",
             "INDUSTRY_EMBED_translator",
-            "FORECAST_mean",
+            "HOURS_mean",
             "HOURLY_RATE_mean",
             "HOURLY_RATE_translator",
             "QUALITY_EVALUATION_mean",
             "translator_categorical_vector",
         ]
 
-        for i in tqdm(range(len(dataframe)), desc="Loading data"):
-            row_data = dataframe.iloc[i]
-            t = create_features(self.task_features, row_data)
-            tr = create_features(self.translator_features, row_data)
-            self.task_samples.append(np.array(t, dtype=np.float32))
-            self.translator_samples.append(np.array(tr, dtype=np.float32))
+        # --- MODIFICATION START: Two-pass approach for padding ---
+        
+        # Pass 1: Determine maximum feature lengths and store raw feature lists
+        all_task_feature_lengths = []
+        all_translator_feature_lengths = []
+        raw_task_feature_lists = []
+        raw_translator_feature_lists = []
 
+        print("PositivesDataset: Starting pass 1 to determine max feature lengths...")
+        for i in tqdm(range(len(dataframe)), desc="Preprocessing (Pass 1/2)"):
+            row_data = dataframe.iloc[i]
+            t_list = create_features(self.task_features, row_data)
+            tr_list = create_features(self.translator_features, row_data)
+            
+            all_task_feature_lengths.append(len(t_list))
+            all_translator_feature_lengths.append(len(tr_list))
+            
+            raw_task_feature_lists.append(t_list)
+            raw_translator_feature_lists.append(tr_list)
+
+        max_task_len = 0
+        if all_task_feature_lengths:
+            max_task_len = max(all_task_feature_lengths)
+        
+        max_translator_len = 0
+        if all_translator_feature_lengths:
+            max_translator_len = max(all_translator_feature_lengths)
+
+        print(f"PositivesDataset: Max task feature length: {max_task_len}")
+        print(f"PositivesDataset: Max translator feature length: {max_translator_len}")
+
+        self.task_samples = []
+        self.translator_samples = []
+
+        # Pass 2: Pad features to max length and convert to numpy arrays
+        print("PositivesDataset: Starting pass 2 to load and pad data...")
+        for i in tqdm(range(len(dataframe)), desc="Loading & Padding (Pass 2/2)"):
+            t_list = raw_task_feature_lists[i]
+            tr_list = raw_translator_feature_lists[i]
+
+            # Pad task_list
+            if len(t_list) < max_task_len:
+                t_list.extend([0.0] * (max_task_len - len(t_list)))
+            # No truncation needed as we pad to the actual max length found
+            
+            # Pad translator_list
+            if len(tr_list) < max_translator_len:
+                tr_list.extend([0.0] * (max_translator_len - len(tr_list)))
+            # No truncation needed
+
+            self.task_samples.append(np.array(t_list, dtype=np.float32))
+            self.translator_samples.append(np.array(tr_list, dtype=np.float32))
+        
+        # --- MODIFICATION END ---
+
+        # Note on Scaler: The hasattr(scaler, 'mean_') check will likely be false for new scalers.
+        # This means the scaling blocks below might not execute unless scalers are pre-fitted.
+        # This is separate from the tensor stacking error.
         if task_scaler and hasattr(task_scaler, "mean_") and self.task_samples:
-            # hasattr(task_scaler, 'mean_') is a simple check if the scaler has been fitted.
-            # Stack list of 1D arrays into a 2D array for scaler's transform method
+            print("PositivesDataset: Scaling task samples...")
             task_samples_2d = np.stack(self.task_samples)
-            # Transform the data
-            scaled_task_samples_2d = task_scaler.transform(task_samples_2d)
-            # Unstack back into a list of 1D arrays, ensuring float32 dtype
+            scaled_task_samples_2d = task_scaler.fit_transform(task_samples_2d)
             self.task_samples = [
                 scaled_task_samples_2d[i].astype(np.float32)
                 for i in range(scaled_task_samples_2d.shape[0])
@@ -77,8 +129,9 @@ class PositivesDataset(Dataset):
             and hasattr(translator_scaler, "mean_")
             and self.translator_samples
         ):
+            print("PositivesDataset: Scaling translator samples...")
             translator_samples_2d = np.stack(self.translator_samples)
-            scaled_translator_samples_2d = translator_scaler.transform(
+            scaled_translator_samples_2d = translator_scaler.fit_transform(
                 translator_samples_2d
             )
             self.translator_samples = [
@@ -86,11 +139,16 @@ class PositivesDataset(Dataset):
                 for i in range(scaled_translator_samples_2d.shape[0])
             ]
         assert len(self.task_samples) == len(self.translator_samples), (
-            "Mismatch between task and translator samples"
+            "Mismatch between task and translator samples after processing"
         )
+        if self.task_samples:
+             assert all(s.shape[0] == max_task_len for s in self.task_samples), "Task samples have inconsistent lengths after padding."
+        if self.translator_samples:
+             assert all(s.shape[0] == max_translator_len for s in self.translator_samples), "Translator samples have inconsistent lengths after padding."
+
 
     def __len__(self) -> int:
-        return len(self.task_samples)
+        return len(self.dataframe) # Should be len(self.task_samples) or len(self.pair_labels)
 
     def __getitem__(self, idx: int):
         return (
@@ -99,6 +157,14 @@ class PositivesDataset(Dataset):
             torch.tensor(self.pair_labels[idx], dtype=torch.long),
         )
 
+def my_collate(batch):
+    tasks, translators, labels = zip(*batch)
+    tasks       = torch.stack(tasks, dim=0)
+    translators = torch.stack(translators, dim=0)
+    labels      = torch.tensor([lbl.item() if isinstance(lbl, torch.Tensor) else lbl
+                                for lbl in labels],
+                               dtype=torch.long)
+    return tasks, translators, labels
 
 class Translator_AE(nn.Module):
     def __init__(self, translator_dim: int, latent_dim: int, hidden_dim: int = 64):
@@ -149,6 +215,7 @@ def train_step(
     optimizer_task: torch.optim.Optimizer,
     optimizer_translator: torch.optim.Optimizer,
     device: torch.device,
+    current_step: int=0,
 ) -> float:
     model_task.train()
     model_translator.train()
@@ -160,6 +227,14 @@ def train_step(
             translators.to(device),
             labels.to(device),
         )
+
+        warmup_factor = get_lr_warmup_factor(current_step, warmup_steps)
+        for param_group in optimizer_task.param_groups:
+            param_group['lr'] = cfg.learning_rate * warmup_factor
+        for param_group in optimizer_translator.param_groups:
+            param_group['lr'] = cfg.learning_rate * warmup_factor        
+        
+        current_step += 1
 
         optimizer_task.zero_grad()
         optimizer_translator.zero_grad()
@@ -179,7 +254,7 @@ def train_step(
         rec_losses = rec_loss_t + rec_loss_tr
 
         loss_val = loss_func(embeds, lbls, hard_triplets)
-        loss_val += rec_losses
+        #loss_val += rec_losses
         loss_val.backward()
 
         optimizer_task.step()
@@ -232,13 +307,16 @@ def eval_step(
                 rec_losses = rec_loss_t + rec_loss_tr
 
                 loss_val = loss_func(embeds, lbls, hard_triplets)
-                loss_val += rec_losses
+                #loss_val += rec_losses
 
                 total_loss += loss_val.item()
                 count += 1
 
     return total_loss / count if count > 0 else 0.0
 
+def get_lr_warmup_factor(current_step:int, warmup_steps: int) -> float:
+    """Linear learning rate warm-up from 0 to 1 over warmup-steps"""
+    return min(1.0, current_step / warmup_steps)
 
 def calculate_accuracy_metrics(
     val_dataloader: DataLoader,
@@ -247,51 +325,62 @@ def calculate_accuracy_metrics(
     distance_metric: Callable = LpDistance(p=2),
     k_values: List[int] = [1, 5, 10],
     device: Optional[torch.device] = None,
+    eval_batch_size: int = 256,              # ← batch size for evaluation
 ) -> Dict[str, float | Dict[int, float]]:
+
     model_task.eval()
     model_translator.eval()
 
     if device is None:
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    model_task.to(device)
-    model_translator.to(device)
-    task_embs, tr_embs, labels = [], [], []
-
+    # 1) gather all embeddings & labels
+    task_embs_list, tr_embs_list, labels_list = [], [], []
     with torch.no_grad():
         for tasks, translators, pair_labels in val_dataloader:
-            t, tr = tasks.to(device), translators.to(device)
+            t_emb, _  = model_task(tasks.to(device))
+            tr_emb, _ = model_translator(translators.to(device))
+            task_embs_list.append(t_emb.cpu())
+            tr_embs_list.append(tr_emb.cpu())
+            labels_list.append(pair_labels)
 
-            te, _ = model_task(t)
-            tre, _ = model_translator(tr)
+    task_embs = torch.cat(task_embs_list)   # (N, E) on CPU
+    tr_embs   = torch.cat(tr_embs_list)     # (N, E) on CPU
+    labels    = torch.cat(labels_list)      # (N,)
 
-            task_embs.append(te.cpu())
-            tr_embs.append(tre.cpu())
-            labels.append(pair_labels)
-
-    task_embs = torch.cat(task_embs)
-    tr_embs = torch.cat(tr_embs)
-    labels = torch.cat(labels)
-
-    num = task_embs.size(0)
-    D = torch.cdist(task_embs.to(device), tr_embs.to(device))
-    ranks = D.argsort(dim=1).cpu()
+    N = task_embs.size(0)
+    max_k = max(k_values)
 
     precision_at_k = {k: 0 for k in k_values}
     reciprocal_ranks = []
-    for i in range(num):
-        true = labels[i].item()
-        ranked = labels[ranks[i]]
 
-        pos = (ranked == true).nonzero(as_tuple=True)[0][0].item() + 1
+    # Move translator embeddings once to device
+    tr_embs_device = tr_embs.to(device)
 
-        reciprocal_ranks.append(1.0 / pos)
-        for k in k_values:
-            if pos <= k:
-                precision_at_k[k] += 1
+    # 2) iterate over task embeddings in chunks
+    for start in range(0, N, eval_batch_size):
+        end = min(start + eval_batch_size, N)
+        t_batch = task_embs[start:end].to(device)    # (B, E)
 
+        # compute distances B × N (fits in memory for B~256)
+        dists = torch.cdist(t_batch, tr_embs_device)  # (B, N)
+        dists = dists.cpu()
+
+        # 3) for each example in the batch compute rank, prec@k and RR
+        for i in range(end - start):
+            global_idx = start + i
+            row = dists[i]                             # (N,)
+            true_dist = row[global_idx].item()
+            # count how many are strictly closer
+            rank = int((row < true_dist).sum().item()) + 1
+            reciprocal_ranks.append(1.0 / rank)
+            for k in k_values:
+                if rank <= k:
+                    precision_at_k[k] += 1
+
+    # 4) normalize
     mrr = float(np.mean(reciprocal_ranks))
-    precision_at_k = {k: v / num for k, v in precision_at_k.items()}
+    precision_at_k = {k: v / N for k, v in precision_at_k.items()}
     return {"mrr": mrr, "precision_at_k": precision_at_k}
 
 
@@ -388,13 +477,14 @@ if __name__ == "__main__":
     wandb.init(
         project="translation-retrieval-sweep",
         config={
-            "batch_size": 256,
+            "batch_size": 1024,
             "learning_rate": 1e-3,
-            "latent_dim": 42,
-            "hidden_dim": 42,
-            "margin": 2,
+            "latent_dim": 60,
+            "hidden_dim": 1024,
+            "margin": 30,
             "epochs": 100,
             "loss": "Triplet",
+            "warmup_epochs": 10,
         },
     )
 
@@ -403,11 +493,11 @@ if __name__ == "__main__":
     wandb.config.update({"device": str(device)})
 
     # Log data artifact
-    data_art = wandb.Artifact("positives-data", type="dataset")
-    data_art.add_file("../data/positives.pkl")
-    wandb.log_artifact(data_art)
+#     data_art = wandb.Artifact("positives-data", type="dataset")
+#     data_art.add_reference("file://../data/final_positives.pkl")
+#     wandb.log_artifact(data_art)
 
-    positives_df = pd.read_pickle("../data/positives.pkl")
+    positives_df = pd.read_pickle("../data/final_positives.pkl")
     if not positives_df.index.is_unique:
         positives_df = positives_df.reset_index(drop=True)
 
@@ -425,12 +515,14 @@ if __name__ == "__main__":
         batch_size=cfg.batch_size,
         shuffle=True,
         num_workers=10,
+        collate_fn=my_collate,
     )
     val_loader = DataLoader(
         val_set,
         batch_size=cfg.batch_size,
         shuffle=False,
         num_workers=10,
+        collate_fn=my_collate,
     )
 
     sample_task, sample_translator, _ = dataset[0]
@@ -446,8 +538,8 @@ if __name__ == "__main__":
         translator_dim=TRANSLATOR_DIM, latent_dim=LATENT_DIM, hidden_dim=HIDDEN_DIM
     ).to(device)
 
-    miner = TripletMarginMiner(distance=LpDistance(p=2), type_of_triplets="hard")
-    loss_fn = TripletMarginLoss(distance=LpDistance(p=2), margin=cfg.margin)
+    miner = TripletMarginMiner(distance=CosineSimilarity(), type_of_triplets="hard")
+    loss_fn = TripletMarginLoss(distance=CosineSimilarity(), margin=cfg.margin)
 
     loss_fn = loss_fn.to(device)
     miner = miner.to(device)
@@ -459,6 +551,9 @@ if __name__ == "__main__":
     optimizer_translator = torch.optim.Adam(
         model_translator.parameters(), lr=cfg.learning_rate
     )
+
+    warmup_steps = len(train_loader) * cfg.warmup_epochs
+    current_step = 0
 
     for epoch in range(cfg.epochs):
         train_loss = train_step(

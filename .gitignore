@@ -2,10 +2,14 @@
 __pycache__/
 env/
 result
+
+data/
+
 .idea/
 *.pyc
 
-*.pth
+**/*.pth
+**/*.pt
 
 _/
 

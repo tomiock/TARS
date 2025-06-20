@@ -161,12 +161,17 @@ def load_embedding_data(filename: str) -> dict | None:
 
 
 if __name__ == "__main__":
-    df_tasks = pd.read_csv("data/data_enhanced.csv", decimal=".")
+    df_tasks = pd.read_csv("../data/final_data_enhanced.csv", decimal=".", low_memory=False)
 
     print("Loaded the CSV...")
 
-    set_industries = set(df_tasks["MANUFACTURER_INDUSTRY"].unique())
-    set_industries = set(industry_tokenizer(indu) for indu in set_industries)
+    raw_inds = df_tasks["MANUFACTURER_INDUSTRY"].unique()
+
+    set_industries = {
+        industry_tokenizer(v)
+        for v in raw_inds
+        if isinstance(v, str) and v.strip()
+    }
 
     indu_to_index = {indu: i for i, indu in enumerate(set_industries)}
 
@@ -209,7 +214,7 @@ if __name__ == "__main__":
     print()
     print()
 
-    output_filename = "scripts/industry_embeddings.pkl"
+    output_filename = "final_industry_embeddings.pkl"
 
     save_embedding_data(
         filename=output_filename,
@@ -222,7 +227,7 @@ if __name__ == "__main__":
     original_embeddings_np = embed_industry
     latent_embeddings_np = encoded_data_cpu
 
-    input_filename = "scripts/industry_embeddings.pkl"
+    input_filename = "final_industry_embeddings.pkl"
     loaded_data = load_embedding_data(input_filename)
 
     print()
